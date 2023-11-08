@@ -24,9 +24,10 @@ $button.Location = New-Object System.Drawing.Point(200, 200)
 $Button.Add_Click({./regfiles\enable-searchbox.reg})
 $main_form.Controls.Add($button)
 
+$location = Get-ChildItem applist.txt
 
-$alpath = ".\applist.txt"
-$Applist = Get-Content -Path $alpath
+
+$Applist = Get-Content -Path $location
 
 
 $i = 1 
