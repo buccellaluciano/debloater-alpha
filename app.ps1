@@ -25,7 +25,7 @@ $Button.Add_Click({./regfiles\enable-searchbox.reg})
 $main_form.Controls.Add($button)
 
 
-$alpath = "C:\Users\estudiante\Documents\GitHub\debloater-alpha\applist.txt"
+$alpath = ".\applist.txt"
 $Applist = Get-Content -Path $alpath
 
 
