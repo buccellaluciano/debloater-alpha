@@ -29,7 +29,6 @@ $alpath = ".\applist.txt"
 $Applist = Get-Content -Path $alpath
 
 
-
 $i = 1 
 foreach ($Line in $Applist) {
     Write-Host "$Line $i :";
