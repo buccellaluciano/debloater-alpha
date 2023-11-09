@@ -17,6 +17,16 @@ $Button.Add_Click({Start-Process "$locatio"})
 $main_form.Controls.Add($button)
 $PSVersionTable
 
+$RemoveKeys                      = New-Object system.Windows.Forms.Button
+$RemoveKeys.text                 = "Remove Keys"
+$RemoveKeys.width                = 150
+$RemoveKeys.height               = 50
+$RemoveKeys.location             = New-Object System.Drawing.Point(20,425)
+$RemoveKeys.Font                 = New-Object System.Drawing.Font('Microsoft Sans Serif',12,[System.Drawing.FontStyle]([System.Drawing.FontStyle]::Bold))
+$RemoveKeys.ForeColor            = [System.Drawing.ColorTranslator]::FromHtml("#ffffff")
+$RemoveKeys.BackColor            = [System.Drawing.ColorTranslator]::FromHtml("#4a90e2")
+$main_form.Controls.Add($RemoveKeys)
+
 
 $button = New-Object System.Windows.Forms.Button
 $Button.Text = "Inciar Debloater"
