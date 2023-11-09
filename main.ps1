@@ -17,13 +17,16 @@ $Button.Add_Click({Start-Process "$locatio"})
 $main_form.Controls.Add($button)
 $PSVersionTable
 
-
 $button = New-Object System.Windows.Forms.Button
 $Button.Text = "Inciar Debloater"
 $button.Location = New-Object System.Drawing.Point(100, 200)
-$locatio = Get-ChildItem debloater.ps1
-$Button.Add_Click({C:\Users\estudiante\Documents\GitHub\debloater-alpha\regfiles\change-class.reg})
+$Button.Add_Click({$buttons})
 $main_form.Controls.Add($button)
+
+$buttons=[windows.forms.messagebox]::show('body','title','YesNo')
+[System.Security.SecurityException]::show
+
+
 
 $main_form.ShowDialog()
 
