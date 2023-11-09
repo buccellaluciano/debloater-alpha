@@ -17,6 +17,7 @@ $Button.Add_Click({Start-Process "$locatio"})
 $main_form.Controls.Add($button)
 $PSVersionTable
 
+
 $button = New-Object System.Windows.Forms.Button
 $Button.Text = "Inciar Debloater"
 $button.Location = New-Object System.Drawing.Point(100, 200)

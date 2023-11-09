@@ -19,23 +19,43 @@ $main_form.Controls.Add($button)
 
 
 $button = New-Object System.Windows.Forms.Button
-$Button.Text = "Activar Barra"
+$Button.Text = "Cambiar registros"
 $button.Location = New-Object System.Drawing.Point(200, 200)
-$Button.Add_Click({./regfiles\enable-searchbox.reg})
-$main_form.Controls.Add($button)
-
-$location = Get-ChildItem applist.txt
+$Button.Add_Click({(Changeregs)})
+$main_form.Controls.Add()
 
 
-$Applist = Get-Content -Path $location
-
-
-$i = 1 
-foreach ($Line in $Applist) {
-    Write-Host "$Line $i :";
-    $i++
+function Changeregs {
+    
+    $regfilesloc = Get-ChildItem regfiles
+    $regfiles = Get-Content -Path $regfilesloc
+    
+    $j
+    foreach ($Line in $regfiles){
+        Write-Host "$Line $j :";
+        $j++
+    }
+    
+    Param($Enabled)
+    Try{
+        if ($Enabled -eq $false){
+            Write-Host "Habilitando..."
+            $value = 1
+        }
+        else {
+            Write-Host "Desabilitando..."
+            $value = 0
+        }
+        $Path = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search"
+        Set-ItemProperty -Path $Path -Name BingSearchEnabled -Value $value
+    
+    }
+    Catch [System.Security.SecurityException] {
+        Write-Warning "Unable to set $Path\$Name to $Value due to a Security Exception"
+    }
 }
 
+    Set-ItemProperty -Path $Path -Name BingSearchEnabled -Value $value
 
 
 $main_form.ShowDialog()
