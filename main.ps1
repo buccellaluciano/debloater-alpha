@@ -24,6 +24,7 @@ $button.Location = New-Object System.Drawing.Point(100, 200)
 $Button.Add_Click({$buttons})
 $main_form.Controls.Add($button)
 
+
 $buttons=[windows.forms.messagebox]::show('body','title','YesNo')
 [System.Security.SecurityException]::show
 
