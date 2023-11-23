@@ -49,3 +49,25 @@ function Add-Button {
 
     return $newControl
 }
+
+function Add-GroupBox {
+    param (
+        [System.Windows.Forms.Control]$Control,
+        [string]$Text,
+        [int]$X,
+        [int]$Y,
+        [int]$Width,
+        [int]$Height
+    )
+
+    $newGroupbox = New-Object System.Windows.Forms.GroupBox
+    $newGroupbox.Location = New-Object System.Drawing.Size($X, $Y)
+    $newGroupbox.Size = New-Object System.Drawing.Size($Width, $Height)
+    $newGroupbox.Text = $Title
+
+    $Control.Controls.Add($newGroupbox)
+
+    return $newGroupbox
+
+
+}

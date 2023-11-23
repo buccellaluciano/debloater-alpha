@@ -21,10 +21,14 @@ $tabPage2 = Add-TabPage -TabControl $tabControl -Text "Install"
 $tabPage3 = Add-TabPage -TabControl $tabControl -Text "DEBUG"
 
 ############TAB 1############
-
-
-
+##GROUPBOX1##
+$GrBox_UninWindows = Add-GroupBox -Control $tabPage1 -Text "Developer test" -X 5 -Y 5 -Width 300 -Height 400
+$GrBox_UninWindows.Controls.Add($butUninstalWindows) #Agregar foreach, que recorra todo lo que quiera ser agregado en el groupbox
+##GROUPBOX1##
 $butUninstalWindows = Add-Button -Control $tabPage1 -Text "Developer test" -X 10 -Y 10 -Width 100 -Height 20
+
+
+
 ############TAB 1############
 
 
