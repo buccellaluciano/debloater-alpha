@@ -38,10 +38,13 @@ function openscript {
     Start-Process -FilePath $pwpath -ArgumentList $defpath
 }
 
+=======
+
 
 $button = New-Object System.Windows.Forms.Button
 $Button.Text = "asheeee"
 $button.Location = New-Object System.Drawing.Point(100, 200)
+
 $Button.Add_Click({
         $script = "debloater.ps1"
         openscript
@@ -56,5 +59,14 @@ $Button.Add_Click({
         openscript
 })
 $main_form.Controls.Add($button)
+=======
+$Button.Add_Click({$buttons})
+$main_form.Controls.Add($button)
+
+
+$buttons=[windows.forms.messagebox]::show('body','title','YesNo')
+[System.Security.SecurityException]::show
+
+
 
 $main_form.ShowDialog()
