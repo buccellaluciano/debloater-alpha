@@ -181,9 +181,15 @@ $formPrincipal.Controls.Add($button)
     "Microsoft.XboxGamingOverlay"            # Game overlay, required/useful for some games)
     )
     
+    $regname =@("$text")
     function Changeregs {
+    
+    foreach ($e in $regname){
+        $regname+=$text
+    
         $regpath = $expath.Replace("$exname","src\regfiles\$regname")
         $lines = Get-Content -Path $regpath
+        Write-Host ("$regpath")
         $j
         foreach ($i in $lines){
             $j++
@@ -198,15 +204,24 @@ $formPrincipal.Controls.Add($button)
                 $value=$i
             }
         }
+        Write-Host ("$regroute")
+        Write-Host ("$name")
+        Write-Host ("$value")
         Set-ItemProperty -Path "$regroute" -Name "$name" -Value "$value" -ErrorAction SilentlyContinue
+        
     }
+    
+}
     
     $button = New-Object System.Windows.Forms.Button
     $Button.Text = "JUAN"
     $button.Location = New-Object System.Drawing.Point(650, 450)
     $Button.Add_Click({
-        $regname = "align_taskbar.txt"
-            Changeregs
+        $text = "align_taskbar.txt"
+        Changeregs
+        $text = "show_search_icon.txt"
+        Changeregs
+        
     })
     $formPrincipal.Controls.Add($button)
 
