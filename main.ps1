@@ -62,40 +62,9 @@ $tabPage1 = Add-TabPage -TabControl $tabControl -Text "Tweaks"
 $tab2Install = Add-TabPage -TabControl $tabControl -Text "Install"
 $tabPage3 = Add-TabPage -TabControl $tabControl -Text "DEBUG"
 
-############TAB 1############
-$panelTweaks = Add-Panel -Control $tabPage1 -X 10 -Y 10 -Width 500 -Height 400 #Mucho no importa el height, si el width
-$panelTweaks.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#2c2c2c")
-
-$tweakNames = @(
-    "Habilitar modo oscuro",
-    "Habilitar historial de actividad",
-    "Habilitar aplicaciones de fondo",
-    "Habilitar historial de portapapeles",
-    "Habilitar sincronizacion de portapapeles entre dispositivos",
-    "Habilitar cortana",
-    "Habilitar hibernacion",
-    "Habilitar el legacy context menu",
-    "Habilitar contorl viejo de volumen",
-    "Habilitar reconocimiento de voz online",
-    "Habilitar Phone Link",
-    "Habilitar photo viewer",
-    "Habilitar buscar aplicacion por extension desconocida",
-    "Habilitar telemetria"
-)
-
-$checkboxes = Add-CheckboxesToList -Panel $panelTweaks -CheckboxNames $tweakNames -Spacing 30
-
-##PANEL 1##
-##PANEL 2##
-$tweaksTitle = Add-Label -control $panel2 -Text "DEBUG TEST" -X 80 -Y 5 -Width 300 -Height 400
-$butUninstalWindows = Add-Button -Control $panel2 -Text "ButtonTest" -X 100 -Y 500 -Width 200 -Height 100
-$checkBox1 = Add-CheckBox -Control $panel1 -Text "Opción 1" -X 10 -Y 10
-##PANEL 2##
-
-
-
-
-############TAB 1############
+. "$PSScriptRoot\Tab1.ps1"
+. "$PSScriptRoot\Tab2.ps1"
+. "$PSScriptRoot\Tab3.ps1"
 
 
 
@@ -107,7 +76,7 @@ $checkBox1 = Add-CheckBox -Control $panel1 -Text "Opción 1" -X 10 -Y 10
 
 ############TAB 2############
 $panelNavegadores = Add-Panel -Control $tab2Install -X 10 -Y 10 -Width 300 -Height 200
-$labelNav = Add-Label -control $panelNavegadores -Text "Navegadores" -X 0 -Y 5 -Width $panelNavegadores.Width -Height 25 -ForeColor '#8E44AD'
+$labelNav = Add-Label -control $panelNavegadores -Text "Navegadores" -X 0 -Y 5 -Width $panelNavegadores.Width -Height 25 -ForeColor '#8E44AD' -Size 15
 
 # Agregar checkboxes al panel1 con nombres específicos
 $chBoxChrome = Add-CheckBox -Control $panelNavegadores -Text "Chrome" -X 10 -Y 40 -ForeColor '#FFFFFF'
@@ -118,7 +87,7 @@ $chBoxOperagx = Add-CheckBox -Control $panelNavegadores -Text "Opera GX" -X 10 -
 
 # Agregar otro panel a la pestaña 2
 $panel2 = Add-Panel -Control $tab2Install -X 10 -Y 250 -Width 300 -Height 200
-$label2 = Add-Label -control $panel2 -Text "Panel 2" -X 5 -Y 5 -Width 457 -Height 20
+$label2 = Add-Label -control $panel2 -Text "Panel 2" -X 5 -Y 5 -Width 457 -Height 20 -Size 15
 
 # Agregar checkboxes al panel2 con nombres específicos
 $checkBox2_1 = Add-CheckBox -Control $panel2 -Text "CheckBox 1 - Desarrollo 6" -X 10 -Y 30
@@ -147,6 +116,15 @@ $panelExterno.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#2c2c2c")
 
 #$buttons=[windows.forms.messagebox]::show('body','title','YesNo')
 #[System.Security.SecurityException]::show
+
+
+
+
+
+
+
+
+####RODRIGO Y JULIAN: TIENEN QUE HACER FUNCIONES DE LOS BOTONES.###########
 
 
 $butUninstalWindows.Add_Click( {

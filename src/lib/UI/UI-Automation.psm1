@@ -14,6 +14,7 @@ function Add-CheckboxesToList {
 
     # Altura total necesaria en función de la cantidad de checkboxes y la separación
     $totalHeight = $Spacing * $CheckboxNames.Count
+    $totalHeight += 60
 
     # Ajustar la altura del panel automáticamente si es necesario
     if ($Panel.Height -lt $totalHeight) {
