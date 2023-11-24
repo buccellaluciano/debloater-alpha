@@ -10,6 +10,7 @@ $icon = [System.Drawing.Icon]::ExtractAssociatedIcon($iconPath)
 $formPrincipal.Icon = $icon
 
 
+
 $pwpath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
 
 $adminCheck = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")
@@ -94,6 +95,35 @@ $formPrincipal.BackColor = [System.Drawing.Color]::LightGray
 
 
 
+=======
+
+$formPrincipal.BackColor = [System.Drawing.Color]::LightGray
+
+
+Import-Module -DisableNameChecking .\src\lib\UI\UI-Creator.psm1 -Force
+
+$tabControl = Add-TabControl -Form $formPrincipal -X 0 -Y 0 -Width 800 -Height 600
+
+$tabPage1 = Add-TabPage -TabControl $tabControl -Text "Tweaks"
+$tabPage2 = Add-TabPage -TabControl $tabControl -Text "Install"
+$tabPage3 = Add-TabPage -TabControl $tabControl -Text "DEBUG"
+
+############TAB 1############
+##GROUPBOX1##
+$GrBox_UninWindows = Add-GroupBox -Control $tabPage1 -Text "Developer test" -X 5 -Y 5 -Width 300 -Height 400
+$GrBox_UninWindows.Controls.Add($butUninstalWindows) #Agregar foreach, que recorra todo lo que quiera ser agregado en el groupbox
+##GROUPBOX1##
+$butUninstalWindows = Add-Button -Control $tabPage1 -Text "Developer test" -X 10 -Y 10 -Width 100 -Height 20
+
+
+
+############TAB 1############
+
+
+
+
+
+
 
 
 
@@ -118,5 +148,7 @@ $butUninstalWindows.Add_Click( {
 })
 
 $formPrincipal.ShowDialog()
+
+=======
 
 
