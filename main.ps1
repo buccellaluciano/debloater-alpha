@@ -19,8 +19,12 @@ $formPrincipal.Icon = $icon
 ####CONFIGURACION FORM PRINCIPAL, UNICO####
 
 
-
+###IMPORTAR MODULOS, CARGALOS TODOS DE UNA DESPUES CAMBIAR... ?####
 Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UI\UI-Creator.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UI\UI-Automation.psm1" -Force
+
+
+###IMPORTAR MODULOS, CARGALOS TODOS DE UNA DESPUES CAMBIAR... ?####
 
 $pwpath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
 
@@ -59,14 +63,10 @@ $tab2Install = Add-TabPage -TabControl $tabControl -Text "Install"
 $tabPage3 = Add-TabPage -TabControl $tabControl -Text "DEBUG"
 
 ############TAB 1############
-# ...
-
-# Agregar un panel en Tab1
-$panelTweaks = Add-Panel -Control $tabPage1 -X 10 -Y 10 -Width 300 -Height 1200
+$panelTweaks = Add-Panel -Control $tabPage1 -X 10 -Y 10 -Width 500 -Height 400 #Mucho no importa el height, si el width
 $panelTweaks.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#2c2c2c")
 
-# Lista de tweaks con una separación de 30 pixeles
-$tweaks = @(
+$tweakNames = @(
     "Habilitar modo oscuro",
     "Habilitar historial de actividad",
     "Habilitar aplicaciones de fondo",
@@ -83,26 +83,9 @@ $tweaks = @(
     "Habilitar telemetria"
 )
 
-# Diccionario para almacenar las referencias a los checkboxes
-$checkboxes = @{}
-
-# Coordenadas iniciales
-$x = 10
-$y = 30
-
-# Agregar checkboxes al panelTweaks con la separación especificada
-foreach ($tweak in $tweaks) {
-    $checkbox = Add-CheckBox -Control $panelTweaks -Text $tweak -X $x -Y $y -ForeColor '#FFFFFF'
-    
-    # Asignar el checkbox al diccionario con el nombre de variable como clave
-    $checkboxes[$tweak] = $checkbox
-    
-    $y += 30  # Aumentar la posición Y para la próxima checkbox
-}
+$checkboxes = Add-CheckboxesToList -Panel $panelTweaks -CheckboxNames $tweakNames -Spacing 30
 
 ##PANEL 1##
-
-$panel2 = Add-Panel -Control $tabPage1 -X 260 -Y 5 -Width 250 -Height 700
 ##PANEL 2##
 $tweaksTitle = Add-Label -control $panel2 -Text "DEBUG TEST" -X 80 -Y 5 -Width 300 -Height 400
 $butUninstalWindows = Add-Button -Control $panel2 -Text "ButtonTest" -X 100 -Y 500 -Width 200 -Height 100

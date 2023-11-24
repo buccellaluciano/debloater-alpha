@@ -25,6 +25,7 @@ function Add-TabPage {
     $tabPage.Text = $Text
     $tabpage.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#252525")
     $tabpage.AutoScroll = $True
+    $tabpage.Height = 1000
 
 
     $TabControl.Controls.Add($tabPage)
@@ -139,6 +140,7 @@ function Add-CheckBox {
     $checkBox.Location = New-Object System.Drawing.Point($X, $Y)
     $checkBox.Font = New-Object System.Drawing.Font('Consolas', 15, [System.Drawing.FontStyle]::Italic)
     $checkBox.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$ForeColor")
+    $checkBox.AutoSize = $true
     #$checkBox.Appearance = 'Button'
 
     $Control.Controls.Add($checkBox)
