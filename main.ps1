@@ -5,7 +5,7 @@ $formPrincipal.Text = 'Super Debloater!'
 $formPrincipal.Size = New-Object System.Drawing.Size(800,600)
 $formPrincipal.StartPosition = 'CenterScreen'
 
-$iconPath = ".\img\debloaterIcon.ico"
+$iconPath = "$PSScriptRoot\img\debloaterIcon.ico"
 $icon = [System.Drawing.Icon]::ExtractAssociatedIcon($iconPath)
 $formPrincipal.Icon = $icon
 
