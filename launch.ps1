@@ -181,8 +181,6 @@ $formPrincipal.Controls.Add($button)
     "Microsoft.XboxGamingOverlay"            # Game overlay, required/useful for some games)
     )
     
-
-    
     function Changeregs {
         $regpath = $expath.Replace("$exname","src\regfiles\$regname")
         $lines = Get-Content -Path $regpath
