@@ -59,10 +59,47 @@ $tab2Install = Add-TabPage -TabControl $tabControl -Text "Install"
 $tabPage3 = Add-TabPage -TabControl $tabControl -Text "DEBUG"
 
 ############TAB 1############
-$panel1 = Add-Panel -Control $tabPage1 -X 5 -Y 5 -Width 250 -Height 700
-##PANEL 1##
-$tweaksTitle = Add-Label -control $panel1 -Text "DEBUG TEST" -X 80 -Y 5 -Width 300 -Height 400
-$butUninstalWindows = Add-Button -Control $panel1 -Text "ButtonTest" -X 100 -Y 500 -Width 200 -Height 100
+# ...
+
+# Agregar un panel en Tab1
+$panelTweaks = Add-Panel -Control $tabPage1 -X 10 -Y 10 -Width 300 -Height 1200
+$panelTweaks.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#2c2c2c")
+
+# Lista de tweaks con una separación de 30 pixeles
+$tweaks = @(
+    "Habilitar modo oscuro",
+    "Habilitar historial de actividad",
+    "Habilitar aplicaciones de fondo",
+    "Habilitar historial de portapapeles",
+    "Habilitar sincronizacion de portapapeles entre dispositivos",
+    "Habilitar cortana",
+    "Habilitar hibernacion",
+    "Habilitar el legacy context menu",
+    "Habilitar contorl viejo de volumen",
+    "Habilitar reconocimiento de voz online",
+    "Habilitar Phone Link",
+    "Habilitar photo viewer",
+    "Habilitar buscar aplicacion por extension desconocida",
+    "Habilitar telemetria"
+)
+
+# Diccionario para almacenar las referencias a los checkboxes
+$checkboxes = @{}
+
+# Coordenadas iniciales
+$x = 10
+$y = 30
+
+# Agregar checkboxes al panelTweaks con la separación especificada
+foreach ($tweak in $tweaks) {
+    $checkbox = Add-CheckBox -Control $panelTweaks -Text $tweak -X $x -Y $y -ForeColor '#FFFFFF'
+    
+    # Asignar el checkbox al diccionario con el nombre de variable como clave
+    $checkboxes[$tweak] = $checkbox
+    
+    $y += 30  # Aumentar la posición Y para la próxima checkbox
+}
+
 ##PANEL 1##
 
 $panel2 = Add-Panel -Control $tabPage1 -X 260 -Y 5 -Width 250 -Height 700
