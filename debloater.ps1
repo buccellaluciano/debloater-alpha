@@ -46,8 +46,8 @@ function Changeregs {
             Write-Host "Desabilitando..."
             $value = 0
         }
-        $Path = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search"
-        Set-ItemProperty -Path $Path -Name BingSearchEnabled -Value $value
+        $Path = "$regpath"
+        Set-ItemProperty -Path $Path -Name $regname -Value $value
     
     }
     Catch [System.Security.SecurityException] {
