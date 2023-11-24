@@ -182,18 +182,32 @@ $formPrincipal.Controls.Add($button)
     )
     
 
-    #esto es completamente funcional, el unico problema que tiene es que al hacer un cambio aparece un cartel horrible, que es 0 prolijo, asi que voy a buscar otra forma.
+    
     function Changeregs {
-        $regeditpath = "C:\Windows\regedit.exe"
         $regpath = $expath.Replace("$exname","src\regfiles\$regname")
-        Start-Process -FilePath $regeditpath -ArgumentList $regpath -ErrorAction SilentlyContinue
+        $lines = Get-Content -Path $regpath
+        $j
+        foreach ($i in $lines){
+            $j++
+            if ($j -eq 1) 
+            {
+                $regroute=$i
+            }
+            if ($j -eq 2){
+                $name=$i
+            }
+            if ($j -eq 3){
+                $value=$i
+            }
+        }
+        Set-ItemProperty -Path "$regroute" -Name "$name" -Value "$value" -ErrorAction SilentlyContinue
     }
     
     $button = New-Object System.Windows.Forms.Button
     $Button.Text = "JUAN"
     $button.Location = New-Object System.Drawing.Point(650, 450)
     $Button.Add_Click({
-        $regname = "align_taskbar.reg"
+        $regname = "align_taskbar.txt"
             Changeregs
     })
     $formPrincipal.Controls.Add($button)
