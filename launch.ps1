@@ -182,7 +182,7 @@ $formPrincipal.Controls.Add($button)
     )
     
 
-
+    #esto es completamente funcional, el unico problema que tiene es que al hacer un cambio aparece un cartel horrible, que es 0 prolijo, asi que voy a buscar otra forma.
     function Changeregs {
         $regeditpath = "C:\Windows\regedit.exe"
         $regpath = $expath.Replace("$exname","src\regfiles\$regname")
