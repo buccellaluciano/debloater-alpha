@@ -1,0 +1,3 @@
+HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer
+DisableSearchBoxSuggestions
+00000001

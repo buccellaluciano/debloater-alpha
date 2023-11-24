@@ -1,6 +1,0 @@
-Windows Registry Editor Version 5.00
-
-; Get fun facts, tips and more from Windows and Cortana on your lock screen
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
-"SubscribedContent-338387Enabled"=dword:00000000
-"RotatingLockScreenOverlayEnabled"=dword:00000000

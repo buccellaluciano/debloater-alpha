@@ -1,0 +1,7 @@
+HKCU\SOFTWARE\Policies\Microsoft\Windows\Windows Search
+AllowCortana
+00000000
+
+
+
+"CortanaConsent"=dword:00000000

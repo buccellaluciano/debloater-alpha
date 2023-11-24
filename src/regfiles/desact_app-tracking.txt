@@ -1,0 +1,3 @@
+HKCU\Software\Policies\Microsoft\Windows\EdgeUI
+DisableMFUTracking
+00000001

@@ -1,0 +1,3 @@
+HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+TaskbarMn
+00000000
