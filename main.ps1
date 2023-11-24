@@ -85,15 +85,15 @@ $checkBox1 = Add-CheckBox -Control $panel1 -Text "Opción 1" -X 10 -Y 10
 
 
 ############TAB 2############
-$panel1 = Add-Panel -Control $tab2Install -X 10 -Y 10 -Width 300 -Height 200
-$label1 = Add-Label -control $panel1 -Text "Panel 1" -X 5 -Y 5 -Width 457 -Height 20
+$panelNavegadores = Add-Panel -Control $tab2Install -X 10 -Y 10 -Width 300 -Height 200
+$labelNav = Add-Label -control $panelNavegadores -Text "Navegadores" -X 0 -Y 5 -Width $panelNavegadores.Width -Height 25 -ForeColor '#8E44AD'
 
 # Agregar checkboxes al panel1 con nombres específicos
-$chBoxChrome = Add-CheckBox -Control $panel1 -Text "Chrome" -X 10 -Y 30
-$chBoxBrave = Add-CheckBox -Control $panel1 -Text "Brave" -X 10 -Y 50
-$chBoxFirefox = Add-CheckBox -Control $panel1 -Text "Firefox" -X 10 -Y 70
-$chBoxOpera = Add-CheckBox -Control $panel1 -Text "Opera" -X 10 -Y 90
-$chBoxOperagx = Add-CheckBox -Control $panel1 -Text "Opera GX" -X 10 -Y 110
+$chBoxChrome = Add-CheckBox -Control $panelNavegadores -Text "Chrome" -X 10 -Y 40 -ForeColor '#FFFFFF'
+$chBoxBrave = Add-CheckBox -Control $panelNavegadores -Text "Brave" -X 10 -Y 70 -ForeColor '#FFFFFF'
+$chBoxFirefox = Add-CheckBox -Control $panelNavegadores -Text "Firefox" -X 10 -Y 100 -ForeColor '#FFFFFF'
+$chBoxOpera = Add-CheckBox -Control $panelNavegadores -Text "Opera" -X 10 -Y 130 -ForeColor '#FFFFFF'
+$chBoxOperagx = Add-CheckBox -Control $panelNavegadores -Text "Opera GX" -X 10 -Y 160 -ForeColor '#FFFFFF'
 
 # Agregar otro panel a la pestaña 2
 $panel2 = Add-Panel -Control $tab2Install -X 10 -Y 250 -Width 300 -Height 200

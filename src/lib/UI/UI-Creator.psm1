@@ -106,8 +106,9 @@ function Add-Label {
     $newLabel.Location = New-Object System.Drawing.Size($X, $Y)
     $newLabel.Size = New-Object System.Drawing.Size($Width, $Height)
     $newLabel.Text = $Text
-    $newLabel.Font = New-Object System.Drawing.Font('Consolas', 15, [System.Drawing.FontStyle]::Bold)
+    $newLabel.Font = New-Object System.Drawing.Font('Consolas', 18, [System.Drawing.FontStyle]::Bold)
     $newLabel.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$ForeColor")
+    $newLabel.TextAlign = 'MiddleCenter'
 
     $Control.Controls.Add($newLabel)
 
@@ -146,7 +147,7 @@ function Add-CheckBox {
     $checkBox = New-Object System.Windows.Forms.CheckBox
     $checkBox.Text = $Text
     $checkBox.Location = New-Object System.Drawing.Point($X, $Y)
-    $checkBox.Font = New-Object System.Drawing.Font('Consolas', 10, [System.Drawing.FontStyle]::Bold)
+    $checkBox.Font = New-Object System.Drawing.Font('Consolas', 15, [System.Drawing.FontStyle]::Italic)
     $checkBox.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$ForeColor")
     #$checkBox.Appearance = 'Button'
 
