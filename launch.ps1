@@ -67,40 +67,6 @@ $Button.Add_Click({
 $formPrincipal.Controls.Add($button)
 
 
-
-function Changeregs {
-    
-    $regfilesloc = Get-ChildItem regfiles
-    $regfiles = Get-Content -Path $regfilesloc
-    
-    $j
-    foreach ($Line in $regfiles){
-        Write-Host "$Line $j :";
-        $j++
-    }
-    
-    Param($Enabled)
-    Try{
-        if ($Enabled -eq $false){
-            Write-Host "Habilitando..."
-            $value = 1
-        }
-        else {
-            Write-Host "Desabilitando..."
-            $value = 0
-        }
-        $Path = "$regpath"
-        Set-ItemProperty -Path $Path -Name $regname -Value $value
-    
-    }
-    Catch [System.Security.SecurityException] {
-        Write-Warning "Unable to set $Path\$Name to $Value due to a Security Exception"
-    }
-}
-
-    Set-ItemProperty -Path $Path -Name BingSearchEnabled -Value $value
-
-
     $apps = @("Clipchamp.Clipchamp"
     "Microsoft.3DBuilder"
     "Microsoft.549981C3F5F10"   #Cortana app
@@ -215,4 +181,22 @@ function Changeregs {
     "Microsoft.XboxGamingOverlay"            # Game overlay, required/useful for some games)
     )
     
+
+
+    function Changeregs {
+        $regeditpath = "C:\Windows\regedit.exe"
+        $regpath = $expath.Replace("$exname","src\regfiles\$regname")
+        Start-Process -FilePath $regeditpath -ArgumentList $regpath -ErrorAction SilentlyContinue
+    }
+    
+    $button = New-Object System.Windows.Forms.Button
+    $Button.Text = "JUAN"
+    $button.Location = New-Object System.Drawing.Point(650, 450)
+    $Button.Add_Click({
+        $regname = "align_taskbar.reg"
+            Changeregs
+    })
+    $formPrincipal.Controls.Add($button)
+
+
     $formPrincipal.ShowDialog()
