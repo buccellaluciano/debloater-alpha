@@ -1,14 +1,3 @@
-function Enable-AutoScroll {
-    param (
-        [System.Windows.Forms.Form]$Form
-    )
-
-    $Form.AutoScroll = $true
-    $Form.AutoScrollMargin = New-Object System.Drawing.Size(0, 20)  # Ajusta el margen según sea necesario
-    $Form.AutoScrollMinSize = New-Object System.Drawing.Size($Form.Width, $Form.Height)
-}
-
-
 function Add-TabControl {
     param (
         [System.Windows.Forms.Form]$Form
@@ -35,6 +24,7 @@ function Add-TabPage {
     $tabPage = New-Object System.Windows.Forms.TabPage
     $tabPage.Text = $Text
     $tabpage.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#252525")
+    $tabpage.AutoScroll = $True
 
 
     $TabControl.Controls.Add($tabPage)
