@@ -72,12 +72,9 @@ function Add-GroupBox {
     $newGroupBox.Size = New-Object System.Drawing.Size($Width, $Height)
     $newGroupBox.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("#eeeeee")
 
-
     $Control.Controls.Add($newGroupBox)
 
     return $newGroupBox
-
-
 }
 
 function Add-Label {
@@ -99,6 +96,7 @@ function Add-Label {
     $newLabel.Text = $Text
     $newLabel.Font = New-Object System.Drawing.Font('Arial', $Size, [System.Drawing.FontStyle]::Bold)
     $newLabel.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$ForeColor")
+    $newLabel.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#FFFFFF")
     $newLabel.TextAlign = 'MiddleCenter'
 
     $Control.Controls.Add($newLabel)
@@ -138,7 +136,7 @@ function Add-CheckBox {
     $checkBox = New-Object System.Windows.Forms.CheckBox
     $checkBox.Text = $Text
     $checkBox.Location = New-Object System.Drawing.Point($X, $Y)
-    $checkBox.Font = New-Object System.Drawing.Font('Consolas', 13, [System.Drawing.FontStyle]::Italic)
+    $checkBox.Font = New-Object System.Drawing.Font('Consolas', 10, [System.Drawing.FontStyle]::Italic)
     $checkBox.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$ForeColor")
     $checkBox.AutoSize = $true
     #$checkBox.Appearance = 'Button'
