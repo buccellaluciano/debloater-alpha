@@ -1,4 +1,5 @@
 #id de los programas para el winget
+#pack general
 "CoderBag.QuickCPUx64"
 "Guru3D.Afterburner"
 "XP8K4RGX25G3GM" #crystal disk
@@ -10,4 +11,3 @@
 "Google.Chrome"
 "Discord.Discord"
 "Valve.Steam"
-"Nvidia.GeForceExperience"

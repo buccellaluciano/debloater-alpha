@@ -1,0 +1,8 @@
+"EpicGames.EpicGamesLauncher"
+"Ubisoft.Connect"
+"GOG.Galaxy"
+"Amazon.Games"
+"BlueStack.BlueStacks"
+"Valve.Steam"
+"Discord.Discord"
+

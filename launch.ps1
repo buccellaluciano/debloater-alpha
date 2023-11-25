@@ -250,9 +250,6 @@ $formPrincipal.Controls.Add($button)
         $app
         $install ="winget install $app --accept-source-agreements --accept-package-agreements"
         Invoke-Expression -Command $install
-        
-        
-        
     }
     $formPrincipal.Controls.Add($button)
 

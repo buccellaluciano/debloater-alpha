@@ -1,0 +1,7 @@
+#navegadores
+"Google.Chrome"
+"Opera.OperaGX"
+"Opera.Opera"
+"XP8C9QZMS2PC1T"
+"9NZVDKPMR9RD"
+
