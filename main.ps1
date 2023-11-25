@@ -53,8 +53,6 @@ $tabPage3 = Add-TabPage -TabControl $tabControl -Text "DEBUG"
 #[System.Security.SecurityException]::show
 
 
-####RODRIGO Y JULIAN: TIENEN QUE HACER FUNCIONES DE LOS BOTONES.###########
-
 
 $butUninstalWindows.Add_Click( {
     Write-Host "DevTest"
