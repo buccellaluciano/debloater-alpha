@@ -1,0 +1,3 @@
+HKCU:\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Windows.SystemToast.Suggested
+Enabled
+00000000

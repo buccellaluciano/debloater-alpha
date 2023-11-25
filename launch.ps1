@@ -44,17 +44,21 @@ $Button.Add_Click({
 })
 $formPrincipal.Controls.Add($button)
 
-function uninstallpack {
+function upackages {
+    
     foreach ($i in $apps) {
         
         if ($selapp -eq $i){
-            $selapp = $i
-            Write-Host ("$selapp")
-            #la linea de abajo hace que lo de arriba desinstale el programa que elijas, no lo activen, a no ser...
-            # Get-AppxPackage -Name $selapp -AllUsers | Remove-AppxPackage
+            $selapp = $i    
         }
-        
     }
+            Write-Host ("$selapp")
+            $appinfo=Get-AppxPackage -Name $selapp | Format-List -Property *
+            if ($appinfo -ne $null){
+                Get-AppxPackage -Name $selapp -AllUsers | Remove-AppxPackage
+            }else {
+                Write-Warning ("El programa no esta instalado")
+            }
 }
 
 $button = New-Object System.Windows.Forms.Button
@@ -67,118 +71,121 @@ $Button.Add_Click({
 $formPrincipal.Controls.Add($button)
 
 
-    $apps = @("Clipchamp.Clipchamp"
-    "Microsoft.3DBuilder"
-    "Microsoft.549981C3F5F10"   #Cortana app
-    "Microsoft.BingFinance"
-    "Microsoft.BingFoodAndDrink"            
-    "Microsoft.BingHealthAndFitness"         
-    "Microsoft.BingNews"
-    "Microsoft.BingSports"
-    "Microsoft.BingTranslator"
-    "Microsoft.BingTravel" 
-    "Microsoft.BingWeather"
-    "Microsoft.Getstarted"   # Cannot be uninstalled in Windows 11
-    "Microsoft.Messaging"
-    "Microsoft.Microsoft3DViewer"
-    "Microsoft.MicrosoftOfficeHub"
-    "Microsoft.MicrosoftPowerBIForWindows"
-    "Microsoft.MicrosoftSolitaireCollection"
-    "Microsoft.MicrosoftStickyNotes"
-    "Microsoft.MixedReality.Portal"
-    "Microsoft.NetworkSpeedTest"
-    "Microsoft.News"
-    "Microsoft.Office.OneNote"
-    "Microsoft.Office.Sway"
-    "Microsoft.OneConnect"
-    "Microsoft.Print3D"
-    "Microsoft.SkypeApp"
-    "Microsoft.Todos"
-    "Microsoft.WindowsAlarms"
-    "Microsoft.WindowsFeedbackHub"
-    "Microsoft.WindowsMaps"
-    "Microsoft.WindowsSoundRecorder"
-    "Microsoft.XboxApp"   # Old Xbox Console Companion App, no longer supported
-    "Microsoft.ZuneVideo"
-    "MicrosoftTeams"   # Only removes the personal version (MS Store), does not remove business/enterprise version of teams
-    "ACGMediaPlayer"
-    "ActiproSoftwareLLC"
-    "AdobeSystemsIncorporated.AdobePhotoshopExpress"
-    "Amazon.com.Amazon"
-    "AmazonVideo.PrimeVideo"
-    "Asphalt8Airborne" 
-    "AutodeskSketchBook"
-    "CaesarsSlotsFreeCasino"
-    "COOKINGFEVER"
-    "CyberLinkMediaSuiteEssentials"
-    "DisneyMagicKingdoms"
-    "Disney"
-    "Dolby"
-    "DrawboardPDF"
-    "Duolingo-LearnLanguagesforFree"
-    "EclipseManager"
-    "Facebook"
-    "FarmVille2CountryEscape"
-    "fitbit"
-    "Flipboard"
-    "HiddenCity"
-    "HULULLC.HULUPLUS"
-    "iHeartRadio"
-    "Instagram"
-    "king.com.BubbleWitch3Saga"
-    "king.com.CandyCrushSaga"
-    "king.com.CandyCrushSodaSaga"
-    "LinkedInforWindows"
-    "MarchofEmpires"
-    "Netflix"
-    "NYTCrossword"
-    "OneCalendar"
-    "PandoraMediaInc"
-    "PhototasticCollage"
-    "PicsArt-PhotoStudio"
-    "Plex"
-    "PolarrPhotoEditorAcademicEdition"
-    "Royal Revolt"
-    "Shazam"
-    "Sidia.LiveWallpaper"
-    "SlingTV"
-    "Speed Test"
-    "Spotify"
-    "TikTok"
-    "TuneInRadio"
-    "Twitter"
-    "Viber"
-    "WinZipUniversal"
-    "Wunderlist"
-    "XING"
-    "Microsoft.GetHelp"                      # Required for some Windows 11 Troubleshooters
-    "Microsoft.MSPaint"                      # Paint 3D
-    "Microsoft.OutlookForWindows"            # New mail app
-    "Microsoft.Paint"                        # Classic Paint
-    "Microsoft.People"                       # Required for & included with Mail & Calendar
-    "Microsoft.PowerAutomateDesktop"
-    "Microsoft.RemoteDesktop"
-    "Microsoft.ScreenSketch"                 # Snipping Tool
-    "Microsoft.Whiteboard"                   # Only preinstalled on devices with touchscreen and/or pen support
-    "Microsoft.Windows.Photos"
-    "Microsoft.WindowsCalculator"
-    "Microsoft.WindowsCamera"
-    "Microsoft.windowscommunicationsapps"    # Mail & Calendar
-    "Microsoft.WindowsStore"                 # Microsoft Store, WARNING: This app cannot be reinstalled!
-    "Microsoft.WindowsTerminal"              # New default terminal app in windows 11
-    "Microsoft.Xbox.TCUI"                    # UI framework, seems to be required for MS store, photos and certain games
-    "Microsoft.XboxIdentityProvider"         # Xbox sign-in framework, required for some games
-    "Microsoft.XboxSpeechToTextOverlay"      # Might be required for some games, WARNING: This app cannot be reinstalled!
-    "Microsoft.YourPhone"                    # Phone link
-    "Microsoft.ZuneMusic"                    # Modern Media Player
+    $apps = @(
+    "*Clipchamp.Clipchamp*"
+    "*Microsoft.3DBuilder*"
+    "*Microsoft.549981C3F5F10*"   #Cortana app
+    "*Microsoft.BingFinance*"
+    "*Microsoft.BingFoodAndDrink*"            
+    "*Microsoft.BingHealthAndFitness*"         
+    "*Microsoft.BingNews*"
+    "*Microsoft.BingSports*"
+    "*Microsoft.BingTranslator*"
+    "*Microsoft.BingTravel*" 
+    "*Microsoft.BingWeather*"
+    "*Microsoft.Getstarted*"   # Cannot be uninstalled in Windows 11
+    "*Microsoft.Messaging*"
+    "*Microsoft.Microsoft3DViewer*"
+    "*Microsoft.MicrosoftOfficeHub*"
+    "*Microsoft.MicrosoftPowerBIForWindows*"
+    "*Microsoft.MicrosoftSolitaireCollection*"
+    "*Microsoft.MicrosoftStickyNotes*"
+    "*Microsoft.MixedReality.Portal*"
+    "*Microsoft.NetworkSpeedTest*"
+    "*Microsoft.News*"
+    "*Microsoft.Office.OneNote*"
+    "*Microsoft.Office.Sway*"
+    "*Microsoft.OneConnect*"
+    "*Microsoft.Print3D*"
+    "*Microsoft.SkypeApp*"
+    "*Microsoft.Todos*"
+    "*Microsoft.WindowsAlarms*"
+    "*Microsoft.WindowsFeedbackHub*"
+    "*Microsoft.WindowsMaps*"
+    "*Microsoft.WindowsSoundRecorder*"
+    "*Microsoft.XboxApp*"   # Old Xbox Console Companion App, no longer supported
+    "*Microsoft.ZuneVideo*"
+    "*MicrosoftCorporationII.MicrosoftFamily*"   # Family Safety App
+    "*MicrosoftTeams*"   # Only removes the personal version (MS Store), does not remove business/enterprise version of teams
+    
+    "*ACGMediaPlayer*"
+    "*ActiproSoftwareLLC*"
+    "*AdobeSystemsIncorporated.AdobePhotoshopExpress*"
+    "*Amazon.com.Amazon*"
+    "*AmazonVideo.PrimeVideo*"
+    "*Asphalt8Airborne*" 
+    "*AutodeskSketchBook*"
+    "*CaesarsSlotsFreeCasino*"
+    "*COOKINGFEVER*"
+    "*CyberLinkMediaSuiteEssentials*"
+    "*DisneyMagicKingdoms*"
+    "*Disney*"
+    "*Dolby*"
+    "*DrawboardPDF*"
+    "*Duolingo-LearnLanguagesforFree*"
+    "*EclipseManager*"
+    "*Facebook*"
+    "*FarmVille2CountryEscape*"
+    "*fitbit*"
+    "*Flipboard*"
+    "*HiddenCity*"
+    "*HULULLC.HULUPLUS*"
+    "*iHeartRadio*"
+    "*Instagram*"
+    "*king.com.BubbleWitch3Saga*"
+    "*king.com.CandyCrushSaga*"
+    "*king.com.CandyCrushSodaSaga*"
+    "*LinkedInforWindows*"
+    "*MarchofEmpires*"
+    "*Netflix*"
+    "*NYTCrossword*"
+    "*OneCalendar*"
+    "*PandoraMediaInc*"
+    "*PhototasticCollage*"
+    "*PicsArt-PhotoStudio*"
+    "*Plex*"
+    "*PolarrPhotoEditorAcademicEdition*"
+    "*Royal Revolt*"
+    "*Shazam*"
+    "*Sidia.LiveWallpaper*"
+    "*SlingTV*"
+    "*Speed Test*"
+    "*Spotify*"
+    "*TikTok*"
+    "*TuneInRadio*"
+    "*Twitter*"
+    "*Viber*"
+    "*WinZipUniversal*"
+    "*Wunderlist*"
+    "*XING*"
+    # The apps below this line will NOT be uninstalled. If you wish to REMOVE any of the apps below 
+    #  simply remove the # character in front of the specific app.
+    #
+    "*Microsoft.GetHelp*"                      # Required for some Windows 11 Troubleshooters
+    "*Microsoft.MSPaint*"                      # Paint 3D
+    "*Microsoft.Paint*"                        # Classic Paint
+    "*Microsoft.PowerAutomateDesktop*"
+    "*Microsoft.RemoteDesktop*"
+    "*Microsoft.ScreenSketch*"                 # Snipping Tool
+    "*Microsoft.Whiteboard*"                   # Only preinstalled on devices with touchscreen and/or pen support
+    "*Microsoft.Windows.Photos*"
+    "*Microsoft.WindowsCalculator*"
+    "*Microsoft.WindowsCamera*"
+    "*Microsoft.WindowsStore*"                 # Microsoft Store, WARNING: This app cannot be reinstalled!
+    "*Microsoft.WindowsTerminal*"              # New default terminal app in windows 11
+    "*Microsoft.Xbox.TCUI*"                    # UI framework, seems to be required for MS store, photos and certain games
+    "*Microsoft.XboxIdentityProvider*"         # Xbox sign-in framework, required for some games
+    "*Microsoft.XboxSpeechToTextOverlay*"      # Might be required for some games, WARNING: This app cannot be reinstalled!
+    "*Microsoft.YourPhone*"                    # Phone link
+    "*Microsoft.ZuneMusic*"                    # Modern Media Player
     )
 
     $gamingapps =@(
     # The apps below will NOT be uninstalled unless selected during the custom setup selection or when
     #  launching the script with the '-RemoveGamingApps' parameter. 
-    "Microsoft.GamingApp"                    # Modern Xbox Gaming App, required for installing some PC games
-    "Microsoft.XboxGameOverlay"              # Game overlay, required/useful for some games
-    "Microsoft.XboxGamingOverlay"            # Game overlay, required/useful for some games)
+    "*Microsoft.GamingApp*"                    # Modern Xbox Gaming App, required for installing some PC games
+    "*Microsoft.XboxGameOverlay*"               # Game overlay, required/useful for some games
+    "*Microsoft.XboxGamingOverlay*"            # Game overlay, required/useful for some games)
     )
     
     $regname =@("$text")
@@ -186,7 +193,7 @@ $formPrincipal.Controls.Add($button)
     
     foreach ($e in $regname){
         $regname+=$text
-    
+        $enabled
         $regpath = $expath.Replace("$exname","src\regfiles\$regname")
         $lines = Get-Content -Path $regpath
         Write-Host ("$regpath")
@@ -200,13 +207,17 @@ $formPrincipal.Controls.Add($button)
             if ($j -eq 2){
                 $name=$i
             }
-            if ($j -eq 3){
-                $value=$i
-            }
+
         }
-        Write-Host ("$regroute")
-        Write-Host ("$name")
-        Write-Host ("$value")
+        $valor =Get-ItemPropertyValue -Path $regroute -Name $name
+    
+        if ($valor-eq 0){
+            $value=1
+        }if ($valor -eq 1){
+            $value=0 
+    
+        }
+        Write-Host ("$valor")
         Set-ItemProperty -Path "$regroute" -Name "$name" -Value "$value" -ErrorAction SilentlyContinue
         
     }
@@ -217,12 +228,32 @@ $formPrincipal.Controls.Add($button)
     $Button.Text = "JUAN"
     $button.Location = New-Object System.Drawing.Point(650, 450)
     $Button.Add_Click({
-        $text = "align_taskbar.txt"
-        Changeregs
-        $text = "show_search_icon.txt"
-        Changeregs
-        
+        ipackages
     })
+
+
+    function ipackages {
+        $defaultpack=0
+        $applistpath = $expath.Replace("$exname","applist.txt")
+        $app
+        $lines = Get-Content -Path $applistpath
+        if ($defaultpack=1){
+        foreach ($line in $lines){
+            $app=$line
+            Write-Host ("$app")
+            $install ="winget install $app -e"
+            Invoke-Expression -Command $install
+        }
+        $install ="winget install $app --accept-source-agreements --accept-package-agreements"
+        Invoke-Expression -Command $install
+    }
+        $app
+        $install ="winget install $app --accept-source-agreements --accept-package-agreements"
+        Invoke-Expression -Command $install
+        
+        
+        
+    }
     $formPrincipal.Controls.Add($button)
 
 

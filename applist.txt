@@ -1,0 +1,13 @@
+#id de los programas para el winget
+"CoderBag.QuickCPUx64"
+"Guru3D.Afterburner"
+"XP8K4RGX25G3GM" #crystal disk
+"SUPERAntiSpyware.SUPERAntiSpyware"
+"WinDirStat.WinDirStat"
+"7zip.7zip"
+"RARLab.WinRAR"
+"Spotify.Spotify"
+"Google.Chrome"
+"Discord.Discord"
+"Valve.Steam"
+"Nvidia.GeForceExperience"
