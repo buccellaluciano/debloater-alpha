@@ -23,6 +23,8 @@ $formPrincipal.Icon = $icon
 ###IMPORTAR MODULOS, CARGALOS TODOS DE UNA DESPUES CAMBIAR... ?####
 Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UI\UI-Creator.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UI\UI-Automation.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\scripts\Set-Wallpaper.psm1" -Force
+
 
 
 ###IMPORTAR MODULOS, CARGALOS TODOS DE UNA DESPUES CAMBIAR... ?####
@@ -49,6 +51,7 @@ $tabPage3 = Add-TabPage -TabControl $tabControl -Text "DEBUG"
 . "$PSScriptRoot\tabs\Tab3.ps1"
 
 
+
 #$buttons=[windows.forms.messagebox]::show('body','title','YesNo')
 #[System.Security.SecurityException]::show
 
@@ -59,7 +62,4 @@ $butUninstalWindows.Add_Click( {
 })
 
 $formPrincipal.ShowDialog()
-
-=======
-
 
