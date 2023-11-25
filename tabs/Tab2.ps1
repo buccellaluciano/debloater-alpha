@@ -1,5 +1,5 @@
 
-. ".\launch.ps1"
+. "$PSScriptRoot\launch.ps1"
 ####RODRIGO Y JULIAN: TIENEN QUE HACER FUNCIONES DE LOS BOTONES.###########
 Add-Label -control $tab2Install -Text "Instalacion de software" -X 0 -Y 10 -Width ($formPrincipal.Width-50) -Height 50 -ForeColor '#f54242' -Size 30
 Add-Label -control $tab2Install -Text "DEVTEST" -X 0 -Y 70 -Width ($formPrincipal.Width-50) -Height 30 -ForeColor '#ffffff' -Size 20
@@ -11,7 +11,7 @@ $panelNavegadores = Add-Panel -Control $tab2Install -X 10 -Y 130 -Width 300 -Hei
 $labelNav = Add-Label -control $panelNavegadores -Text "Navegadores" -X 0 -Y 5 -Width $panelNavegadores.Width -Height 25 -ForeColor '#8E44AD' -Size 15
 
 # Agregar checkboxes al panel1 con nombres específicos
-$chBoxChrome = Add-CheckBox -Control $panelNavegadores -Text "Chrome" -X 10 -Y 40 -ForeColor '#FFFFFF'
+$chBoxChrome = Add-CheckBox -Control $panelNavegadores -Text "Chrome" -X 10 -Y 40 -ForeColor '#FFFFFF' 
 $chBoxBrave = Add-CheckBox -Control $panelNavegadores -Text "Brave" -X 10 -Y 70 -ForeColor '#FFFFFF' 
 $chBoxFirefox = Add-CheckBox -Control $panelNavegadores -Text "Firefox" -X 10 -Y 100 -ForeColor '#FFFFFF' 
 $chBoxOpera = Add-CheckBox -Control $panelNavegadores -Text "Opera" -X 10 -Y 130 -ForeColor '#FFFFFF'

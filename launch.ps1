@@ -243,8 +243,10 @@ $formPrincipal.Controls.Add($button)
     $Button.Text = "JUAN"
     $button.Location = New-Object System.Drawing.Point(650, 450)
     $Button.Add_Click({
-        $app = "XP8C9QZMS2PC1T"
-        ipackages
+        $text = "tb\enable_tb_center.txt"
+        Changeregs
+        $text = "tb\show_search_icon.txt"
+        Changeregs
     })
 
 
@@ -270,4 +272,4 @@ $formPrincipal.Controls.Add($button)
     $formPrincipal.Controls.Add($button)
 
 
-    $formPrincipal.ShowDialog()
+   
