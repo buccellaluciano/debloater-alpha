@@ -1,0 +1,3 @@
+HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+HideFileExt
+00000000
