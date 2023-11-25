@@ -88,7 +88,7 @@ function Add-Label {
         [int]$Y,
         [int]$Width,
         [int]$Height,
-        [int]$Size,
+        [float]$Size = 10,
         [string]$ForeColor
         
     )
