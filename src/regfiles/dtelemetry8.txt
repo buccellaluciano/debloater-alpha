@@ -1,0 +1,3 @@
+HKCU:\Software\Microsoft\InputPersonalization\TrainedDataStore
+HarvestContacts
+00000000

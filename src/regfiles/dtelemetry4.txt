@@ -1,0 +1,2 @@
+HKCU:\Software\Microsoft\Input\TIPC
+"Enabled"=dword:00000000

@@ -1,0 +1,3 @@
+HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
+RotatingLockScreenOverlayEnabled
+00000000

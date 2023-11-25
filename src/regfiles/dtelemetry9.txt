@@ -1,0 +1,3 @@
+HKCU:\Software\Microsoft\Personalization\Settings
+AcceptedPrivacyPolicy
+00000000

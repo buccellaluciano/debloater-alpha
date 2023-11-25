@@ -1,0 +1,3 @@
+HKCU:\Software\Microsoft\InputPersonalization
+RestrictImplicitTextCollection
+00000001

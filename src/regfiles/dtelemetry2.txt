@@ -1,0 +1,3 @@
+HKCU:\Software\Microsoft\Windows\CurrentVersion\Privacy
+TailoredExperiencesWithDiagnosticDataEnabled
+00000000
