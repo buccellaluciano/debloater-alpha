@@ -1,0 +1,3 @@
+HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot
+TurnOffWindowsCopilot
+00000001

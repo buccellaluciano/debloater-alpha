@@ -1,0 +1,3 @@
+HKCU:\Software\Microsoft\Windows\CurrentVersion\Search
+SearchboxTaskbarMode
+00000001
