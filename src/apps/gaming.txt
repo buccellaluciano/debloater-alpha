@@ -5,4 +5,4 @@
 "BlueStack.BlueStacks"
 "Valve.Steam"
 "Discord.Discord"
-
+"ElectronicArts.EADesktop"

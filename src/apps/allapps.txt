@@ -1,0 +1,17 @@
+"CoderBag.QuickCPUx64" #quicikcpu
+"XP8K4RGX25G3GM" #crystal disk
+"SUPERAntiSpyware.SUPERAntiSpyware"
+"Guru3D.Afterburner"
+"Google.Chrome"
+"Opera.OperaGX"
+"Opera.Opera"
+"XP8C9QZMS2PC1T" #brave
+"9NZVDKPMR9RD"  #mozilla
+"EpicGames.EpicGamesLauncher"
+"Ubisoft.Connect"
+"GOG.Galaxy"
+"Amazon.Games"
+"BlueStack.BlueStacks"
+"Valve.Steam"
+"Discord.Discord"
+"ElectronicArts.EADesktop"

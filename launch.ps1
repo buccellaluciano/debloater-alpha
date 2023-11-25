@@ -45,28 +45,41 @@ $Button.Add_Click({
 $formPrincipal.Controls.Add($button)
 
 function upackages {
-    
+    $j
     foreach ($i in $apps) {
+        $j ++
         
-        if ($selapp -eq $i){
-            $selapp = $i    
+    if ($j -ne $apps.length){
+        if ($app -eq $i){
+            $app=$i
+            Write-Host ("$app")
+            $appinfo=Get-AppxPackage -Name $app | Format-List -Property *
+            if ($appinfo -ne $null){
+                Get-AppxPackage -Name $app -AllUsers | Remove-AppxPackage
+            }
         }
     }
-            Write-Host ("$selapp")
-            $appinfo=Get-AppxPackage -Name $selapp | Format-List -Property *
-            if ($appinfo -ne $null){
-                Get-AppxPackage -Name $selapp -AllUsers | Remove-AppxPackage
-            }else {
-                Write-Warning ("El programa no esta instalado")
-            }
+    else {
+        Write-Warning ("El programa no esta instalado o no se reconoce con Get-Appx, probando con winget...")
+        try {
+            $app = $app.Trim('*')
+            $uninstall ="winget uninstall $app"
+            Invoke-Expression -Command $uninstall
+        }
+        catch {
+            Write-Host "Se produjo un error: $_.Exception.Message"
+        }
+}
+        
+    }              
 }
 
 $button = New-Object System.Windows.Forms.Button
-$Button.Text = "JUAN"
+$Button.Text = "JUAN desintalador"
 $button.Location = New-Object System.Drawing.Point(350, 250)
 $Button.Add_Click({
-    $selapp = "Microsoft.BingFinance"
-        uninstall
+    $app = "XP8C9QZMS2PC1T"
+        upackages
 })
 $formPrincipal.Controls.Add($button)
 
@@ -187,6 +200,8 @@ $formPrincipal.Controls.Add($button)
     "*Microsoft.XboxGameOverlay*"               # Game overlay, required/useful for some games
     "*Microsoft.XboxGamingOverlay*"            # Game overlay, required/useful for some games)
     )
+
+    
     
     $regname =@("$text")
     function Changeregs {
@@ -228,25 +243,26 @@ $formPrincipal.Controls.Add($button)
     $Button.Text = "JUAN"
     $button.Location = New-Object System.Drawing.Point(650, 450)
     $Button.Add_Click({
+        $app = "XP8C9QZMS2PC1T"
         ipackages
     })
 
 
     function ipackages {
         $defaultpack=0
-        $applistpath = $expath.Replace("$exname","applist.txt")
+        $applistpath = $expath.Replace("$exname","\src\apps\defaultapps.txt")
         $app
         $lines = Get-Content -Path $applistpath
-        if ($defaultpack=1){
-        foreach ($line in $lines){
-            $app=$line
-            Write-Host ("$app")
-            $install ="winget install $app -e"
-            Invoke-Expression -Command $install
-        }
-        $install ="winget install $app --accept-source-agreements --accept-package-agreements"
-        Invoke-Expression -Command $install
-    }
+        #if ($defaultpack=1){
+        #foreach ($line in $lines){
+            #$app=$line
+            #Write-Host ("$app")
+            #$install ="winget install $app -e"
+            #nvoke-Expression -Command $install
+        #}
+        #$install ="winget install $app --accept-source-agreements --accept-package-agreements"
+        #nvoke-Expression -Command $install
+    #}
         $app
         $install ="winget install $app --accept-source-agreements --accept-package-agreements"
         Invoke-Expression -Command $install

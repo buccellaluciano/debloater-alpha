@@ -2,6 +2,6 @@
 "Google.Chrome"
 "Opera.OperaGX"
 "Opera.Opera"
-"XP8C9QZMS2PC1T"
-"9NZVDKPMR9RD"
+"XP8C9QZMS2PC1T" #brave
+"9NZVDKPMR9RD" #mozilla
 
