@@ -1,0 +1,3 @@
+HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
+SystemPaneSuggestionsEnabled
+00000000

@@ -1,0 +1,3 @@
+HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+Start_IrisRecommendations
+00000000

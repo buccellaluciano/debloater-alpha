@@ -1,0 +1,3 @@
+HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
+SoftLandingEnabled
+00000000

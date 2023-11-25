@@ -1,0 +1,3 @@
+HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
+SubscribedContent-338389Enabled
+00000000

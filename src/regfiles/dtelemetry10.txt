@@ -1,3 +1,0 @@
-HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection
-AllowTelemetry
-00000000
