@@ -1,5 +1,4 @@
 
-. "$PSScriptRoot\launch.ps1"
 
 function crearLabelClickable {
     param (
@@ -10,8 +9,11 @@ function crearLabelClickable {
     )
     $nuevalabel = Add-Label -control $MiControl -Text $Texto -X $X -Y $Y -ForeColor '#FFFF66'
     $nuevalabel.Cursor = [Windows.Forms.Cursors]::Hand
+
     #return $nuevalabel
 }
+
+
 
 #Esto es para que se ajusten la posicion de los paneles a cuanton miden. SOLO LLAMAR AL FINAL.
 function ajustarPosicionPaneles{
@@ -97,10 +99,10 @@ for ($i = 0; $i -lt $posiciones_control; $i++) {
     $cx_ar[$i] = 40
     $cy_ar[$i] = 40 + ($i * 30) #El 30 es el espacio entre controles, aumentar o reducir si es necesario.
 }
-
 #Elementos de paneles de navegadores
 $labelNav = Add-Label -control $panelNavegadores -Text "Navegadores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-crearLabelClickable -MiControl $panelNavegadores -Texto "Chrome" -X $cx_ar[0] -Y $cy_ar[0]
+$labelchrome = crearLabelClickable -MiControl $panelNavegadores -Texto "Chrome" -X $cx_ar[0] -Y $cy_ar[0]
+$buttonchrome = Add-Button -Control $panelNavegadores -Text "Instalar" -X 120 -Y $cy_ar[0] -Width 60 -Height 20 -ForeColor '#FFFFFF';$buttonchrome.Add_Click({$global:app="XP8C9QZMS2PC1T"; ipackages}) 
 crearLabelClickable -MiControl $panelNavegadores -Texto "Brave" -X $cx_ar[1] -Y $cy_ar[1]
 crearLabelClickable -MiControl $panelNavegadores -Texto "Firefox" -X $cx_ar[2] -Y $cy_ar[2]
 crearLabelClickable -MiControl $panelNavegadores -Texto "Opera" -X $cx_ar[3] -Y $cy_ar[3]

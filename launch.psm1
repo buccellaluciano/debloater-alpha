@@ -248,7 +248,7 @@ $formPrincipal.Controls.Add($button)
     })
 
 
-    function ipackages {
+    function I-Packages() {
         $defaultpack=0
         $applistpath = $expath.Replace("$exname","\src\apps\defaultapps.txt")
         $app
@@ -265,7 +265,9 @@ $formPrincipal.Controls.Add($button)
     }
         $app
         $install ="winget install $app --accept-source-agreements --accept-package-agreements"
-        Invoke-Expression -Command $install
+        
+        return Invoke-Expression -Command $install
+
     }
     $formPrincipal.Controls.Add($button)
 
@@ -310,4 +312,3 @@ $formPrincipal.Controls.Add($button)
 
     
     $selectedapps =@("$sp")
-    $formPrincipal.ShowDialog()
