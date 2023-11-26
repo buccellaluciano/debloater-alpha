@@ -82,11 +82,13 @@ $panelCompresor = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelPlaceholder2 = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelPlaceholder3 = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelPlaceholder4 = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
+$panelplaceholder5 = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
+$panelplaceholder6 = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 
 
 #CONTROLES
 #Posiciones para los controles
-$posiciones_control = 5
+$posiciones_control = 10
 $cx_ar = New-Object int[] $posiciones_control
 $cy_ar = New-Object int[] $posiciones_control
 
@@ -104,6 +106,7 @@ crearLabelClickable -MiControl $panelNavegadores -Texto "Firefox" -X $cx_ar[2] -
 crearLabelClickable -MiControl $panelNavegadores -Texto "Opera" -X $cx_ar[3] -Y $cy_ar[3]
 crearLabelClickable -MiControl $panelNavegadores -Texto "Opera GX" -X $cx_ar[4] -Y $cy_ar[4]
 
+
 #Elementos de paneles para los drivers
 $labelGPU = Add-Label -control $panelGpuCpuDrivers -Text "Driver de CPU/GPU" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 crearLabelClickable -MiControl $panelGpuCpuDrivers -Texto "Controlador AMD Ryzen Chipset" -X $cx_ar[0] -Y $cy_ar[0]
@@ -114,12 +117,58 @@ $labelGPU = Add-Label -control $panelCompresor -Text "Compresores" -X 0 -Y 5 -Wi
 crearLabelClickable -MiControl $panelCompresor -Texto "Winrar (Version de Prueba)" -X $cx_ar[0] -Y $cy_ar[0]
 crearLabelClickable -MiControl $panelCompresor -Texto "7-Zip" -X $cx_ar[1] -Y $cy_ar[1]
 
+#Elemento de paneles para gaming
+$labelGPU = Add-Label -control $panelPlaceholder2 -Text "Gaming" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+crearLabelClickable -MiControl $panelPlaceholder2 -Texto "GOG Galaxy " -X $cx_ar[0] -Y $cy_ar[0]
+crearLabelClickable -MiControl $panelPlaceholder2 -Texto "Epic games Launcher" -X $cx_ar[1] -Y $cy_ar[1]
+crearLabelClickable -MiControl $panelPlaceholder2 -Texto "Steam " -X $cx_ar[2] -Y $cy_ar[2]
+crearLabelClickable -MiControl $panelPlaceholder2 -Texto "Ubisofft Connct" -X $cx_ar[3] -Y $cy_ar[3]
+crearLabelClickable -MiControl $panelPlaceholder2 -Texto "Borderless gaming" -X $cx_ar[4] -Y $cy_ar[4]
+
+#Elemento de striming services
+$labelGPU = Add-Label -control $panelPlaceholder3 -Text "Streaming Services" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+crearLabelClickable -MiControl $panelPlaceholder3 -Texto "Amazon Prime Video " -X $cx_ar[0] -Y $cy_ar[0]
+crearLabelClickable -MiControl $panelPlaceholder3 -Texto "Disney+" -X $cx_ar[1] -Y $cy_ar[1]
+crearLabelClickable -MiControl $panelPlaceholder3 -Texto "Netflix " -X $cx_ar[2] -Y $cy_ar[2]
+crearLabelClickable -MiControl $panelPlaceholder3 -Texto "Spotify" -X $cx_ar[3] -Y $cy_ar[3]
+
+#Elemento de striming services
+$labelGPU = Add-Label -control $panelPlaceholder4 -Text "Communication" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+crearLabelClickable -MiControl $panelPlaceholder4 -Texto "Discord " -X $cx_ar[0] -Y $cy_ar[0]
+crearLabelClickable -MiControl $panelPlaceholder4 -Texto "Microsoft Teams" -X $cx_ar[1] -Y $cy_ar[1]
+crearLabelClickable -MiControl $panelPlaceholder4 -Texto "Rocket chat " -X $cx_ar[2] -Y $cy_ar[2]
+crearLabelClickable -MiControl $panelPlaceholder4 -Texto "Signal" -X $cx_ar[3] -Y $cy_ar[3]
+crearLabelClickable -MiControl $panelPlaceholder4 -Texto "Skype" -X $cx_ar[4] -Y $cy_ar[4]
+crearLabelClickable -MiControl $panelPlaceholder4 -Texto "Stack" -X $cx_ar[5] -Y $cy_ar[5]
+crearLabelClickable -MiControl $panelPlaceholder4 -Texto "Telegram desktop" -X $cx_ar[6] -Y $cy_ar[6]
+crearLabelClickable -MiControl $panelPlaceholder4 -Texto "WhatsApp Desktop" -X $cx_ar[7] -Y $cy_ar[7]
+crearLabelClickable -MiControl $panelPlaceholder4 -Texto "Zoom" -X $cx_ar[8] -Y $cy_ar[8]
+
+#Elemento de image tools 
+$labelGPU = Add-Label -control $panelPlaceholder5 -Text "Image Tools" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+crearLabelClickable -MiControl $panelPlaceholder5 -Texto "GIMP " -X $cx_ar[0] -Y $cy_ar[0]
+crearLabelClickable -MiControl $panelPlaceholder5 -Texto "Inkscape" -X $cx_ar[1] -Y $cy_ar[1]
+crearLabelClickable -MiControl $panelPlaceholder5 -Texto "Iranview " -X $cx_ar[2] -Y $cy_ar[2]
+crearLabelClickable -MiControl $panelPlaceholder5 -Texto "Krita" -X $cx_ar[3] -Y $cy_ar[3]
+crearLabelClickable -MiControl $panelPlaceholder5 -Texto "Paint.NET" -X $cx_ar[4] -Y $cy_ar[4]
+crearLabelClickable -MiControl $panelPlaceholder5 -Texto "ShareX(Screenshots/Gifs)" -X $cx_ar[5] -Y $cy_ar[5]
+
+#Elemento de Text Editors/IDEs
+$labelGPU = Add-Label -control $panelPlaceholder6 -Text "Text Editors/IDEs" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+crearLabelClickable -MiControl $panelPlaceholder6 -Texto "Notepad++ " -X $cx_ar[0] -Y $cy_ar[0]
+crearLabelClickable -MiControl $panelPlaceholder6 -Texto "Jerbrains toolbox" -X $cx_ar[1] -Y $cy_ar[1]
+crearLabelClickable -MiControl $panelPlaceholder6 -Texto "VS code" -X $cx_ar[2] -Y $cy_ar[2]
+crearLabelClickable -MiControl $panelPlaceholder6 -Texto "VS coium" -X $cx_ar[3] -Y $cy_ar[3]
+crearLabelClickable -MiControl $panelPlaceholder6 -Texto "Visual Estudio 2022 Community" -X $cx_ar[4] -Y $cy_ar[4]
+crearLabelClickable -MiControl $panelPlaceholder6 -Texto "Jetbrains Toolbox" -X $cx_ar[5] -Y $cy_ar[5]
+
+
 
 $button2 = Add-Button -Control $tab2Install -Text "Button 2" -X 100 -Y 500 -Width 200 -Height 100 -ForeColor '#FFFFFF'
 $tweaksTitle = Add-Label -control $tabPage1 -Text "DEBUG TEST" -X 5 -Y 100 -Width 457 -Height 142
 
 
-ajustarPosicionPaneles -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelPlaceholder2, $panelPlaceholder3, $panelPlaceholder4
+ajustarPosicionPaneles -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelPlaceholder2, $panelPlaceholder3, $panelPlaceholder4 , $panelplaceholder5 , $panelplaceholder6
 
 #####POR LAS DUDAS#######
 #$chBoxDiscord DISCORD
