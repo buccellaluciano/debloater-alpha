@@ -21,13 +21,15 @@ function ajustarPosicionPaneles{
     )
     
     #Estos valores se iran actualizando
-    $posXahora = $xpos_array[0]     #Posiciones actualizadas
-    $posYahora = $ypos_array[0]     #para los paneles
+    $posXahora = 10    #Posiciones actualizadas
+    $posYahora = 130     #para los paneles
 
     #Esto va a buscar el panel mas ancho para la medicion en el movimiento de columna.
     $panelMasAncho = $Paneles[0]
     foreach ($panel in $Paneles) {
-        if ($panel.Width -gt $panelMasAncho.Width){$panelMasAncho = $panel}
+        if ($panel.Width -gt $panelMasAncho.Width){
+            $panelMasAncho = $panel
+        }
     }
     
     $indiceVer = 0                  #Indice de los paneles en verticalidad.
@@ -46,7 +48,7 @@ function ajustarPosicionPaneles{
         {
             $posXahora += $panelMasAncho.Width + $xsep #Siempre se toma el panel mas ancho.
             $indiceVer = 0
-            $posYahora = $ypos_array[0]
+            $posYahora = 130
         }
         $indiceVer++
 
