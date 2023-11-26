@@ -24,6 +24,7 @@ $formPrincipal.Icon = $icon
 Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UI\UI-Creator.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UI\UI-Automation.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\scripts\Set-Wallpaper.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\installpackages.psm1" -Force
 
 
 
@@ -49,6 +50,14 @@ $tabPage3 = Add-TabPage -TabControl $tabControl -Text "DEBUG"
 . "$PSScriptRoot\tabs\Tab1.ps1"
 . "$PSScriptRoot\tabs\Tab2.ps1"
 . "$PSScriptRoot\tabs\Tab3.ps1"
+$value= $MyInvocation.MyCommand.Definition
+$appsname = $MyInvocation.MyCommand.Name
+
+
+param (
+    [string]$Pasarapp
+)
+
 
 
 
