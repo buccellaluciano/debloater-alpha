@@ -83,22 +83,30 @@ function Add-Label {
         [string]$Text,
         [int]$X,
         [int]$Y,
-        [int]$Width,
-        [int]$Height,
+        [int]$Width = 0,
+        [int]$Height = 0,
         [float]$Size = 10,
         [string]$ForeColor
-        
     )
-
+    
     $newLabel = New-Object System.Windows.Forms.Label  # Cambiado de Panel a Label
     $newLabel.Location = New-Object System.Drawing.Size($X, $Y)
-    $newLabel.Size = New-Object System.Drawing.Size($Width, $Height)
+
+    #Nuevo ajuste de tamaño
+    if ($Width -gt 0 -and $Height -gt 0)
+    {
+        $newLabel.Size = New-Object System.Drawing.Size($Width, $Height)
+    }
+    else
+    {
+        $newLabel.AutoSize = $true
+    }
     $newLabel.Text = $Text
     $newLabel.Font = New-Object System.Drawing.Font('Arial', $Size, [System.Drawing.FontStyle]::Bold)
     $newLabel.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$ForeColor")
     #$newLabel.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#FFFFFF")
-    $newLabel.TextAlign = 'MiddleCenter'
-
+    $newLabel.TextAlign = 'MiddleTop'
+    
     $Control.Controls.Add($newLabel)
 
     return $newLabel
@@ -144,4 +152,30 @@ function Add-CheckBox {
     $Control.Controls.Add($checkBox)
 
     return $checkBox
+}
+
+function Add-Panel-Autosized {
+    param (
+        [System.Windows.Forms.Control]$Control,
+        [int]$X,
+        [int]$Y
+    )
+
+    $newPanel = New-Object System.Windows.Forms.Panel
+    $newPanel.Location = New-Object System.Drawing.Size($X, $Y)
+    $newPanel.AutoSize = $true
+    $newPanel.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#2c2c2c")
+    $Control.Controls.Add($newPanel)
+
+    return $newPanel
+}
+
+#SIIIIIIII EXISTEN LOS MESSAGE BOX
+function cuadroMensaje{
+    param(
+        [string]$Text,
+        [string]$Titulo = $formPrincipal.Text
+    )
+
+    [System.Windows.Forms.MessageBox]::Show($Text, $Titulo)
 }
