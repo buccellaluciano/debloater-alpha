@@ -243,10 +243,8 @@ $formPrincipal.Controls.Add($button)
     $Button.Text = "JUAN"
     $button.Location = New-Object System.Drawing.Point(650, 450)
     $Button.Add_Click({
-        $text = "tb\enable_tb_center.txt"
-        Changeregs
-        $text = "tb\show_search_icon.txt"
-        Changeregs
+        $app = "XP8C9QZMS2PC1T"
+        ipackages
     })
 
 
@@ -255,21 +253,61 @@ $formPrincipal.Controls.Add($button)
         $applistpath = $expath.Replace("$exname","\src\apps\defaultapps.txt")
         $app
         $lines = Get-Content -Path $applistpath
-        #if ($defaultpack=1){
-        #foreach ($line in $lines){
-            #$app=$line
-            #Write-Host ("$app")
-            #$install ="winget install $app -e"
-            #nvoke-Expression -Command $install
-        #}
-        #$install ="winget install $app --accept-source-agreements --accept-package-agreements"
-        #nvoke-Expression -Command $install
-    #}
+        if ($defaultpack -eq 1){
+        foreach ($line in $lines){
+            $app=$line
+            Write-Host ("$app")
+            $install ="winget install $app --accept-source-agreements --accept-package-agreements"
+            Invoke-Expression -Command $install
+        }
+        $install ="winget install $app --accept-source-agreements --accept-package-agreements"
+        Invoke-Expression -Command $install
+    }
         $app
         $install ="winget install $app --accept-source-agreements --accept-package-agreements"
         Invoke-Expression -Command $install
     }
     $formPrincipal.Controls.Add($button)
 
+    $checkBoxbrave = New-Object System.Windows.Forms.CheckBox
+    $checkBoxbrave.Text = "Brave"
+    $checkBoxbrave.Location = New-Object System.Drawing.Point(300,100)
+    if ($checkBoxbrave.Checked -eq $true){
+            
+            #$selectedapps+=({$sp="1XP8C9QZMS2PC1T"})
+        }
+        $formPrincipal.Controls.Add($checkBoxbrave)
 
-   
+    $button = New-Object System.Windows.Forms.Button
+    $Button.Text = "JUAN SUPER PRO"
+    $button.Location = New-Object System.Drawing.Point(540, 330)
+    $Button.Add_Click({Savechanges})
+    $formPrincipal.Controls.Add($button)
+
+    #
+    #function Savechanges {
+        #$save = $expath.Replace("$exname","src\save.txt")
+        #$savedata
+        #$lines = Get-Content -Path $save
+        #Write-Host ("$save")
+        #$dollar="$"
+        
+            
+        #if ($cbox.Contains("1")){
+            #$out=$cbox.Trim('1')
+            #"$out"| Out-File -FilePath $save -Force -Append
+            #rite-Host ("$line")
+        #}  
+        
+        #foreach ($line in $lines){  
+         #   if ($line.Contains("1") -and $line -eq $cbox){
+          #      $propiedad=$dollar+=$cbox.Trim('1').Checked
+           #     Invoke-Expression -Command $propiedad   
+           # }
+        #}
+        
+    #}
+
+    
+    $selectedapps =@("$sp")
+    $formPrincipal.ShowDialog()
