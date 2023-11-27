@@ -90,13 +90,13 @@ $labelGPU = Add-Label -control $panelGpuCpuDrivers -Text "Driver de CPU/GPU" -X 
 $labelControladorAMD = Add-Label -control $panelGpuCpuDrivers -Text "Controlador AMD Ryzen Chipset" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelControladorAMD.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 $labelNvidia = Add-Label -control $panelGpuCpuDrivers -Text "Nvidia Drivers" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelNvidia.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
+    $labelNvidia.Add_Click({$global:app="Nvidia.GeForceExperience"; ipackages});
 
 #Buttons para drivers
-$buttonControladorAMD = Add-Button -Control $panelGpuCpuDrivers -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonControladorAMD = Add-ImageButton -Control $panelGpuCpuDrivers -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonControladorAMD.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonNvidia = Add-Button -Control $panelGpuCpuDrivers -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonNvidia.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
+$buttonNvidia = Add-ImageButton -Control $panelGpuCpuDrivers -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonNvidia.Add_Click({$global:app="Nvidia.GeForceExperience"; upackages})
 
 #Labels para compresores
 $labelCompresor = Add-Label -control $panelCompresor -Text "Programas de compresion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
@@ -106,9 +106,9 @@ $label7z = Add-Label -control $panelCompresor -Text "7-Zip" -X $cx_ar[1] -Y $cy_
     $label7z.Add_Click({$global:app="7zip.7zip"; ipackages}) 
 
 #Buttons para compresores
-$buttonwinr = Add-Button -Control $panelCompresor -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonwinr = Add-ImageButton -Control $panelCompresor -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonwinr.Add_Click({$global:app="RARLab.WinRAR"; upackages}) 
-$button7z = Add-Button -Control $panelCompresor -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$button7z = Add-ImageButton -Control $panelCompresor -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $button7z.Add_Click({$global:app="7zip.7zip"; upackages}) 
 
 
@@ -126,15 +126,15 @@ $labeleadesk = Add-Label -control $panelGaming -Text "Ea Desktop" -X $cx_ar[4] -
     $labeleadesk.Add_Click({$global:app="ElectronicArts.EADesktop"; ipackages}) 
 
 #Buttons para gaming
-$buttongog = Add-Button -Control $panelGaming -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttongog = Add-ImageButton -Control $panelGaming -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttongog.Add_Click({$global:app="GOG.Galaxy"; upackages}) 
-$buttonepic = Add-Button -Control $panelGaming -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonepic = Add-ImageButton -Control $panelGaming -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonepic.Add_Click({$global:app="EpicGames.EpicGamesLauncher"; upackages}) 
-$buttonsteam = Add-Button -Control $panelGaming -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonsteam = Add-ImageButton -Control $panelGaming -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonsteam.Add_Click({$global:app="Valve.Steam"; upackages}) 
-$buttonubisoft = Add-Button -Control $panelGaming -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonubisoft = Add-ImageButton -Control $panelGaming -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonubisoft.Add_Click({$global:app="Ubisoft.Connect"; upackages}) 
-$buttoneadesk = Add-Button -Control $panelGaming -Text " " -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttoneadesk = Add-ImageButton -Control $panelGaming -ImagePath "$global:imagenTroll" -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttoneadesk.Add_Click({$global:app="ElectronicArts.EADesktop"; upackages}) 
 
 
@@ -150,13 +150,13 @@ $labelSpoti = Add-Label -control $panelStreaming -Text "Spotify" -X $cx_ar[3] -Y
     $labelSpoti.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Buttons de Streaming services
-$buttonAmazon = Add-Button -Control $panelStreaming -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
+$buttonAmazon = Add-ImageButton -Control $panelStreaming -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
     $buttonAmazon.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonDisney = Add-Button -Control $panelStreaming -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
+$buttonDisney = Add-ImageButton -Control $panelStreaming -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
     $buttonDisney.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonNetflix = Add-Button -Control $panelStreaming -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
+$buttonNetflix = Add-ImageButton -Control $panelStreaming -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
     $buttonNetflix.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonSpoti = Add-Button -Control $panelStreaming -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
+$buttonSpoti = Add-ImageButton -Control $panelStreaming -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
     $buttonSpoti.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Labels de Comunicacion
@@ -171,13 +171,13 @@ $labelwhats = Add-Label -control $panelComun -Text "WhatsApp Desktop" -X $cx_ar[
     $labelwhats.Add_Click({$global:app="WhatsApp.WhatsApp"; ipackages})
 
 #Buttons de Comunicacion
-$buttondisc = Add-Button -Control $panelComun -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttondisc = Add-ImageButton -Control $panelComun -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttondisc.Add_Click({$global:app="Discord.Discord"; upackages}) 
-$buttonsky = Add-Button -Control $panelComun -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonsky = Add-ImageButton -Control $panelComun -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonsky.Add_Click({$global:app="9WZDNCRFJ364"; upackages}) 
-$buttonslack = Add-Button -Control $panelComun -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonslack = Add-ImageButton -Control $panelComun -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonslack.Add_Click({$global:app="9WZDNCRDK3WP"; upackages}) 
-$buttonwhats = Add-Button -Control $panelComun -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonwhats = Add-ImageButton -Control $panelComun -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonwhats.Add_Click({$global:app="WhatsApp.WhatsApp"; upackages}) 
 
 #Labels de AV
@@ -192,13 +192,13 @@ $labelmpc = Add-Label -control $panelAV -Text "MPC-HC" -X $cx_ar[3] -Y $cy_ar[3]
     $labelmpc.Add_Click({$global:app="clsid2.mpc-hc"; ipackages})
 
 #Buttons de AV
-$buttonvlc = Add-Button -Control $panelAV -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonvlc = Add-ImageButton -Control $panelAV -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonvlc.Add_Click({$global:app="XPDM1ZW6815MQM"; upackages}) 
-$buttonspoti = Add-Button -Control $panelAV -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonspoti = Add-ImageButton -Control $panelAV -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonspoti.Add_Click({$global:app="Spotify.Spotify"; upackages}) 
-$buttonaud = Add-Button -Control $panelAV -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonaud = Add-ImageButton -Control $panelAV -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonaud.Add_Click({$global:app="XP8K0J757HHRDW"; upackages}) 
-$buttonmpc = Add-Button -Control $panelAV -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonmpc = Add-ImageButton -Control $panelAV -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonmpc.Add_Click({$global:app="clsid2.mpc-hc"; upackages})
 
 
@@ -217,15 +217,15 @@ $labelyuzu = Add-Label -Control $panelEmuladores -Text "Yuzu" -X $cx_ar[4] -Y $c
     $labelyuzu.Add_Click({$global:app="YuzuEmu.Yuzu.Mainline"; ipackages}) 
 
 #Buttons de emuladores
-$buttonblue = Add-Button -Control $panelEmuladores -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonblue = Add-ImageButton -Control $panelEmuladores -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonblue.Add_Click({$global:app="BlueStack.BlueStacks"; upackages})
-$buttoncemu = Add-Button -Control $panelEmuladores -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttoncemu = Add-ImageButton -Control $panelEmuladores -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttoncemu.Add_Click({$global:app="Cemu.Cemu"; upackages}) 
-$buttonryu = Add-Button -Control $panelEmuladores -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonryu = Add-ImageButton -Control $panelEmuladores -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonryu.Add_Click({$global:app="Ryujinx.Ryujinx.Ava"; upackages}) 
-$buttondol = Add-Button -Control $panelEmuladores -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttondol = Add-ImageButton -Control $panelEmuladores -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttondol.Add_Click({$global:app=" DolphinEmulator.Dolphin"; upackages}) 
-$buttonyuzu = Add-Button -Control $panelEmuladores -Text " " -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonyuzu = Add-ImageButton -Control $panelEmuladores -ImagePath "$global:imagenTroll" -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonyuzu.Add_Click({$global:app="YuzuEmu.Yuzu.Mainline"; upackages}) 
 
 
@@ -243,13 +243,13 @@ $labelVSCU = Add-Label -Control $panelEditors -Text "Visual studio Codium" -X $c
     $labelVSCU.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Buttons de Editors/DIEs
-$buttonplusplus = Add-Button -Control $panelEditors -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonplusplus = Add-ImageButton -Control $panelEditors -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonplusplus.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonVS2022 = Add-Button -Control $panelEditors -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonVS2022 = Add-ImageButton -Control $panelEditors -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonVS2022.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonVSC = Add-Button -Control $panelEditors -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonVSC = Add-ImageButton -Control $panelEditors -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonVSC.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonVSCU = Add-Button -Control $panelEditors -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonVSCU = Add-ImageButton -Control $panelEditors -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonVSCU.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 
@@ -261,9 +261,9 @@ $labelwinrar = Add-Label -Control $paneFileCompression -Text "Winrar (Periodo de
     $labelwinrar.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Buttons de File Compression
-$buttonsevenzip = Add-Button -Control $paneFileCompression -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonsevenzip = Add-ImageButton -Control $paneFileCompression -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonsevenzip.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonwinrar = Add-Button -Control $paneFileCompression -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonwinrar = Add-ImageButton -Control $paneFileCompression -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonwinrar.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Labels de Documents Editor/Reader(s)
@@ -280,15 +280,15 @@ $labelSumapdf = Add-Label -Control $paneFileDocumet -Text "Sumatra PDF" -X $cx_a
     $labelSumapdf.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Buttons de Documents Editor/Reader(s)
-$buttonAdober = Add-Button -Control $paneFileDocumet -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonAdober = Add-ImageButton -Control $paneFileDocumet -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonAdober.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonOO = Add-Button -Control $paneFileDocumet -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonOO = Add-ImageButton -Control $paneFileDocumet -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonOO.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonPDFCC = Add-Button -Control $paneFileDocumet -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonPDFCC = Add-ImageButton -Control $paneFileDocumet -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonPDFCC.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonb1 = Add-Button -Control $paneFileDocumet -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonb1 = Add-ImageButton -Control $paneFileDocumet -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonb1.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonSumapdf = Add-Button -Control $paneFileDocumet -Text " " -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonSumapdf = Add-ImageButton -Control $paneFileDocumet -ImagePath "$global:imagenTroll" -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonSumapdf.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 
@@ -304,13 +304,13 @@ $labelTV = Add-Label -Control $panelRemote -Text "Team Viewer" -X $cx_ar[3] -Y $
     $labelTV.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Buttons de Documents Editor/Reader(s)
-$buttonAnydesk = Add-Button -Control $panelRemote -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonAnydesk = Add-ImageButton -Control $panelRemote -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonAnydesk.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonParsec = Add-Button -Control $panelRemote -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonParsec = Add-ImageButton -Control $panelRemote -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonParsec.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonScr = Add-Button -Control $panelRemote -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonScr = Add-ImageButton -Control $panelRemote -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonScr.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonTV = Add-Button -Control $panelRemote -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonTV = Add-ImageButton -Control $panelRemote -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonTV.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Estos paneles fueron sacados por su nivel de inutilidad
@@ -331,11 +331,11 @@ $labelVentoy = Add-Label -Control $panelBootale -Text "Ventoy" -X $cx_ar[2] -Y $
     $labelVentoy.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Buttons de Bootable USB
-$buttonEtcher = Add-Button -Control $panelBootale -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonEtcher = Add-ImageButton -Control $panelBootale -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonEtcher.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonRufus = Add-Button -Control $panelBootale -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonRufus = Add-ImageButton -Control $panelBootale -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonRufus.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonVentoy = Add-Button -Control $panelBootale -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonVentoy = Add-ImageButton -Control $panelBootale -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonVentoy.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 
@@ -349,11 +349,11 @@ $labelvmware = Add-Label -Control $panelVirtual -Text "VMware Workstation Player
     $labelvmware.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Button Virtual Machines
-$buttonOracleVM = Add-Button -Control $panelVirtual -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonOracleVM = Add-ImageButton -Control $panelVirtual -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonOracleVM.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonQEMU = Add-Button -Control $panelVirtual -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonQEMU = Add-ImageButton -Control $panelVirtual -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonQEMU.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonvmware = Add-Button -Control $panelVirtual -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonvmware = Add-ImageButton -Control $panelVirtual -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonvmware.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #ALERTA DE LINDO PEDAZZZZO DE CODIGO ABAJO 
@@ -379,23 +379,23 @@ $labelubuntu20 = Add-Label -Control $panelSubsystem -Text "Ubuntu LTS v18.04" -X
     $labelubuntu20.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Buttons para Windows Subsystem For Linux
-$buttonwsl = Add-Button -Control $panelSubsystem -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonwsl = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonwsl.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonarchwsl = Add-Button -Control $panelSubsystem -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonarchwsl = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonarchwsl.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttondebian = Add-Button -Control $panelSubsystem -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttondebian = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttondebian.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonkali = Add-Button -Control $panelSubsystem -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonkali = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonkali.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonsuse = Add-Button -Control $panelSubsystem -Text " " -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonsuse = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonsuse.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonsles = Add-Button -Control $panelSubsystem -Text " " -X ($cx_ar[5] -35) -Y ($cy_ar[5]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonsles = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[5] -35) -Y ($cy_ar[5]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonsles.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonubuntu = Add-Button -Control $panelSubsystem -Text " " -X ($cx_ar[6] -35) -Y ($cy_ar[6]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonubuntu = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[6] -35) -Y ($cy_ar[6]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonubuntu.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonubuntu18 = Add-Button -Control $panelSubsystem -Text " " -X ($cx_ar[7] -35) -Y ($cy_ar[7]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonubuntu18 = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[7] -35) -Y ($cy_ar[7]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonubuntu18.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonubuntu24 = Add-Button -Control $panelSubsystem -Text " " -X ($cx_ar[8] -35) -Y ($cy_ar[8]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonubuntu24 = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[8] -35) -Y ($cy_ar[8]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonubuntu24.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 
@@ -413,15 +413,15 @@ $labelwiresh = Add-Label -Control $panelNetwork -Text "Wireshark" -X $cx_ar[4] -
     $labelwiresh.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Buttons de Network Management
-$buttonhamachi = Add-Button -Control $panelNetwork -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonhamachi = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonhamachi.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonputty = Add-Button -Control $panelNetwork -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonputty = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonputty.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonradmi = Add-Button -Control $panelNetwork -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonradmi = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonradmi.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonwinscp = Add-Button -Control $panelNetwork -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonwinscp = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonwinscp.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonwiresh = Add-Button -Control $panelNetwork -Text " " -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonwiresh = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonwiresh.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Labels de UI Customization
@@ -432,9 +432,9 @@ $labeltranslucent = Add-Label -Control $panelUICustomization -Text "Translucent 
     $labeltranslucent.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Button de UI Customization
-$buttonOracleVM = Add-Button -Control $panelUICustomization -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonOracleVM = Add-ImageButton -Control $panelUICustomization -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonOracleVM.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonQEMU = Add-Button -Control $panelUICustomization -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonQEMU = Add-ImageButton -Control $panelUICustomization -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonQEMU.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #ALERTA DE LINDO PEDAZZZZO DE CODIGO ABAJO
@@ -458,21 +458,21 @@ $labelpyth3 = Add-Label -Control $panelDevelopment -Text "Python 3" -X $cx_ar[7]
     $labelpyth3.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Button para Development On Windows
-$buttonwt = Add-Button -Control $panelDevelopment -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonwt = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonwt.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonggs = Add-Button -Control $panelDevelopment -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonggs = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonggs.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonadb = Add-Button -Control $panelDevelopment -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonadb = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonadb.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonands = Add-Button -Control $panelDevelopment -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonands = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonands.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonjava = Add-Button -Control $panelDevelopment -Text " " -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonjava = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonjava.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonmysql = Add-Button -Control $panelDevelopment -Text " " -X ($cx_ar[5] -35) -Y ($cy_ar[5]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonmysql = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[5] -35) -Y ($cy_ar[5]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonmysql.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonnodejs = Add-Button -Control $panelDevelopment -Text " " -X ($cx_ar[6] -35) -Y ($cy_ar[6]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonnodejs = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[6] -35) -Y ($cy_ar[6]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonnodejs.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
-$buttonpyth3 = Add-Button -Control $panelDevelopment -Text " " -X ($cx_ar[7] -35) -Y ($cy_ar[7]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+$buttonpyth3 = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[7] -35) -Y ($cy_ar[7]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonpyth3.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 
 #Elementos de Wep Browsers

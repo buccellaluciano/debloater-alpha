@@ -26,14 +26,13 @@ for ($i = 0; $i -lt $posiciones_control; $i++) {
 }
 
 ############TAB 3############
-$buttondeb = Add-Button -Control $paneldebloat -Text "Debloat" -X 10 -Y 10 -Width 100 -Height 20 -ForeColor '#FFFFFF'
-$buttondeb.Add_Click({Confirm-Action -YesAction {$global:removebloatware=0; upackages}})
+$button3 = Add-Button -Control $tabPage3 -Text "Button 2" -X 10 -Y 10 -Width 100 -Height 20 -ForeColor '#FFFFFF'
+$button3.Add_Click{
+    $global:removebloatware=1
+    Confirm-Action -Message "Mira que esto quita todo el bloatware, te vas a quedar sin computadora por unos minutos" -YesAction {upackages}
+}
 
 ############TAB 3############
 
 $btnTESTa = Add-ImageButton -Control $tabPage3 -ImagePath $global:imagenTroll -X 50 -Y 50 -Width 300 -Height 200
-
-
-ajustarPosicionPaneles -Paneles $paneldebloat
-
 #$btnTESTa = Add-ImageButton -Control $tabPage3 -ImagePath "M:\Organizate\Desktop\debloater-alpha\src\img\debloaterIcon.jpg" -X 50 -Y 50 -Width 300 -Height 200
