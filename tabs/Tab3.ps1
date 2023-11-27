@@ -4,27 +4,6 @@ Add-Label -control $tabPage3 -Text "Ojo, aca se pueden desinstalar la mayoria de
 ############TITULOS###########
 
 
-$paneldebloat = Add-Panel-Autosized -Control $tabPage3 -X 0 -Y 0
-$panelSearch = Add-Panel-Autosized -Control $tabPage3 -X 0 -Y 0
-$panelsuggest = Add-Panel-Autosized -Control $tabPage3 -X 0 -Y 0
-$panelDarkMode = Add-Panel-Autosized -Control $tabPage3 -X 0 -Y 0
-
-
-#$panelTweaks = Add-Panel -Control $tabPage1 -X 10 -Y 300 -Width 300 -Height 400
-
-
-#CONTROLES
-#Posiciones para los controles
-$posiciones_control = 20
-$cx_ar = New-Object int[] $posiciones_control
-$cy_ar = New-Object int[] $posiciones_control
-
-#Definicion automatica para las posiciones de los controles. Soporta hasta 5 posiciones.
-for ($i = 0; $i -lt $posiciones_control; $i++) {
-    $cx_ar[$i] = 40
-    $cy_ar[$i] = 40 + ($i * 40) #El 30 es el espacio entre controles, aumentar o reducir si es necesario.
-}
-
 ############TAB 3############
 $btnlastbtn = Add-ImageButton -Control $tabPage3 -ImagePath $global:imagenTroll -X ($formPrincipal.Width / 2 - 400) -Y ($formPrincipal.Width / 2 - 500) -Width 800 -Height 500
 $btnlastbtn.Add_Click{
