@@ -81,4 +81,3 @@ param (
 
 #Congratulate
 $formPrincipal.ShowDialog()
-
