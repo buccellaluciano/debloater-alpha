@@ -7,6 +7,7 @@ Add-Label -control $tabPage1 -Text "Soto-Buccella-Gorno-Sandes" -X 0 -Y 70 -Widt
 $paneltb = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
 $panelSearch = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
 $panelsuggest = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
+$panelDarkMode = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
 
 
 #$panelTweaks = Add-Panel -Control $tabPage1 -X 10 -Y 300 -Width 300 -Height 400
@@ -77,6 +78,7 @@ $btnends.Add_Click({$global:text="tb\recomendation_tips.txt"; changeregs;$global
 
 ############TAB 1############
 
+ajustarPosicionPaneles -Paneles $paneltb, $panelSearch, $panelDarkMode
 
 
 
