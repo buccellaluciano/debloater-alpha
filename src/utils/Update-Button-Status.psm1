@@ -1,9 +1,9 @@
 function Update-Button-Status {
     param (
         [System.Windows.Forms.Control]$button,
-        [ref]$variableObserved,
-        [string]$textInicial,
-        [string]$textDespues
+        [bool]$variableObserved,
+        [string]$textInicial = "Activar",
+        [string]$textDespues = "Desactivar"
     )
 
     if ($variableObserved) {

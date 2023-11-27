@@ -1,3 +1,5 @@
+#debug form.
+
 Add-Type -assembly System.Windows.Forms
 $main_form = New-Object System.Windows.Forms.Form
 $main_form.Text ='GUI for my PoSh script'
@@ -24,38 +26,6 @@ $button.Location = New-Object System.Drawing.Point(200, 200)
 $Button.Add_Click({(Changeregs)})
 $main_form.Controls.Add()
 
-
-function Changeregs {
-    
-    $regfilesloc = Get-ChildItem regfiles
-    $regfiles = Get-Content -Path $regfilesloc
-    
-    $j
-    foreach ($Line in $regfiles){
-        Write-Host "$Line $j :";
-        $j++
-    }
-    
-    Param($Enabled)
-    Try{
-        if ($Enabled -eq $false){
-            Write-Host "Habilitando: $regname"
-            $value = 1
-        }
-        else {
-            Write-Host "Desabilitando: $regname"
-            $value = 0
-        }
-        $Path = "$regpath"
-        Set-ItemProperty -Path $Path -Name $regname -Value $value
-    
-    }
-    Catch [System.Security.SecurityException] {
-        Write-Warning "Unable to set $Path\$Name to $Value due to a Security Exception"
-    }
-}
-
-    Set-ItemProperty -Path $Path -Name BingSearchEnabled -Value $value
 
 
 $main_form.ShowDialog()
