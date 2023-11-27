@@ -12,7 +12,10 @@ $formPrincipal = New-Object System.Windows.Forms.Form
 $formPrincipal.Text = 'Debloater Ferrando'
 $formPrincipal.Size = New-Object System.Drawing.Size(1100,700)
 $formPrincipal.StartPosition = 'CenterScreen'
-$formPrincipal.FormBorderStyle = 'Fixed3D'
+$formPrincipal.FormBorderStyle = 'FixedSingle'
+$formPrincipal.MinimizeBox = $false
+$formPrincipal.MaximizeBox = $false
+$formPrincipal.MaximizeBox = $false
 $formPrincipal.BackColor= [System.Drawing.ColorTranslator]::FromHtml("#252525")
 
 $iconPath = "$PSScriptRoot\src\img\debloaterIcon.ico"

@@ -47,7 +47,7 @@ function Add-Button {
     $newControl.Size = New-Object System.Drawing.Size($Width, $Height)
     $newControl.Text = $Text
     $newControl.FlatStyle = 'Flat'
-    $newControl.Font = New-Object System.Drawing.Font('Consolas',11, , [System.Drawing.FontStyle]::Bold)
+    $newControl.Font = New-Object System.Drawing.Font('Terminal',11, , [System.Drawing.FontStyle]::Bold)
     $newControl.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$ForeColor")
 
 
@@ -101,7 +101,7 @@ function Add-Label {
         $newLabel.AutoSize = $true
     }
     $newLabel.Text = $Text
-    $newLabel.Font = New-Object System.Drawing.Font('Arial', $Size, [System.Drawing.FontStyle]::Bold)
+    $newLabel.Font = New-Object System.Drawing.Font('Terminal', $Size, [System.Drawing.FontStyle]::Bold)
     $newLabel.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$ForeColor")
     #$newLabel.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#FFFFFF")
     $newLabel.TextAlign = 'MiddleCenter'
@@ -144,7 +144,7 @@ function Add-CheckBox {
     $checkBox = New-Object System.Windows.Forms.CheckBox
     $checkBox.Text = $Text
     $checkBox.Location = New-Object System.Drawing.Point($X, $Y)
-    $checkBox.Font = New-Object System.Drawing.Font('Consolas', 10, [System.Drawing.FontStyle]::Italic)
+    $checkBox.Font = New-Object System.Drawing.Font('Terminal', 10, [System.Drawing.FontStyle]::Italic)
     $checkBox.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$ForeColor")
     $checkBox.AutoSize = $true
     #$checkBox.Appearance = 'Button'

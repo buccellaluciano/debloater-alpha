@@ -1,5 +1,5 @@
 function Add-Label-Clickeable {
-    param (
+    param(
         [System.Windows.Forms.Control]$Control,
         [string]$Text,
         [int]$X,
@@ -23,10 +23,10 @@ function Add-Label-Clickeable {
         $newLabel.AutoSize = $true
     }
     $newLabel.Text = $Text
-    $newLabel.Font = New-Object System.Drawing.Font('Arial', $Size, [System.Drawing.FontStyle]::Bold)
+    $newLabel.Font = New-Object System.Drawing.Font('Terminal', $Size, [System.Drawing.FontStyle]::Bold)
     $newLabel.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$ForeColor")
     #$newLabel.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#FFFFFF")
-    $newLabel.TextAlign = 'MiddleTop'
+    $newLabel.TextAlign = 'MiddleCenter'
     $newLabel.Cursor = [Windows.Forms.Cursors]::Hand
 
     
