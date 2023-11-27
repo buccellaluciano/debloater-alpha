@@ -1,66 +1,4 @@
-
-
-function crearLabelClickable {
-    param (
-        [System.Windows.Forms.Control]$MiControl,
-        [int]$X,
-        [int]$Y,
-        [string]$Texto
-    )
-    $nuevalabel = Add-Label -control $MiControl -Text $Texto -X $X -Y $Y -ForeColor '#FFFF66'
-    $nuevalabel.Cursor = [Windows.Forms.Cursors]::Hand
-
-    #return $nuevalabel
-}
-
-
-
 #Esto es para que se ajusten la posicion de los paneles a cuanton miden. SOLO LLAMAR AL FINAL.
-function ajustarPosicionPaneles{
-    param(
-        [System.Windows.Forms.Panel[]]$Paneles,
-        [Int]$PanelesXColumna = 2
-    )
-    
-    #Estos valores se iran actualizando
-    $posXahora = 10    #Posiciones actualizadas
-    $posYahora = 130     #para los paneles
-
-    #Esto va a buscar el panel mas ancho para la medicion en el movimiento de columna.
-    $panelMasAncho = $Paneles[0]
-    foreach ($panel in $Paneles) {
-        if ($panel.Width -gt $panelMasAncho.Width){
-            $panelMasAncho = $panel
-        }
-    }
-    
-    $indiceVer = 0                  #Indice de los paneles en verticalidad.
-    $panelAnterior = $Paneles[0]
-
-    #Posicionamiento automaticos por medio de evaluacion.
-    foreach ($panel in $Paneles) {
-
-        #Primero viene la definicion de la altura y luego la horizontal.
-        #Esto toma la definicion de tamaño del panel anterior a este.
-        $posYahora += (($panelAnterior.Height + $ysep) * ($indiceVer -gt 0))
-        
-        #Si el indice vertical ya llego al limite de paneles por columna, nos movemos
-        #a la siguiente columna.
-        if ($indiceVer -ge $PanelesXColumna)
-        {
-            $posXahora += $panelMasAncho.Width + $xsep #Siempre se toma el panel mas ancho.
-            $indiceVer = 0
-            $posYahora = 130
-        }
-        $indiceVer++
-
-        #Esto termina de establecer la posicion
-        $panel.Location = New-Object System.Drawing.Size($posXahora, $posYahora)
-        $panelAnterior = $panel
-    }
-}
-
-
 ####RODRIGO Y JULIAN: TIENEN QUE HACER FUNCIONES DE LOS BOTONES.###########
 Add-Label -control $tab2Install -Text "Instalacion de software" -X 0 -Y 10 -Width ($formPrincipal.Width-50) -Height 50 -ForeColor '#f54242' -Size 30
 Add-Label -control $tab2Install -Text "DEVTEST" -X 0 -Y 70 -Width ($formPrincipal.Width-50) -Height 30 -ForeColor '#ffffff' -Size 20
@@ -100,13 +38,12 @@ for ($i = 0; $i -lt $posiciones_control; $i++) {
     $cy_ar[$i] = 40 + ($i * 30) #El 30 es el espacio entre controles, aumentar o reducir si es necesario.
 }
 #Elementos de paneles de navegadores
-$labelNav = Add-Label -control $panelNavegadores -Text "Navegadores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelchrome = crearLabelClickable -MiControl $panelNavegadores -Texto "Chrome" -X $cx_ar[0] -Y $cy_ar[0]
-$buttonchrome = Add-Button -Control $panelNavegadores -Text "Instalar" -X 120 -Y $cy_ar[0] -Width 60 -Height 20 -ForeColor '#FFFFFF';$buttonchrome.Add_Click({$global:app="XP8C9QZMS2PC1T"; ipackages}) 
-crearLabelClickable -MiControl $panelNavegadores -Texto "Brave" -X $cx_ar[1] -Y $cy_ar[1]
-crearLabelClickable -MiControl $panelNavegadores -Texto "Firefox" -X $cx_ar[2] -Y $cy_ar[2]
-crearLabelClickable -MiControl $panelNavegadores -Texto "Opera" -X $cx_ar[3] -Y $cy_ar[3]
-crearLabelClickable -MiControl $panelNavegadores -Texto "Opera GX" -X $cx_ar[4] -Y $cy_ar[4]
+$labelNav = Add-Label -control $panelNavegadores -Text "Navegadores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
+crearLabelClickable -MiControl $panelNavegadores -Texto "Chrome" -X $cx_ar[0] -Y $cy_ar[0] ; $buttonchrome = Add-Button -Control $panelNavegadores -Text " " -X 120 -Y $cy_ar[0] -Width 30 -Height 20 -ForeColor '#FFFFFF';$buttonchrome.Add_Click({$global:app="Google.Chrome"; ipackages}) 
+crearLabelClickable -MiControl $panelNavegadores -Texto "Brave" -X $cx_ar[1] -Y $cy_ar[1] ; $buttonbrave = Add-Button -Control $panelNavegadores -Text " " -X 120 -Y $cy_ar[1] -Width 30 -Height 20 -ForeColor '#FFFFFF';$buttonbrave.Add_Click({$global:app="XP8C9QZMS2PC1T"; ipackages}) 
+crearLabelClickable -MiControl $panelNavegadores -Texto "Firefox" -X $cx_ar[2] -Y $cy_ar[2] ; $buttonbrave = Add-Button -Control $panelNavegadores -Text " " -X 120 -Y $cy_ar[2] -Width 30 -Height 20 -ForeColor '#FFFFFF';$buttonfirefox.Add_Click({$global:app="9NZVDKPMR9RD"; ipackages}) 
+crearLabelClickable -MiControl $panelNavegadores -Texto "Opera" -X $cx_ar[3] -Y $cy_ar[3] ; $buttonopera = Add-Button -Control $panelNavegadores -Text " " -X 120 -Y $cy_ar[3] -Width 30 -Height 20 -ForeColor '#FFFFFF';$buttonfirefox.Add_Click({$global:app="Opera.Opera"; ipackages}) 
+crearLabelClickable -MiControl $panelNavegadores -Texto "Opera GX" -X $cx_ar[4] -Y $cy_ar[4]  ; $buttonoperagx = Add-Button -Control $panelNavegadores -Text " " -X 120 -Y $cy_ar[4] -Width 30 -Height 20 -ForeColor '#FFFFFF';$buttonfirefox.Add_Click({$global:app="Opera.OperaGX"; ipackages}) 
 
 
 #Elementos de paneles para los drivers
