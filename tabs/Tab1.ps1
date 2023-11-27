@@ -46,6 +46,7 @@ $btntsk.Add_Click({$global:text="tb\hide_search_taskbar.txt"; changeregs})
 $btnttb = Add-Button -Control $paneltb -Text "Barra transparente" -X $cx_ar[5] -Y $cy_ar[5] -Width 80 -Height 30 -ForeColor '#f54242'
 $btnttb.Add_Click({zVIVE})
 
+#Telemetria
 
 
 ############TAB 1############
