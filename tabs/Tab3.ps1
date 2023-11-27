@@ -1,7 +1,10 @@
 
 ############TAB 3############
 $button3 = Add-Button -Control $tabPage3 -Text "Button 2" -X 10 -Y 10 -Width 100 -Height 20 -ForeColor '#FFFFFF'
-$button3.Add_Click({$global:removebloatware=1; upackages})
+$button3.Add_Click{
+    $global:removebloatware=1
+    Confirm-Action -Message "Mira que esto quita todo el bloatware, te vas a quedar sin computadora por unos minutos" -YesAction {upackages}
+}
 
 ############TAB 3############
 
