@@ -1,8 +1,9 @@
 $expath= $MyInvocation.MyCommand.Definition
 $exname = $MyInvocation.MyCommand.Name
 $regname =@("$text")
-    function Changeregs {
-    
+    function Update-Button-Reg {
+        param([System.Windows.Forms.Control]$buttonChanger)
+
     foreach ($e in $regname){
         $regname+=$global:text
         $enabled
@@ -24,13 +25,12 @@ $regname =@("$text")
         $valor =Get-ItemPropertyValue -Path $regroute -Name $name
     
         if ($valor-eq 0){
-            $value=1
+            $buttonChanger.Text = "Deshabilitado"
         }if ($valor -eq 1){
-            $value=0
+            $buttonChanger.Text = "Habilitado"
+
     
         }
-        Write-Host ("$valor")
-        Set-ItemProperty -Path "$regroute" -Name "$name" -Value "$value" -ErrorAction SilentlyContinue
         
     }
     
