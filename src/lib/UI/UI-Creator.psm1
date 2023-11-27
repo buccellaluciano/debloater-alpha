@@ -106,6 +106,7 @@ function Add-Label {
     $newLabel.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$ForeColor")
     #$newLabel.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#FFFFFF")
     $newLabel.TextAlign = 'MiddleTop'
+
     
     $Control.Controls.Add($newLabel)
 

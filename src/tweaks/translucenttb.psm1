@@ -13,6 +13,9 @@ $vivepath="src\zVIVE"
         Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\installpackages.psm1" -Force
         $global:app ="9PF4KZ2VN4W9"
         ipackages
-        
+        $tb = "C:\Program Files\WindowsApps\28017CharlesMilette.TranslucentTB_2023.1.0.0_x64__v826wp6bftszj\TranslucentTB.exe"
+        $Result=  Add-Type -AssemblyName PresentationCore,PresentationFramework
+        $Result = [System.Windows.MessageBox]::Show("Para terminar el proceso, escriba 'Translucent' en la barra de busqueda y ejecute TranslucentTb.","Finalizado","Ok")
+            
     
     }  

@@ -56,32 +56,81 @@ for ($i = 0; $i -lt $posiciones_control; $i++) {
     $cx_ar[$i] = 40
     $cy_ar[$i] = 40 + ($i * 30) #El 30 es el espacio entre controles, aumentar o reducir si es necesario.
 }
-#Elementos de paneles de navegadores
+#Label de navegadores
 
 Add-Label -control $panelNavegadores -Text "Navegadores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
-Add-Label-Clickeable -MiControl $panelNavegadores -Texto "Chrome" -X $cx_ar[0] -Y $cy_ar[0]; $buttonchrome = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonchrome.Add_Click({$global:app="Google.Chrome"; ipackages}); 
-Add-Label-Clickeable -MiControl $panelNavegadores -Texto "Brave" -X $cx_ar[1] -Y $cy_ar[1]; $buttonbrave = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonbrave.Add_Click({$global:app="XP8C9QZMS2PC1T"; ipackages}); 
-Add-Label-Clickeable -MiControl $panelNavegadores -Texto "Firefox" -X $cx_ar[2] -Y $cy_ar[2]; $buttonfirefox = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonfirefox.Add_Click({$global:app="9NZVDKPMR9RD"; ipackages}); 
-Add-Label-Clickeable -MiControl $panelNavegadores -Texto "Opera" -X $cx_ar[3] -Y $cy_ar[3]; $buttonopera = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonopera.Add_Click({$global:app="Opera.Opera"; ipackages}); 
-Add-Label-Clickeable -MiControl $panelNavegadores -Texto "Opera GX" -X $cx_ar[4] -Y $cy_ar[4]; $buttonoperagx = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonoperagx.Add_Click({$global:app="Opera.OperaGX"; ipackages}); 
+$labelchrome = Add-Label -control $panelNavegadores -Text "Chrome" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+    $labelchrome.Add_Click({$global:app="Google.Chrome"; ipackages})
+$labelbrave = Add-Label -control $panelNavegadores -Text "Brave" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+    $labelbrave.Add_Click({$global:app="XP8C9QZMS2PC1T"; ipackages})
+$labelfirefox = Add-Label -control $panelNavegadores -Text "Firefox" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+    $labelfirefox.Add_Click({$global:app="9NZVDKPMR9RD"; ipackages})
+$labelopera = Add-Label -control $panelNavegadores -Text "Opera" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+    $labelopera.Add_Click({$global:app="Opera.Opera"; ipackages})
+$labeloperagx = Add-Label -control $panelNavegadores -Text "Opera GX" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
+    $buttonoperagx.Add_Click({$global:app="Opera.OperaGX"; ipackages});
+
+#Buttons de navegadores
+
+$buttonbrave = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonbrave.Add_Click({$global:app="XP8C9QZMS2PC1T"; upackages}); 
+$buttonfirefox = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonfirefox.Add_Click({$global:app="9NZVDKPMR9RD"; upackages}); 
+$buttonopera = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonopera.Add_Click({$global:app="Opera.Opera"; upackages}); 
+$buttonoperagx = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonoperagx.Add_Click({$global:app="Opera.OperaGX"; upackages}); 
+
+
 
 #Elementos de paneles para los drivers
 $labelGPU = Add-Label -control $panelGpuCpuDrivers -Text "Driver de CPU/GPU" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-Add-Label-Clickeable -MiControl $panelGpuCpuDrivers -Texto "Controlador AMD Ryzen Chipset" -X $cx_ar[0] -Y $cy_ar[0]
-Add-Label-Clickeable -MiControl $panelGpuCpuDrivers -Texto "Nvidia Drivers" -X $cx_ar[1] -Y $cy_ar[1]
+Add-Label-Clickeable -MiControl $panelGpuCpuDrivers -Texto "Controlador AMD Ryzen Chipset" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
 
-#Elementos de paneles para el panel de compresor de archivos.
+Add-Label-Clickeable -MiControl $panelGpuCpuDrivers -Texto "Nvidia Drivers" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+
+#Labels para compresores
+
 $labelCompresor = Add-Label -control $panelCompresor -Text "Programas de compresion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-Add-Label-Clickeable -MiControl $panelCompresor -Texto "Winrar (Version de Prueba)" -X $cx_ar[0] -Y $cy_ar[0]; $buttonwinr = Add-Button -Control $panelCompresor -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonwinr.Add_Click({$global:app="RARLab.WinRAR"; ipackages}) 
-Add-Label-Clickeable -MiControl $panelCompresor -Texto "7-Zip" -X $cx_ar[1] -Y $cy_ar[1]; $button7z = Add-Button -Control $panelCompresor -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $button7z.Add_Click({$global:app="7zip.7zip"; ipackages}) 
+$labelwinrar = Add-Label -control $panelCompresor -Text "Winrar (Version de Prueba)" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+    $labelwinrar.Add_Click({$global:app="RARLab.WinRAR"; ipackages}) 
+$label7z = Add-Label -control $panelCompresor -Text "7-Zip" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+    $label7z.Add_Click({$global:app="7zip.7zip"; ipackages}) 
+#Buttons para compresores
 
-#Elemento de paneles para gaming
+$buttonwinr = Add-Button -Control $panelCompresor -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonwinr.Add_Click({$global:app="RARLab.WinRAR"; upackages}) 
+$button7z = Add-Button -Control $panelCompresor -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $button7z.Add_Click({$global:app="7zip.7zip"; upackages}) 
+
+
+#Label para gaming
+
 $labelGaming = Add-Label -control $panelGaming -Text "Gaming" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-Add-Label-Clickeable -MiControl $panelGaming -Texto "GOG Galaxy " -X $cx_ar[0] -Y $cy_ar[0]; $buttongog = Add-Button -Control $panelGaming -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttongog.Add_Click({$global:app="GOG.Galaxy"; ipackages}) 
-Add-Label-Clickeable -MiControl $panelGaming -Texto "Epic games Launcher" -X $cx_ar[1] -Y $cy_ar[1]; $buttonepic = Add-Button -Control $panelGaming -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonepic.Add_Click({$global:app="EpicGames.EpicGamesLauncher"; ipackages}) 
-Add-Label-Clickeable -MiControl $panelGaming -Texto "Steam " -X $cx_ar[2] -Y $cy_ar[2]; $buttonsteam = Add-Button -Control $panelGaming -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonsteam.Add_Click({$global:app="Valve.Steam"; ipackages}) 
-Add-Label-Clickeable -MiControl $panelGaming -Texto "Ubisofft Connct" -X $cx_ar[3] -Y $cy_ar[3];$buttonubisoft = Add-Button -Control $panelGaming -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonubisoft.Add_Click({$global:app="Ubisoft.Connect"; ipackages}) 
-Add-Label-Clickeable -MiControl $panelGaming -Texto "Ea Desktop" -X $cx_ar[4] -Y $cy_ar[4];$buttoneadesk = Add-Button -Control $panelGaming -Text " " -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttoneadesk.Add_Click({$global:app="ElectronicArts.EADesktop"; ipackages}) 
+$labelgog = Add-Label-control $panelGaming -Text "GOG Galaxy " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+    $labelgog.Add_Click({$global:app="GOG.Galaxy"; ipackages}) 
+$labelepic = Add-Label -control $panelGaming -Text "Epic games Launcher" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+    $labelepic.Add_Click({$global:app="EpicGames.EpicGamesLauncher"; ipackages}) 
+$labelsteam = Add-Label-control $panelGaming -Text "Steam " -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+    $labelsteam.Add_Click({$global:app="Valve.Steam"; ipackages}) 
+$labelubisoft = Add-Label -control $panelGaming -Text "Ubisofft Connct" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+    $labelubisoft.Add_Click({$global:app="Ubisoft.Connect"; ipackages}) 
+$labeleadesk = Add-Label -control $panelGaming -Text "Ea Desktop" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
+    $labeleadesk.Add_Click({$global:app="ElectronicArts.EADesktop"; ipackages}) 
+
+#Buttons para gaming
+
+$buttongog = Add-Button -Control $panelGaming -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttongog.Add_Click({$global:app="GOG.Galaxy"; upackages}) 
+$buttonepic = Add-Button -Control $panelGaming -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+    $buttonepic.Add_Click({$global:app="EpicGames.EpicGamesLauncher"; upackages}) 
+$buttonsteam = Add-Button -Control $panelGaming -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonsteam.Add_Click({$global:app="Valve.Steam"; upackages}) 
+$buttonubisoft = Add-Button -Control $panelGaming -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+    $buttonubisoft.Add_Click({$global:app="Ubisoft.Connect"; upackages}) 
+$buttoneadesk = Add-Button -Control $panelGaming -Text " " -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttoneadesk.Add_Click({$global:app="ElectronicArts.EADesktop"; upackages}) 
+
 
 #Elemento de striming services
 $labelGPU = Add-Label -control $panelPlaceholder3 -Text "Streaming Services" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
@@ -90,19 +139,55 @@ Add-Label-Clickeable -MiControl $panelPlaceholder3 -Texto "Disney+" -X $cx_ar[1]
 Add-Label-Clickeable -MiControl $panelPlaceholder3 -Texto "Netflix " -X $cx_ar[2] -Y $cy_ar[2]
 Add-Label-Clickeable -MiControl $panelPlaceholder3 -Texto "Spotify" -X $cx_ar[3] -Y $cy_ar[3]
 
-#Elemento de striming services
-$labelComun = Add-Label -control $panelComun -Text "Comunicacion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-Add-Label-Clickeable -MiControl $panelComun -Texto "Discord " -X $cx_ar[0] -Y $cy_ar[0]; $buttondisc = Add-Button -Control $panelComun -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttondisc.Add_Click({$global:app="Discord.Discord"; ipackages}) 
-Add-Label-Clickeable -MiControl $panelComun -Texto "Skype" -X $cx_ar[1] -Y $cy_ar[1]; $buttonsky = Add-Button -Control $panelComun -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonsky.Add_Click({$global:app="9WZDNCRFJ364"; ipackages}) 
-Add-Label-Clickeable -MiControl $panelComun -Texto "Slack" -X $cx_ar[2] -Y $cy_ar[2]; $buttonslack = Add-Button -Control $panelComun -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonslack.Add_Click({$global:app="9WZDNCRDK3WP"; ipackages}) 
-Add-Label-Clickeable -MiControl $panelComun -Texto "WhatsApp Desktop" -X $cx_ar[3] -Y $cy_ar[3]; $buttonwhats = Add-Button -Control $panelComun -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonwhats.Add_Click({$global:app="WhatsApp.WhatsApp"; ipackages}) 
+#Labels de comunicacion
 
-#Elemento de image tools 
+$labelComun = Add-Label -control $panelComun -Text "Comunicacion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+$labeldisc = Add-Label -control $panelComun -Texto "Discord " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+    $labeldisc.Add_Click({$global:app="Discord.Discord"; ipackages}) 
+$labelsky = Add-Label -control $panelComun -Text "Skype" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+    $labelsky.Add_Click({$global:app="9WZDNCRFJ364"; ipackages}) 
+$labelslack = Add-Label -control $panelComun -Text "Slack" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+    $labelslack.Add_Click({$global:app="9WZDNCRDK3WP"; ipackages}) 
+$labelwhats = Add-Label -control $panelComun -Text "WhatsApp Desktop" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+    $labelwhats.Add_Click({$global:app="WhatsApp.WhatsApp"; ipackages})
+
+#Buttons de comuniacion
+
+$buttondisc = Add-Button -Control $panelComun -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttondisc.Add_Click({$global:app="Discord.Discord"; upackages}) 
+$buttonsky = Add-Button -Control $panelComun -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonsky.Add_Click({$global:app="9WZDNCRFJ364"; upackages}) 
+$buttonslack = Add-Button -Control $panelComun -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonslack.Add_Click({$global:app="9WZDNCRDK3WP"; upackages}) 
+$buttonwhats = Add-Button -Control $panelComun -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonwhats.Add_Click({$global:app="WhatsApp.WhatsApp"; upackages}) 
+
+
+
+
+#Labels de AV
+
 $labelAV = Add-Label -control $panelAV -Text "Audio/Video" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-Add-Label-Clickeable -MiControl $panelAV -Texto "VLC" -X $cx_ar[0] -Y $cy_ar[0]; $buttonvlc = Add-Button -Control $panelAV -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonvlc.Add_Click({$global:app="XPDM1ZW6815MQM"; ipackages}) 
-Add-Label-Clickeable -MiControl $panelAV -Texto "Spotify" -X $cx_ar[1] -Y $cy_ar[1]; $buttonspoti = Add-Button -Control $panelAV -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonspoti.Add_Click({$global:app="Spotify.Spotify"; ipackages}) 
-Add-Label-Clickeable -MiControl $panelAV -Texto "Audacity" -X $cx_ar[2] -Y $cy_ar[2]; $buttonaud = Add-Button -Control $panelAV -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonaud.Add_Click({$global:app="XP8K0J757HHRDW"; ipackages}) 
-Add-Label-Clickeable -MiControl $panelAV -Texto "MPC-HC" -X $cx_ar[3] -Y $cy_ar[3]; $buttonmpc = Add-Button -Control $panelAV -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonmpc.Add_Click({$global:app="clsid2.mpc-hc"; ipackages}) 
+$labelvlc = Add-Label -control $panelAV -Text "VLC" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+    $labelvlc.Add_Click({$global:app="XPDM1ZW6815MQM"; ipackages})
+$labelspoti = Add-Label -control $panelAV -Text "Spotify" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+    $labelspoti.Add_Click({$global:app="Spotify.Spotify"; ipackages})
+$labelaud = Add-Label -control $panelAV -Text "Audacity" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+    $labelaud.Add_Click({$global:app="XP8K0J757HHRDW"; ipackages}) 
+$labelmpc = Add-Label -control $panelAV -Text "MPC-HC" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+    $labelmpc.Add_Click({$global:app="clsid2.mpc-hc"; ipackages})
+
+#Buttons de AV
+
+$buttonvlc = Add-Button -Control $panelAV -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonvlc.Add_Click({$global:app="XPDM1ZW6815MQM"; upackages}) 
+$buttonspoti = Add-Button -Control $panelAV -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonspoti.Add_Click({$global:app="Spotify.Spotify"; upackages}) 
+$buttonaud = Add-Button -Control $panelAV -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonaud.Add_Click({$global:app="XP8K0J757HHRDW"; upackages}) 
+$buttonmpc = Add-Button -Control $panelAV -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonmpc.Add_Click({$global:app="clsid2.mpc-hc"; upackages})
+
 
 
 #Elemento de emuladores
