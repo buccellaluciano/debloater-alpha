@@ -6,4 +6,9 @@ $button3.Add_Click({$global:removebloatware=1; upackages})
 ############TAB 3############
 
 $btnTESTa = Add-ImageButton -Control $tabPage3 -ImagePath $global:imagenTroll -X 50 -Y 50 -Width 300 -Height 200
+
+$btnTESTa.Add_Click{
+    $global:text = "del\end_suggest.txt"
+    deleteRegs
+}
 #$btnTESTa = Add-ImageButton -Control $tabPage3 -ImagePath "M:\Organizate\Desktop\debloater-alpha\src\img\debloaterIcon.jpg" -X 50 -Y 50 -Width 300 -Height 200

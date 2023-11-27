@@ -38,6 +38,7 @@ Import-Module -DisableNameChecking "$PSScriptRoot\src\tweaks\translucenttb.psm1"
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\changeregs.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\removegapps.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\scripts\Congrats.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\deleteregs.psm1" -Force
 
 
 

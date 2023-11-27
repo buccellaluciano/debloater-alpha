@@ -21,9 +21,8 @@ $regname =@("$text")
             }
 
         }
-
-        Write-Host ("BORRADO: $regroute, $name")
-        Remove-Item -Path "$regroute" -Name "$name" -ErrorAction SilentlyContinue
+        Write-Host ("BORRADO: $regroute\$name")
+        Remove-ItemProperty -Path $regroute -Name $name -ErrorAction SilentlyContinue
         
     }
     
