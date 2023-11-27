@@ -33,6 +33,13 @@ $panelComun = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelAV = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelplaceholder6 = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelEmuladores = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
+$panelEditors = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
+$paneFileCompression = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
+$paneFileDocumet = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
+$panelRemote = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
+$panelTorrent = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
+$panelAcaemic = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
+
 
 #CONTROLES
 #Posiciones para los controles
@@ -119,7 +126,63 @@ Add-Label-Clickeable -MiControl $panelEmuladores -Texto "Ryujinx" -X $cx_ar[2] -
 Add-Label-Clickeable -MiControl $panelEmuladores -Texto "Dolphin" -X $cx_ar[3] -Y $cy_ar[3]
 
 
-ajustarPosicionPaneles -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelPlaceholder3, $panelComun , $panelAV , $panelplaceholder6 , $panelEmuladores, $panelEmuladores
+#Elemento de Edetors/DIEs
+$labelGPU = Add-Label -control $panelEditors -Text "Jetbreins Toolbox " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelEditors -Texto "Notepad++" -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelEditors -Texto "Visual Studio 2022 Community" -X $cx_ar[1] -Y $cy_ar[1]
+Add-Label-Clickeable -MiControl $panelEditors -Texto "VS Code" -X $cx_ar[2] -Y $cy_ar[2]
+Add-Label-Clickeable -MiControl $panelEditors -Texto "VS Codium" -X $cx_ar[3] -Y $cy_ar[3]
+
+
+#Elemento de File Compression
+$labelGPU = Add-Label -control $paneFileCompression -Text "File Compression " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $paneFileCompression -Texto "7-Zip" -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $paneFileCompression -Texto "WinRAR (trial)" -X $cx_ar[1] -Y $cy_ar[1]
+
+#Elemento de Documentos Eitor/Readers
+$labelGPU = Add-Label -control $paneFileDocumet  -Text " Documentos Eitor/Readers" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $paneFileDocumet  -Texto "Adobe Reader" -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $paneFileDocumet  -Texto "ONLYOFICE DesktopEditors" -X $cx_ar[1] -Y $cy_ar[1]
+Add-Label-Clickeable -MiControl $paneFileDocumet  -Texto "PDFCreator(PDF Converter)" -X $cx_ar[2] -Y $cy_ar[2]
+Add-Label-Clickeable -MiControl $paneFileDocumet  -Texto "Power Bl" -X $cx_ar[3] -Y $cy_ar[3]
+Add-Label-Clickeable -MiControl $paneFileDocumet -Texto "Sumatra PDF" -X $cx_ar[4] -Y $cy_ar[4]
+
+#Elementos de Remote connection
+$labelGPU = Add-Label -control $panelRemote -Text " Remote connection" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelRemote  -Texto "AnyDesk" -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelRemote  -Texto "Parsec" -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelRemote  -Texto "ScrCpy(Android)" -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelRemote  -Texto "Team Viewer" -X $cx_ar[0] -Y $cy_ar[0]
+
+#Elementos de Torrent
+$labelGPU = Add-Label -control $panelTorrent -Text " Torrent " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelTorrent  -Texto "qBittorrent " -X $cx_ar[0] -Y $cy_ar[0]
+
+#Elementos Academic Research 
+
+$labelGPU = Add-Label -control $panelAcaemic -Text " Academic Research" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelAcaemic -Texto "Zotero " -X $cx_ar[0] -Y $cy_ar[0]
+
+#Elementos Bootale USB
+$labelGPU = Add-Label -control $panelBootale -Text " Bootale USB" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelBootale -Texto "Etcher " -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelBootale -Texto "Rufus" -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelBootale -Texto "Ventoy " -X $cx_ar[0] -Y $cy_ar[0]
+
+#Elementos Virtual Machines
+$labelGPU = Add-Label -control $panelVirtual  -Text " Virtual Machines " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelVirtual -Texto "oracie VM VirtualBox " -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelVirtual -Texto "QEMU" -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelVirtual -Texto "Vmware Warkstation Player " -X $cx_ar[0] -Y $cy_ar[0]
+
+
+
+
+
+
+
+
+ajustarPosicionPaneles -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelPlaceholder3, $panelComun , $panelAV , $panelplaceholder6 , $panelEmuladores, $panelEmuladores , $panelEditors , $paneFileCompression , $paneFileDocumet , $panelRemote , $panelTorrent , $panelAcaemic
 
 #####POR LAS DUDAS#######
 #$chBoxDiscord DISCORD
