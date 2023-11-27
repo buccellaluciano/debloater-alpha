@@ -1,3 +1,4 @@
+$removebloatware=0
 function upackages {
     $j
     foreach ($i in $apps) {
@@ -11,7 +12,7 @@ function upackages {
             if ($appinfo -ne $null){
                 Get-AppxPackage -Name $app -AllUsers | Remove-AppxPackage
                 $Result=  Add-Type -AssemblyName PresentationCore,PresentationFramework
-                $Result = [System.Windows.MessageBox]::Show("Paquete correctamente desinstalado con GetAppx.","Desinstalado","Ok")
+                $Result = [System.Windows.MessageBox]::Show("Paquete $app correctamente desinstalado con GetAppx.","Desinstalado","Ok")
             }
         }
     }
@@ -22,7 +23,7 @@ function upackages {
             $uninstall ="winget uninstall $app"
             Invoke-Expression -Command $uninstall
             $Result=  Add-Type -AssemblyName PresentationCore,PresentationFramework
-            $Result = [System.Windows.MessageBox]::Show("Paquete correctamente desinstalado con Winget.","Desinstalado","Ok")
+            $Result = [System.Windows.MessageBox]::Show("Paquete $app correctamente desinstalado con Winget.","Desinstalado","Ok")
 
         }
         catch {
@@ -32,6 +33,13 @@ function upackages {
 }
         
     }              
+
+    if ($removebloatware -eq 1){
+        foreach ($line in $apps){
+        Get-AppxPackage -Name $line -AllUsers | Remove-AppxPackage
+        }
+    }
+
 }
 
     $apps = @(
@@ -143,10 +151,4 @@ function upackages {
     "*Microsoft.ZuneMusic*"                    # Modern Media Player
     )
 
-    $gamingapps =@(
-    # The apps below will NOT be uninstalled unless selected during the custom setup selection or when
-    #  launching the script with the '-RemoveGamingApps' parameter. 
-    "*Microsoft.GamingApp*"                    # Modern Xbox Gaming App, required for installing some PC games
-    "*Microsoft.XboxGameOverlay*"               # Game overlay, required/useful for some games
-    "*Microsoft.XboxGamingOverlay*"            # Game overlay, required/useful for some games)
-    )
+    
