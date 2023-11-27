@@ -19,11 +19,3 @@ function Confirm-Action {
     }
 }
 
-# Ejemplo de uso
-Show-DecisionMessageBox -Message '¿Quieres ejecutar esta acción?' -Title 'Confirmación' -YesAction {
-    Write-Host 'Ejecutando la acción...'
-    # Coloca aquí el código que deseas ejecutar si el usuario elige 'Yes'
-} -NoAction {
-    Write-Host 'No se realizará ninguna acción.'
-    # Puedes colocar aquí cualquier lógica que desees para el caso 'No'
-}
