@@ -1,5 +1,6 @@
 -ErrorAction SilentlyContinue
 Add-Type -AssemblyName System.Windows.Forms
+Add-Type -Assembly System.Drawing
 
 Write-Output "Habilitando punto de restauracion del sistema."
 Enable-ComputerRestore -Drive "C:\"
@@ -13,12 +14,13 @@ $formPrincipal.Size = New-Object System.Drawing.Size(1100,700)
 $formPrincipal.StartPosition = 'CenterScreen'
 $formPrincipal.FormBorderStyle = 'FixedSingle'
 $formPrincipal.BackColor= [System.Drawing.ColorTranslator]::FromHtml("#252525")
+$formPrincipal.FormBorderStyle = 'FixedDialog'
 
 $iconPath = "$PSScriptRoot\src\img\debloaterIcon.ico"
 $icon = [System.Drawing.Icon]::ExtractAssociatedIcon($iconPath)
 $formPrincipal.Icon = $icon
 ####CONFIGURACION FORM PRINCIPAL, UNICO####
-
+$global:imagenTroll="$PSScriptRoot\src\img\paparrando.png"
 
 ###IMPORTAR MODULOS, CARGALOS TODOS DE UNA DESPUES CAMBIAR... ?####
 Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UI\UI-Creator.psm1" -Force

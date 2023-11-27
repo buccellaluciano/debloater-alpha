@@ -105,7 +105,7 @@ function Add-Label {
     $newLabel.Font = New-Object System.Drawing.Font('Arial', $Size, [System.Drawing.FontStyle]::Bold)
     $newLabel.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$ForeColor")
     #$newLabel.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#FFFFFF")
-    $newLabel.TextAlign = 'MiddleTop'
+    $newLabel.TextAlign = 'MiddleCenter'
 
     
     $Control.Controls.Add($newLabel)
@@ -179,4 +179,34 @@ function cuadroMensaje{
     )
 
     [System.Windows.Forms.MessageBox]::Show($Text, $Titulo)
+}
+
+
+
+function Add-ImageButton {
+    param (
+        [System.Windows.Forms.Control]$Control,
+        [int]$X,
+        [int]$Y,
+        [int]$Width,
+        [int]$Height,
+        [string]$ImagePath
+    )
+
+    $buttonImage = New-Object System.Windows.Forms.Button
+    $buttonImage.Location = New-Object System.Drawing.Point($X, $Y)
+    $buttonImage.Size = New-Object System.Drawing.Size($Width, $Height)
+
+    $Image = [System.Drawing.Image]::FromFile($($ImagePath))
+    $buttonImage.BackgroundImageLayout = [System.Windows.Forms.ImageLayout]::Center
+    $buttonImage.Image = $Image
+    $buttonImage.Cursor = [Windows.Forms.Cursors]::Hand
+
+    $buttonImage.FlatStyle = 'Flat'
+
+
+    $Control.Controls.Add($buttonImage)
+    
+
+    return $buttonImage
 }
