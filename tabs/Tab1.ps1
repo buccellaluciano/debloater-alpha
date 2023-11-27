@@ -49,6 +49,7 @@ $btnCopilot = Add-Button -Control $paneltb -Text "Copilot" -X $cx_ar[6] -Y $cy_a
 $btnCopilot.Add_Click({$global:text="tb\hide_search_taskbar.txt"; changeregs})
 
 
+#Telemetria
 
 
 ############TAB 1############
