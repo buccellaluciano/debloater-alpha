@@ -25,11 +25,9 @@ $regname =@("$text")
         $valor =Get-ItemPropertyValue -Path $regroute -Name $name
     
         if ($valor-eq 0){
-            $buttonChanger.Text = "Deshabilitado"
+            $buttonChanger.ForeColor = [System.Drawing.Color]::Red
         }if ($valor -eq 1){
-            $buttonChanger.Text = "Habilitado"
-
-    
+            $buttonChanger.ForeColor =[System.Drawing.Color]::Green
         }
         
     }

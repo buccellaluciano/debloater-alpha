@@ -33,19 +33,19 @@ $btnchangetheme.Add_Click({$global:text="change_theme1.txt"; changeregs; $global
 #Barra de tareas
 Add-Label -control $paneltb -Text "Barra de tareas" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
 $btnchattb = Add-Button -Control $paneltb -Text "Chat" -X $cx_ar[0] -Y $cy_ar[0] -Width 80 -Height 30 -ForeColor '#ffffff'
-$btnchattb.Add_Click({$global:text="tb\disable_chat_tb.txt"; changeregs})
+$btnchattb.Add_Click({$global:text="tb\disable_chat_tb.txt"; changeregs; Update-Button-Reg -buttonChanger $btnchattb})
 $btnicotb = Add-Button -Control $paneltb -Text "Lupa" -X $cx_ar[1] -Y $cy_ar[1] -Width 80 -Height 30 -ForeColor '#ffffff'
-$btnicotb.Add_Click({$global:text="tb\show_search_icon.txt"; changeregs})
+$btnicotb.Add_Click({$global:text="tb\show_search_icon.txt"; changeregs; Update-Button-Reg -buttonChanger $btnicotb})
 $btnalign = Add-Button -Control $paneltb -Text "Cambiar alineacion" -X $cx_ar[2] -Y $cy_ar[2] -Width 80 -Height 35 -ForeColor '#ffffff'
-$btnalign.Add_Click({$global:text="tb\align_tb.txt"; changeregs})
+$btnalign.Add_Click({$global:text="tb\align_tb.txt"; changeregs; Update-Button-Reg -buttonChanger $btnalign})
 $btnwidgtb = Add-Button -Control $paneltb -Text "Widgets" -X $cx_ar[3] -Y $cy_ar[3] -Width 80 -Height 30 -ForeColor '#ffffff'
-$btnwidgtb.Add_Click({$global:text="tb\widgets_tb1.txt"; changeregs; $global:text="tb\widgets_tb2.txt"; changeregs;})
+$btnwidgtb.Add_Click({$global:text="tb\widgets_tb1.txt"; changeregs; $global:text="tb\widgets_tb2.txt"; changeregs; Update-Button-Reg -buttonChanger $btnwidgtb})
 $btntsk = Add-Button -Control $paneltb -Text "Task View" -X $cx_ar[4] -Y $cy_ar[4] -Width 80 -Height 30 -ForeColor '#ffffff'
-$btntsk.Add_Click({$global:text="tb\hide_search_taskbar.txt"; changeregs})
-$btnttb = Add-Button -Control $paneltb -Text "Barra transparente" -X $cx_ar[5] -Y $cy_ar[5] -Width 80 -Height 30 -ForeColor '#f54242'
+$btntsk.Add_Click({$global:text="tb\hide_search_taskbar.txt"; changeregs; Update-Button-Reg -buttonChanger $btntsk})
+$btnttb = Add-Button -Control $paneltb -Text "Barra transparente" -X $cx_ar[5] -Y $cy_ar[5] -Width 80 -Height 30 -ForeColor '#ffffff'
 $btnttb.Add_Click({zVIVE})
-$btnCopilot = Add-Button -Control $paneltb -Text "Copilot" -X $cx_ar[6] -Y $cy_ar[6] -Width 80 -Height 30 -ForeColor '#f54242'
-$btnCopilot.Add_Click({$global:text="tb\disable_copilot_button.txt"; changeregs})
+$btnCopilot = Add-Button -Control $paneltb -Text "Copilot" -X $cx_ar[6] -Y $cy_ar[6] -Width 80 -Height 30 -ForeColor '#ffffff'
+$btnCopilot.Add_Click({$global:text="tb\disable_copilot_button.txt"; changeregs; Update-Button-Reg -buttonChanger $btnCopilot;[Console]::Beep()})
 
 
 #Telemetria
