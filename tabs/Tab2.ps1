@@ -322,19 +322,19 @@ $buttonRufus = Add-ImageButton -Control $panelBootable -ImagePath "$global:image
 #Labels Virtual Machines
 $labelGPU = Add-Label -control $panelVirtual  -Text "Virtual Machines" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelOracleVM = Add-Label -Control $panelVirtual -Text "Oracle VM VirtualBox" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labelOracleVM.Add_Click({ })
+    $labelOracleVM.Add_Click({$global:app="Oracle.VirtualBox"; ipackages})
 $labelQEMU = Add-Label -Control $panelVirtual -Text "QEMU" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelQEMU.Add_Click({ })
+    $labelQEMU.Add_Click({$global:app="SoftwareFreedomConservancy.QEMU"; ipackages})
 $labelvmware = Add-Label -Control $panelVirtual -Text "VMware Workstation Player" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
-    $labelvmware.Add_Click({ })
+    $labelvmware.Add_Click({$global:app="VMware.WorkstationPlayer"; ipackages})
 
 #Button Virtual Machines
 $buttonOracleVM = Add-ImageButton -Control $panelVirtual -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonOracleVM.Add_Click({ })
+    $buttonOracleVM.Add_Click({$global:app="VMware.WorkstationPlayer"; upackages})
 $buttonQEMU = Add-ImageButton -Control $panelVirtual -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonQEMU.Add_Click({ })
+    $buttonQEMU.Add_Click({$global:app="VMware.WorkstationPlayer"; upackages})
 $buttonvmware = Add-ImageButton -Control $panelVirtual -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonvmware.Add_Click({ })
+    $buttonvmware.Add_Click({$global:app="VMware.WorkstationPlayer"; upackages})
 
 #ALERTA DE LINDO PEDAZZZZO DE CODIGO ABAJO 
 #Labels Windows Subsystem For Linux
@@ -408,8 +408,7 @@ $buttonwiresh = Add-ImageButton -Control $panelNetwork -ImagePath "$global:image
 $labelGPU = Add-Label -control $panelUICustomization -Text "Interfaz Personalizada" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelrounded = Add-Label -Control $panelUICustomization -Text "Rounded TaskBar (BDT Redondeada)" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelrounded.Add_Click({ })
-$labeltranslucent = Add-Label -Control $panelUICustomization -Text "Translucent TaskBar (BDT Translucida)" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labeltranslucent.Add_Click({ })
+
 
 #Button de UI Customization
 $buttonOracleVM = Add-ImageButton -Control $panelUICustomization -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
