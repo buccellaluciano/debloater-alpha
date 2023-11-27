@@ -9,7 +9,7 @@ Checkpoint-Computer -Description "Antes de mandarse una cagada"
 ####CONFIGURACION FORM PRINCIPAL, UNICO####
 $formPrincipal = New-Object System.Windows.Forms.Form
 $formPrincipal.Text = 'Debloater Ferrando'
-$formPrincipal.Size = New-Object System.Drawing.Size(1000,500)
+$formPrincipal.Size = New-Object System.Drawing.Size(1100,700)
 $formPrincipal.StartPosition = 'CenterScreen'
 $formPrincipal.FormBorderStyle = 'FixedSingle'
 $formPrincipal.BackColor= [System.Drawing.ColorTranslator]::FromHtml("#252525")
@@ -26,7 +26,7 @@ Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UI\UI-Automation.psm1"
 Import-Module -DisableNameChecking "$PSScriptRoot\src\scripts\Set-Wallpaper.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\installpackages.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\ajustarposicionpaneles.psm1" -Force
-Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\crearlabelclickeable.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\Add-Label-Clickeable.psm1" -Force
 
 
 ###IMPORTAR MODULOS, CARGALOS TODOS DE UNA DESPUES CAMBIAR... ?####
