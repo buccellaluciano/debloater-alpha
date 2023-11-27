@@ -1,3 +1,4 @@
 HKCU:\Software\Policies\Microsoft\Windows\Explorer
 DisableSearchBoxSuggestions
 00000001
+#WIN 10

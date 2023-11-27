@@ -1,3 +1,0 @@
-HKCU:\SOFTWARE\Policies\Microsoft\Windows\Windows Search
-CortanaConsent
-00000000

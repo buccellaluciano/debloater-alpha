@@ -1,0 +1,4 @@
+HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Search
+AllowCortana
+00000000
+#WIN 10

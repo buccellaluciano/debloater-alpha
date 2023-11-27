@@ -33,8 +33,16 @@ $btnchangetheme.Add_Click({$global:text="change_theme1.txt"; changeregs; $global
 
 #Barra de tareas
 Add-Label -control $paneltb -Text "Barra de tareas" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
-$btnchattb = Add-Button -Control $paneltb -Text "Chat" -X $cx_ar[0] -Y $cy_ar[0] -Width 100 -Height 30 -ForeColor '#ffffff'
-$btnchattb.Add_Click({$global:text="disable_chat_taskbar.txt"; Changeregs})
+$btnchattb = Add-Button -Control $paneltb -Text "Chat" -X $cx_ar[0] -Y $cy_ar[0] -Width 80 -Height 30 -ForeColor '#ffffff'
+$btnchattb.Add_Click({$global:text="tb\disable_chat_tb.txt"; changeregs})
+$btnbingtb = Add-Button -Control $paneltb -Text "Bing" -X $cx_ar[1] -Y $cy_ar[1] -Width 80 -Height 30 -ForeColor '#ffffff'
+$btnbingtb.Add_Click({$global:text="tb\disable_bing_in_search.txt"; changeregs})
+$btnalign = Add-Button -Control $paneltb -Text "Cambiar alineacion" -X $cx_ar[2] -Y $cy_ar[2] -Width 80 -Height 35 -ForeColor '#ffffff'
+$btnalign.Add_Click({$global:text="tb\align_tb.txt"; changeregs})
+$btnwidgtb = Add-Button -Control $paneltb -Text "Widgets" -X $cx_ar[3] -Y $cy_ar[3] -Width 80 -Height 30 -ForeColor '#ffffff'
+$btnwidgtb.Add_Click({$global:text="tb\widgets_tb1.txt"; changeregs; $global:text="tb\widgets_tb2.txt"; changeregs;})
+$btntsk = Add-Button -Control $paneltb -Text "Task View" -X $cx_ar[4] -Y $cy_ar[4] -Width 80 -Height 30 -ForeColor '#ffffff'
+$btntsk.Add_Click({$global:text="tb\hide_search_taskbar.txt"; changeregs})
 
 
 

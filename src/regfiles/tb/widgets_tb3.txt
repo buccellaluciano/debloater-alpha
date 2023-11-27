@@ -1,0 +1,3 @@
+HKLM:\SOFTWARE\Policies\Microsoft\Dsh
+AllowNewsAndInterests
+00000000

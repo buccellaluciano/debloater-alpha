@@ -1,0 +1,3 @@
+HKLM:\SOFTWARE\Microsoft\PolicyManager\default\NewsAndInterests\AllowNewsAndInterests
+value
+00000000
