@@ -1,4 +1,4 @@
-
+-ErrorAction SilentlyContinue
 Add-Type -AssemblyName System.Windows.Forms
 
 Write-Output "Habilitando punto de restauracion del sistema."
