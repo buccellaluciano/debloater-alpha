@@ -70,9 +70,5 @@ param (
 
 
 
-$butUninstalWindows.Add_Click( {
-    Write-Host "DevTest"
-})
-
 $formPrincipal.ShowDialog()
 
