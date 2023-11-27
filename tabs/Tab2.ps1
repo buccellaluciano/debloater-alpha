@@ -30,7 +30,7 @@ $panelPlaceholder3 = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelComun = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelplaceholder5 = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelplaceholder6 = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
-
+$panelEmuladores = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 
 #CONTROLES
 #Posiciones para los controles
@@ -102,10 +102,22 @@ Add-Label-Clickeable -MiControl $panelPlaceholder6 -Texto "VS coium" -X $cx_ar[3
 Add-Label-Clickeable -MiControl $panelPlaceholder6 -Texto "Visual Estudio 2022 Community" -X $cx_ar[4] -Y $cy_ar[4]
 Add-Label-Clickeable -MiControl $panelPlaceholder6 -Texto "Jetbrains Toolbox" -X $cx_ar[5] -Y $cy_ar[5]
 
+#Elemento de emuladores
+$labelGPU = Add-Label -control $panelemuladores -Text "emulaores " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelemuladores -Texto "Bluestacks " -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelemuladores -Texto "CEMU" -X $cx_ar[1] -Y $cy_ar[1]
+Add-Label-Clickeable -MiControl $panelemuladores -Texto "Ryujinx" -X $cx_ar[2] -Y $cy_ar[2]
+Add-Label-Clickeable -MiControl $panelemuladores -Texto "Dolphin" -X $cx_ar[3] -Y $cy_ar[3]
+
+#Elemento de emuladores
+$labelGPU = Add-Label -control $panelEmuladores -Text "emulaores " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelEmuladores -Texto "Bluestacks " -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelEmuladores -Texto "CEMU" -X $cx_ar[1] -Y $cy_ar[1]
+Add-Label-Clickeable -MiControl $panelEmuladores -Texto "Ryujinx" -X $cx_ar[2] -Y $cy_ar[2]
+Add-Label-Clickeable -MiControl $panelEmuladores -Texto "Dolphin" -X $cx_ar[3] -Y $cy_ar[3]
 
 
-
-ajustarPosicionPaneles -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelPlaceholder3, $panelComun , $panelplaceholder5 , $panelplaceholder6
+ajustarPosicionPaneles -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelPlaceholder3, $panelComun , $panelplaceholder5 , $panelplaceholder6 , $panelEmuladores
 
 #####POR LAS DUDAS#######
 #$chBoxDiscord DISCORD
