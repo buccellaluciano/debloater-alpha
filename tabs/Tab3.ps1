@@ -26,8 +26,8 @@ for ($i = 0; $i -lt $posiciones_control; $i++) {
 }
 
 ############TAB 3############
-$button3 = Add-Button -Control $tabPage3 -Text "Button 2" -X 10 -Y 10 -Width 100 -Height 20 -ForeColor '#FFFFFF'
-$button3.Add_Click{
+$btnTESTa = Add-ImageButton -Control $tabPage3 -ImagePath $global:imagenTroll -X ($formPrincipal.Width / 2 - 400) -Y ($formPrincipal.Width / 2 - 500) -Width 800 -Height 500
+$butTESTa.Add_Click{
     $global:removebloatware=1
     Confirm-Action -Message "Mira que esto quita todo el bloatware, te vas a quedar sin computadora por unos minutos" -YesAction {upackages}
 }
