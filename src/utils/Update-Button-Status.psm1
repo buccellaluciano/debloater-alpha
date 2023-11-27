@@ -1,18 +1,20 @@
 function Update-Button-Status {
     param (
         [System.Windows.Forms.Control]$button,
-        [string]$variableObserved,
+        [ref]$variableObserved,
         [string]$textInicial,
-        [string]$TextDespues
-        #POR AHORA NO , PERO EN CASO DE QUERER QUE LOS BOTONES CAMBIEN A COLORES DISTINTOS DE RED Y GREEN, 
-        #CREAR 2 VARIABLES DE STRING, COLORINICIAL, COLORDESPUES Y REEMPLAZAR
-
+        [string]$textDespues
     )
-    if ($variableBoton) {
-        $button.Text = "$textInicial"
+
+    if ($variableObserved) {
+        $button.Text = "$textDespues"
         $button.BackColor = [System.Drawing.Color]::Red
+        $variableObserved = $false
+        Write-Host "DEV TEST TRUE"
     } else {
-        $button.Text = "TextDespues"
+        $button.Text = "$textInicial"
         $button.BackColor = [System.Drawing.Color]::Green
+        $variableObserved = $true
+        Write-Host "DEV TEST FALSE"
     }
 }
