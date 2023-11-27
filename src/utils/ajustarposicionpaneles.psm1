@@ -1,7 +1,7 @@
 function ajustarPosicionPaneles{
     param(
         [System.Windows.Forms.Panel[]]$Paneles,
-        [Int]$PanelesXColumna = 2
+        [Int]$PanelesXColumna = 5
     )
     
     #Estos valores se iran actualizando
