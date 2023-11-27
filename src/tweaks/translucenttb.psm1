@@ -5,9 +5,14 @@ $vivepath="src\zVIVE"
         $defpath = $expath.Replace("$exname", "$vivepath")
         $destiny = "C:\"
 
-        function copyfolder {
+        function zVIVE {
         Copy-Item -Path $defpath -Destination $destiny -Recurse -Force
         $defpath = $expath.Replace("$exname", "$script")
-        Start-Process -FilePath "C:\zVIVE" -ArgumentList "ViVeTool"
+        $zviveon = ("cd C:\zVIVE", "vivetool/disable/id:26008830")
+        Invoke-Expression -Command $zviveon
+        Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\installpackages.psm1" -Force
+        $global:app ="9PF4KZ2VN4W9"
+        ipackages
+        
     
     }  

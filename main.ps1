@@ -30,6 +30,7 @@ Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\Add-Label-Clickeable
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\Update-Button-Status.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\uninstallpackages.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\Confirm-Action.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\tweaks\translucenttb.psm1" -Force
 
 
 ###IMPORTAR MODULOS, CARGALOS TODOS DE UNA DESPUES CAMBIAR... ?####
