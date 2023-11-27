@@ -2,6 +2,7 @@ $expath= $MyInvocation.MyCommand.Definition
 $exname = $MyInvocation.MyCommand.Name
 $regname =@("$text")
     function Changeregs {
+        param($Sender, $EventArgs)
     
     foreach ($e in $regname){
         $regname+=$global:text
@@ -25,12 +26,11 @@ $regname =@("$text")
     
         if ($valor-eq 0){
             $value=1
-            $global:test
         }if ($valor -eq 1){
-            $value=0 
+            $value=0
     
         }
-        Write-Host ("$valor")
+        Write-Host ("$valor TEST BOTON: $Sender")
         Set-ItemProperty -Path "$regroute" -Name "$name" -Value "$value" -ErrorAction SilentlyContinue
         
     }
