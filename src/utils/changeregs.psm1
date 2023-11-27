@@ -25,6 +25,7 @@ $regname =@("$text")
     
         if ($valor-eq 0){
             $value=1
+            
         }if ($valor -eq 1){
             $value=0
     
