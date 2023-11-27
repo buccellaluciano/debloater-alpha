@@ -78,11 +78,9 @@ $btnends.Add_Click({$global:text="tb\recomendation_tips.txt"; changeregs;$global
 
 ############TAB 1############
 
-ajustarPosicionPaneles -Paneles $paneltb, $panelSearch, $panelDarkMode
 
 
-
-ajustarPosicionPaneles -Paneles $paneltb, $panelSearch, $panelsuggest
+ajustarPosicionPaneles -Paneles $paneltb, $panelSearch, $panelsuggest, $panelDarkMode
 $titlePrincipal.Add_Click({
     Set-Wallpaper -Image "$PSScriptRoot\src\img\paparrando.png" -Style Tile
 })
