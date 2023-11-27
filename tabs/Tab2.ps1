@@ -59,15 +59,15 @@ for ($i = 0; $i -lt $posiciones_control; $i++) {
 #Label de navegadores
 
 Add-Label -control $panelNavegadores -Text "Navegadores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
-$labelchrome = Add-Label -control $panelNavegadores -Text "Chrome" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labelchrome = Add-Label-Clickeable -control $panelNavegadores -Text "Chrome" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelchrome.Add_Click({$global:app="Google.Chrome"; ipackages})
-$labelbrave = Add-Label -control $panelNavegadores -Text "Brave" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$labelbrave = Add-Label-Clickeable -control $panelNavegadores -Text "Brave" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelbrave.Add_Click({$global:app="XP8C9QZMS2PC1T"; ipackages})
-$labelfirefox = Add-Label -control $panelNavegadores -Text "Firefox" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+$labelfirefox = Add-Label-Clickeable -control $panelNavegadores -Text "Firefox" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
     $labelfirefox.Add_Click({$global:app="9NZVDKPMR9RD"; ipackages})
-$labelopera = Add-Label -control $panelNavegadores -Text "Opera" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+$labelopera = Add-Label-Clickeable -control $panelNavegadores -Text "Opera" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
     $labelopera.Add_Click({$global:app="Opera.Opera"; ipackages})
-$labeloperagx = Add-Label -control $panelNavegadores -Text "Opera GX" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
+$labeloperagx = Add-Label-Clickeable -control $panelNavegadores -Text "Opera GX" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
     $buttonoperagx.Add_Click({$global:app="Opera.OperaGX"; ipackages});
 
 #Buttons de navegadores
