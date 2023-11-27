@@ -17,6 +17,7 @@ if (-not $adminCheck) {
 
     # Sale del script actual
     Exit
+    Set-ExecutionPolicy RemoteSigned
 }
 
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
