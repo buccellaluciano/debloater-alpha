@@ -39,11 +39,15 @@ $paneFileDocumet = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelRemote = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelTorrent = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelAcaemic = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
+$panelSubsystem = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
+$panelNerwork = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
+$panelUICustomization = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
+$panelDevelopment = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 
 
 #CONTROLES
 #Posiciones para los controles
-$posiciones_control = 10
+$posiciones_control = 20
 $cx_ar = New-Object int[] $posiciones_control
 $cy_ar = New-Object int[] $posiciones_control
 
@@ -134,9 +138,9 @@ Add-Label-Clickeable -MiControl $paneFileDocumet -Texto "Sumatra PDF" -X $cx_ar[
 #Elementos de Remote connection
 $labelGPU = Add-Label -control $panelRemote -Text " Remote connection" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 Add-Label-Clickeable -MiControl $panelRemote  -Texto "AnyDesk" -X $cx_ar[0] -Y $cy_ar[0]
-Add-Label-Clickeable -MiControl $panelRemote  -Texto "Parsec" -X $cx_ar[0] -Y $cy_ar[0]
-Add-Label-Clickeable -MiControl $panelRemote  -Texto "ScrCpy(Android)" -X $cx_ar[0] -Y $cy_ar[0]
-Add-Label-Clickeable -MiControl $panelRemote  -Texto "Team Viewer" -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelRemote  -Texto "Parsec" -X $cx_ar[1] -Y $cy_ar[1]
+Add-Label-Clickeable -MiControl $panelRemote  -Texto "ScrCpy(Android)" -X $cx_ar[2] -Y $cy_ar[2]
+Add-Label-Clickeable -MiControl $panelRemote  -Texto "Team Viewer" -X $cx_ar[3] -Y $cy_ar[3]
 
 #Elementos de Torrent
 $labelGPU = Add-Label -control $panelTorrent -Text " Torrent " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
@@ -150,23 +154,79 @@ Add-Label-Clickeable -MiControl $panelAcaemic -Texto "Zotero " -X $cx_ar[0] -Y $
 #Elementos Bootale USB
 $labelGPU = Add-Label -control $panelBootale -Text " Bootale USB" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 Add-Label-Clickeable -MiControl $panelBootale -Texto "Etcher " -X $cx_ar[0] -Y $cy_ar[0]
-Add-Label-Clickeable -MiControl $panelBootale -Texto "Rufus" -X $cx_ar[0] -Y $cy_ar[0]
-Add-Label-Clickeable -MiControl $panelBootale -Texto "Ventoy " -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelBootale -Texto "Rufus" -X $cx_ar[1] -Y $cy_ar[1]
+Add-Label-Clickeable -MiControl $panelBootale -Texto "Ventoy " -X $cx_ar[2] -Y $cy_ar[2]
 
 #Elementos Virtual Machines
 $labelGPU = Add-Label -control $panelVirtual  -Text " Virtual Machines " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 Add-Label-Clickeable -MiControl $panelVirtual -Texto "oracie VM VirtualBox " -X $cx_ar[0] -Y $cy_ar[0]
-Add-Label-Clickeable -MiControl $panelVirtual -Texto "QEMU" -X $cx_ar[0] -Y $cy_ar[0]
-Add-Label-Clickeable -MiControl $panelVirtual -Texto "Vmware Warkstation Player " -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelVirtual -Texto "QEMU" -X $cx_ar[1] -Y $cy_ar[1]
+Add-Label-Clickeable -MiControl $panelVirtual -Texto "Vmware Warkstation Player " -X $cx_ar[2] -Y $cy_ar[2]
+
+#Elementos Windows Subsystem For Linux
+
+$labelGPU = Add-Label -control $panelSubsystem -Text " Windows Subsystem For Linux " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelSubsystem  -Texto "Install WSL" -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelSubsystem -Texto "ArchWSL(x64)" -X $cx_ar[1] -Y $cy_ar[1]
+Add-Label-Clickeable -MiControl $panelSubsystem  -Texto "Debian GNU/Linix " -X $cx_ar[2] -Y $cy_ar[2]
+Add-Label-Clickeable -MiControl $panelSubsystem  -Texto "Kali Linux Polling " -X $cx_ar[3] -Y $cy_ar[3]
+Add-Label-Clickeable -MiControl $panelSubsystem  -Texto "Open SUSE 42" -X $cx_ar[4] -Y $cy_ar[4]
+Add-Label-Clickeable -MiControl $panelSubsystem  -Texto "SLES v12" -X $cx_ar[5] -Y $cy_ar[5]
+Add-Label-Clickeable -MiControl $panelSubsystem  -Texto "Ubuntu " -X $cx_ar[6] -Y $cy_ar[6]
+Add-Label-Clickeable -MiControl $panelSubsystem  -Texto "Ubuntu 18.04 LTS" -X $cx_ar[7] -Y $cy_ar[7]
+Add-Label-Clickeable -MiControl $panelSubsystem  -Texto "Ubuntu 20.04 LTS" -X $cx_ar[8] -Y $cy_ar[8]
+
+
+#Elemento de Network Manegement
+$labelGPU = Add-Label -control $panelNerwork -Text " Network Manegement " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelNerwork  -Texto "Homochi (LAN)" -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelNerwork -Texto "PuTTY" -X $cx_ar[1] -Y $cy_ar[1]
+Add-Label-Clickeable -MiControl $panelNerwork  -Texto "Radmi vpn (LAN) " -X $cx_ar[2] -Y $cy_ar[2]
+Add-Label-Clickeable -MiControl $panelNerwork  -Texto "WinSCP " -X $cx_ar[3] -Y $cy_ar[3]
+Add-Label-Clickeable -MiControl $panelNerwork  -Texto "Wireshonrk " -X $cx_ar[4] -Y $cy_ar[4]
+
+
+#Elementos de UI Customizacion
+
+$labelGPU = Add-Label -control $panelNerwork -Text " UI Customizacion " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelNerwork  -Texto "RoundedTB" -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelNerwork -Texto "TranslucetTB" -X $cx_ar[1] -Y $cy_ar[1]
+
+#Elementos de Development on Windows
+
+$labelGPU = Add-Label -control $panelDevelopment -Text " Development on Windows " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelDevelopment  -Texto "Windows Terminal" -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "Install Nerd Fornt" -X $cx_ar[1] -Y $cy_ar[1]
+Add-Label-Clickeable -MiControl $panelDevelopment  -Texto "Git + GnuPG + SSH (Setup)" -X $cx_ar[2] -Y $cy_ar[2]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "Android Debug Bridge (ADB)" -X $cx_ar[3] -Y $cy_ar[3]
+Add-Label-Clickeable -MiControl $panelDevelopment  -Texto "Android Studio" -X $cx_ar[4] -Y $cy_ar[4]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "Docker Desktop" -X $cx_ar[5] -Y $cy_ar[5]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "Insomnio" -X $cx_ar[6] -Y $cy_ar[6]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "JAVA- Adoptium JDK 8/11/18" -X $cx_ar[7] -Y $cy_ar[7]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "Java- Oracie JRE" -X $cx_ar[8] -Y $cy_ar[8]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "MYSQL" -X $cx_ar[9] -Y $cy_ar[9]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "NodeJS" -X $cx_ar[10] -Y $cy_ar[10]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "NodeJS LTS" -X $cx_ar[11] -Y $cy_ar[11]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "PostgreSQL" -X $cx_ar[12] -Y $cy_ar[12]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "Python 3" -X $cx_ar[13] -Y $cy_ar[13]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "Python- Anaconda3" -X $cx_ar[14] -Y $cy_ar[14]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "Ruby" -X $cx_ar[15] -Y $cy_ar[15]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "Ruby(MSYS2)" -X $cx_ar[16] -Y $cy_ar[16]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "Rust (GNU)" -X $cx_ar[17] -Y $cy_ar[17]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "Rust (MSVC) " -X $cx_ar[18] -Y $cy_ar[18]
+
+#Elementos de Wep Browsers
+
+$labelGPU = Add-Label -control $panelBrowser -Text " Development on Windows " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelDevelopment  -Texto "Windows Terminal" -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelDevelopment -Texto "Install Nerd Fornt" -X $cx_ar[1] -Y $cy_ar[1]
+Add-Label-Clickeable -MiControl $panelDevelopment  -Texto "Git + GnuPG + SSH (Setup)" -X $cx_ar[2] -Y $cy_ar[2]
 
 
 
 
 
-
-
-
-ajustarPosicionPaneles -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelPlaceholder3, $panelComun , $panelAV , $panelplaceholder6 , $panelEmuladores , $panelEditors , $paneFileCompression , $paneFileDocumet , $panelRemote , $panelTorrent , $panelAcaemic
+ajustarPosicionPaneles -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelPlaceholder3, $panelComun , $panelAV , $panelplaceholder6 , $panelEmuladores , $panelEditors , $paneFileCompression , $paneFileDocumet , $panelRemote , $panelTorrent , $panelAcaemic , $panelSubsystem , $panelNerwork, $panelUICustomization , $panelDevelopment
 
 #####POR LAS DUDAS#######
 #$chBoxDiscord DISCORD
