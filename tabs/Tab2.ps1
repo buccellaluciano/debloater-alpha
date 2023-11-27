@@ -94,26 +94,9 @@ Add-Label-Clickeable -MiControl $panelAV -Texto "Audacity" -X $cx_ar[2] -Y $cy_a
 Add-Label-Clickeable -MiControl $panelAV -Texto "MPC-HC" -X $cx_ar[3] -Y $cy_ar[3]; $buttonmpc = Add-Button -Control $panelAV -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonmpc.Add_Click({$global:app="clsid2.mpc-hc"; ipackages}) 
 
 
-
-#Elemento de Text Editors/IDEs
-$labelGPU = Add-Label -control $panelPlaceholder6 -Text "Text Editors/IDEs" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-Add-Label-Clickeable -MiControl $panelPlaceholder6 -Texto "Notepad++ " -X $cx_ar[0] -Y $cy_ar[0]
-Add-Label-Clickeable -MiControl $panelPlaceholder6 -Texto "Jerbrains toolbox" -X $cx_ar[1] -Y $cy_ar[1]
-Add-Label-Clickeable -MiControl $panelPlaceholder6 -Texto "VS code" -X $cx_ar[2] -Y $cy_ar[2]
-Add-Label-Clickeable -MiControl $panelPlaceholder6 -Texto "VS coium" -X $cx_ar[3] -Y $cy_ar[3]
-Add-Label-Clickeable -MiControl $panelPlaceholder6 -Texto "Visual Estudio 2022 Community" -X $cx_ar[4] -Y $cy_ar[4]
-Add-Label-Clickeable -MiControl $panelPlaceholder6 -Texto "Jetbrains Toolbox" -X $cx_ar[5] -Y $cy_ar[5]
-
-#Elemento de emuladores
-$labelGPU = Add-Label -control $panelemuladores -Text "emulaores " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-Add-Label-Clickeable -MiControl $panelemuladores -Texto "Bluestacks " -X $cx_ar[0] -Y $cy_ar[0]
-Add-Label-Clickeable -MiControl $panelemuladores -Texto "CEMU" -X $cx_ar[1] -Y $cy_ar[1]
-Add-Label-Clickeable -MiControl $panelemuladores -Texto "Ryujinx" -X $cx_ar[2] -Y $cy_ar[2]
-Add-Label-Clickeable -MiControl $panelemuladores -Texto "Dolphin" -X $cx_ar[3] -Y $cy_ar[3]
-
 #Elemento de emuladores
 $labelEmu = Add-Label -control $panelEmuladores -Text "Emuladores " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-Add-Label-Clickeable -MiControl $panelEmuladores -Texto "Bluestacks " -X $cx_ar[0] -Y $cy_ar[0]; $buttonblue = Add-Button -Control $panelEmuladores -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonblue.Add_Click({Confirm-Action; $global:app="BlueStack.BlueStacks"; ipackages})
+Add-Label-Clickeable -MiControl $panelEmuladores -Texto "Bluestacks " -X $cx_ar[0] -Y $cy_ar[0]; $buttonblue = Add-Button -Control $panelEmuladores -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonblue.Add_Click({$global:app="BlueStack.BlueStacks"; ipackages})
 Add-Label-Clickeable -MiControl $panelEmuladores -Texto "CEMU" -X $cx_ar[1] -Y $cy_ar[1]; $buttoncemu = Add-Button -Control $panelEmuladores -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttoncemu.Add_Click({$global:app="Cemu.Cemu"; ipackages}) 
 Add-Label-Clickeable -MiControl $panelEmuladores -Texto "Ryujinx" -X $cx_ar[2] -Y $cy_ar[2]; $buttonryu = Add-Button -Control $panelEmuladores -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonryu.Add_Click({$global:app="Ryujinx.Ryujinx.Ava"; ipackages}) 
 Add-Label-Clickeable -MiControl $panelEmuladores -Texto "Dolphin" -X $cx_ar[3] -Y $cy_ar[3]; $buttondol = Add-Button -Control $panelEmuladores -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttondol.Add_Click({$global:app=" DolphinEmulator.Dolphin"; ipackages}) 
