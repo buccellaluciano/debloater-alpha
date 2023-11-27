@@ -4,7 +4,12 @@ $tituloTab2 = Add-Label -control $tab2Install -Text "Instalacion de software" -X
 Add-Label -control $tab2Install -Text "DEVTEST" -X 0 -Y 70 -Width ($formPrincipal.Width-50) -Height 30 -ForeColor '#ffffff' -Size 20
 
 $installUnin = $true
-$buttonInstalUnin = Add-Button -Control $tab2Install -Text "Button 2" -X 10 -Y 100 -Width 225 -Height 30 -ForeColor '#eeeeee'
+$buttonInstalUnin = Add-Button -Control $tab2Install -Text "MODO: INSTALAR" -X 10 -Y 100 -Width 225 -Height 30 -ForeColor '#ffffff'
+
+$buttonInstalUnin.Add_Click({
+    Update-Button-Status -button $buttonInstalUnin -variableObserved [ref]$installUnin -textInicial "MODO: INSTALAR" -textDespues "MODO: DESINSTALAR"
+})
+
 Update-Button-Status -button $buttonInstalUnin -variableObserved $installUnin
 
 ############TAB 2############
