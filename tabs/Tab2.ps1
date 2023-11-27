@@ -2,7 +2,10 @@
 ####RODRIGO Y JULIAN: TIENEN QUE HACER FUNCIONES DE LOS BOTONES.###########
 $tituloTab2 = Add-Label -control $tab2Install -Text "Instalacion de software" -X 0 -Y 10 -Width ($formPrincipal.Width-50) -Height 50 -ForeColor '#f54242' -Size 30
 Add-Label -control $tab2Install -Text "DEVTEST" -X 0 -Y 70 -Width ($formPrincipal.Width-50) -Height 30 -ForeColor '#ffffff' -Size 20
+
+$installUnin = $true
 $buttonInstalUnin = Add-Button -Control $tab2Install -Text "Button 2" -X 10 -Y 100 -Width 225 -Height 30 -ForeColor '#eeeeee'
+Update-Button-Status -button $buttonInstalUnin -variableObserved $installUnin
 
 ############TAB 2############
 #VARIABLES PARA LOS PANELES DE SANDES, TOCAR SI ES NECESARIO
