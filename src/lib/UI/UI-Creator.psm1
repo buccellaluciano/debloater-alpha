@@ -197,7 +197,7 @@ function Add-ImageButton {
     $buttonImage.Size = New-Object System.Drawing.Size($Width, $Height)
 
     $Image = [System.Drawing.Image]::FromFile($($ImagePath))
-    $buttonImage.BackgroundImageLayout = [System.Windows.Forms.ImageLayout]::Center
+    $buttonImage.BackgroundImageLayout = [System.Windows.Forms.ImageLayout]::Zoom
     $buttonImage.Image = $Image
     $buttonImage.Cursor = [Windows.Forms.Cursors]::Hand
 

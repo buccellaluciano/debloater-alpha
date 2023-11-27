@@ -5,7 +5,7 @@ $button3.Add_Click({$global:removebloatware=1; upackages})
 
 ############TAB 3############
 
-$btnTESTa = Add-ImageButton -Control $tabPage3 -ImagePath $global:imagenTroll -X 50 -Y 50 -Width 300 -Height 200
+$btnTESTa = Add-ImageButton -Control $tabPage3 -ImagePath $global:imagenTroll -X ($formPrincipal.Width / 2 - 400) -Y ($formPrincipal.Width / 2 - 500) -Width 800 -Height 500
 
 $btnTESTa.Add_Click{
     $global:text = "del\end_suggest.txt"
