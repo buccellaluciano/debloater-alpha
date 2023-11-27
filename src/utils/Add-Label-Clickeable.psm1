@@ -1,4 +1,4 @@
-function crearLabelClickable {
+function Add-Label-Clickeable {
     param (
         [System.Windows.Forms.Control]$MiControl,
         [int]$X,
