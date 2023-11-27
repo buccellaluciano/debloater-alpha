@@ -39,7 +39,7 @@ for ($i = 0; $i -lt $posiciones_control; $i++) {
 }
 #Elementos de paneles de navegadores
 $labelNav = Add-Label -control $panelNavegadores -Text "Navegadores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
-crearLabelClickable -MiControl $panelNavegadores -Texto "Chrome" -X $cx_ar[0] -Y $cy_ar[0] ; $buttonchrome = Add-Button -Control $panelNavegadores -Text " " -X 120 -Y $cy_ar[0] -Width 30 -Height 20 -ForeColor '#FFFFFF';$buttonchrome.Add_Click({$global:app="Google.Chrome"; ipackages}) 
+crearLabelClickable -MiControl $panelNavegadores -Texto "Chrome" -X $cx_ar[0] -Y $cy_ar[0] -onclick $global:app="XP8C9QZMS2PC1T"; ipackages
 crearLabelClickable -MiControl $panelNavegadores -Texto "Brave" -X $cx_ar[1] -Y $cy_ar[1] ; $buttonbrave = Add-Button -Control $panelNavegadores -Text " " -X 120 -Y $cy_ar[1] -Width 30 -Height 20 -ForeColor '#FFFFFF';$buttonbrave.Add_Click({$global:app="XP8C9QZMS2PC1T"; ipackages}) 
 crearLabelClickable -MiControl $panelNavegadores -Texto "Firefox" -X $cx_ar[2] -Y $cy_ar[2] ; $buttonbrave = Add-Button -Control $panelNavegadores -Text " " -X 120 -Y $cy_ar[2] -Width 30 -Height 20 -ForeColor '#FFFFFF';$buttonfirefox.Add_Click({$global:app="9NZVDKPMR9RD"; ipackages}) 
 crearLabelClickable -MiControl $panelNavegadores -Texto "Opera" -X $cx_ar[3] -Y $cy_ar[3] ; $buttonopera = Add-Button -Control $panelNavegadores -Text " " -X 120 -Y $cy_ar[3] -Width 30 -Height 20 -ForeColor '#FFFFFF';$buttonfirefox.Add_Click({$global:app="Opera.Opera"; ipackages}) 
@@ -58,11 +58,12 @@ crearLabelClickable -MiControl $panelCompresor -Texto "7-Zip" -X $cx_ar[1] -Y $c
 
 #Elemento de paneles para gaming
 $labelGPU = Add-Label -control $panelPlaceholder2 -Text "Gaming" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-crearLabelClickable -MiControl $panelPlaceholder2 -Texto "GOG Galaxy " -X $cx_ar[0] -Y $cy_ar[0]
-crearLabelClickable -MiControl $panelPlaceholder2 -Texto "Epic games Launcher" -X $cx_ar[1] -Y $cy_ar[1]
-crearLabelClickable -MiControl $panelPlaceholder2 -Texto "Steam " -X $cx_ar[2] -Y $cy_ar[2]
-crearLabelClickable -MiControl $panelPlaceholder2 -Texto "Ubisofft Connct" -X $cx_ar[3] -Y $cy_ar[3]
-crearLabelClickable -MiControl $panelPlaceholder2 -Texto "Borderless gaming" -X $cx_ar[4] -Y $cy_ar[4]
+crearLabelClickable -MiControl $panelPlaceholder2 -Texto "GOG Galaxy " -X $cx_ar[0] -Y $cy_ar[0] ; $buttongog = Add-Button -Control $panelNavegadores -Text " " -X 120 -Y $cy_ar[0] -Width 30 -Height 20 -ForeColor '#FFFFFF';$buttongog.Add_Click({$global:app="GOG.Galaxy"; ipackages})
+crearLabelClickable -MiControl $panelPlaceholder2 -Texto "Epic games Launcher" -X $cx_ar[1] -Y $cy_ar[1] ; $buttonepicgames = Add-Button -Control $panelNavegadores -Text " " -X 120 -Y $cy_ar[0] -Width 30 -Height 20 -ForeColor '#FFFFFF';$buttonepicgames.Add_Click({$global:app="EpicGames.EpicGamesLauncher"; ipackages})
+crearLabelClickable -MiControl $panelPlaceholder2 -Texto "Steam " -X $cx_ar[2] -Y $cy_ar[2] ; $buttonsteam = Add-Button -Control $panelNavegadores -Text " " -X 120 -Y $cy_ar[0] -Width 30 -Height 20 -ForeColor '#FFFFFF';$buttonsteam.Add_Click({$global:app="Valve.Steam"; ipackages})
+crearLabelClickable -MiControl $panelPlaceholder2 -Texto "Ubisofft Connct" -X $cx_ar[3] -Y $cy_ar[3] ; $buttonubi = Add-Button -Control $panelNavegadores -Text " " -X 120 -Y $cy_ar[0] -Width 30 -Height 20 -ForeColor '#FFFFFF';$buttonubi.Add_Click({$global:app="Ubisoft.Connect"; ipackages})
+crearLabelClickable -MiControl $panelPlaceholder2 -Texto "EA Desktop" -X $cx_ar[4] -Y $cy_ar[4]  ; $buttonea = Add-Button -Control $panelNavegadores -Text " " -X 120 -Y $cy_ar[0] -Width 30 -Height 20 -ForeColor '#FFFFFF';$buttonea.Add_Click({$global:app="ElectronicArts.EADesktop"; ipackages})
+
 
 #Elemento de striming services
 $labelGPU = Add-Label -control $panelPlaceholder3 -Text "Streaming Services" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
