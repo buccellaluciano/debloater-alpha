@@ -7,7 +7,9 @@ Add-Label -control $tab2Install -Text "DEVTEST" -X 0 -Y 70 -Width ($formPrincipa
 $buttonInstalUnin = Add-Button -Control $tab2Install -Text "ACTUALIZAR TODO" -X ($formPrincipal.Width / 2 -225) -Y 100 -Width 225 -Height 30 -ForeColor '#00FF00'
 
 $buttonInstalUnin.Add_Click{
-    winget upgrade --all --silent
+    Confirm-Action -message "¿Estas seguro que quieres actualizar todo mediante winget? Algunas aplicaciones no se actualizaran." -action {
+        winget upgrade --all --silent
+    }
 }
 
 ############TAB 2############
@@ -110,7 +112,7 @@ Add-Label-Clickeable -MiControl $panelPlaceholder6 -Texto "Jetbrains Toolbox" -X
 
 
 
-ajustarPosicionPaneles -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelPlaceholder3, $panelPlaceholder4 , $panelplaceholder5 , $panelplaceholder6
+ajustarPosicionPaneles -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelPlaceholder3, $panelPlaceholder4 , $panelplaceholder5 , $panelplaceholder6, $panelEmuladores
 
 #####POR LAS DUDAS#######
 #$chBoxDiscord DISCORD
