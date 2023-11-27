@@ -31,7 +31,6 @@ Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\Update-Button-Status
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\uninstallpackages.psm1" -Force
 
 
-
 ###IMPORTAR MODULOS, CARGALOS TODOS DE UNA DESPUES CAMBIAR... ?####
 
 $pwpath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
