@@ -163,9 +163,6 @@ $buttonslack = Add-Button -Control $panelComun -Text " " -X ($cx_ar[2] -35) -Y (
 $buttonwhats = Add-Button -Control $panelComun -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonwhats.Add_Click({$global:app="WhatsApp.WhatsApp"; upackages}) 
 
-
-
-
 #Labels de AV
 
 $labelAV = Add-Label -control $panelAV -Text "Audio/Video" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
