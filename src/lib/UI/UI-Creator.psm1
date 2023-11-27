@@ -23,9 +23,8 @@ function Add-TabPage {
 
     $tabPage = New-Object System.Windows.Forms.TabPage
     $tabPage.Text = $Text
-    $tabpage.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#252525")
-    $tabpage.AutoScroll = $True
-
+    $tabPage.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#252525")
+    $tabPage.AutoScroll = $True
 
     $TabControl.Controls.Add($tabPage)
 
