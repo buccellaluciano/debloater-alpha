@@ -3,14 +3,12 @@
 $tituloTab2 = Add-Label -control $tab2Install -Text "Instalacion de software" -X 0 -Y 10 -Width ($formPrincipal.Width-50) -Height 50 -ForeColor '#f54242' -Size 30
 Add-Label -control $tab2Install -Text "DEVTEST" -X 0 -Y 70 -Width ($formPrincipal.Width-50) -Height 30 -ForeColor '#ffffff' -Size 20
 
-$installUnin = $true
-$buttonInstalUnin = Add-Button -Control $tab2Install -Text "MODO: INSTALAR" -X 10 -Y 100 -Width 225 -Height 30 -ForeColor '#ffffff'
 
-$buttonInstalUnin.Add_Click({
-    Update-Button-Status -button $buttonInstalUnin -variableObserved [ref]$installUnin -textInicial "MODO: INSTALAR" -textDespues "MODO: DESINSTALAR"
-})
+$buttonInstalUnin = Add-Button -Control $tab2Install -Text "ACTUALIZAR TODO" -X ($formPrincipal.Width / 2 -225) -Y 100 -Width 225 -Height 30 -ForeColor '#00FF00'
 
-Update-Button-Status -button $buttonInstalUnin -variableObserved $installUnin
+$buttonInstalUnin.Add_Click{
+    winget upgrade --all --silent
+}
 
 ############TAB 2############
 #VARIABLES PARA LOS PANELES DE SANDES, TOCAR SI ES NECESARIO
