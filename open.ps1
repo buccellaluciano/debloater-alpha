@@ -14,7 +14,7 @@ if (-not $adminCheck) {
     $process = New-Object System.Diagnostics.Process
     $process.StartInfo = $startInfo
     $process.Start()
-
+ 
     # Sale del script actual
     Exit
 }

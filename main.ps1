@@ -25,7 +25,8 @@ Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UI\UI-Creator.psm1" -F
 Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UI\UI-Automation.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\scripts\Set-Wallpaper.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\installpackages.psm1" -Force
-
+Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\ajustarposicionpaneles.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\crearlabelclickeable.psm1" -Force
 
 
 ###IMPORTAR MODULOS, CARGALOS TODOS DE UNA DESPUES CAMBIAR... ?####

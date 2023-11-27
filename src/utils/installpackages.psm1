@@ -20,4 +20,7 @@ function ipackages() {
 }
     $install ="winget install $global:app --accept-source-agreements --accept-package-agreements"
     Invoke-Expression -Command $install
+    Add-Type -AssemblyName PresentationFramework
+    [System.Windows.MessageBox]::Show("Se ha instalado correctamente el paquete:$global:app", "Instalación correcta", "OK", "Información")
+    
 }
