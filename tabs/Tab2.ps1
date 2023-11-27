@@ -229,9 +229,7 @@ $buttondol = Add-ImageButton -Control $panelEmuladores -ImagePath "$global:image
 $buttonyuzu = Add-ImageButton -Control $panelEmuladores -ImagePath "$global:imagenTroll" -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonyuzu.Add_Click({$global:app="YuzuEmu.Yuzu.Mainline"; upackages}) 
 
-
-
-
+    
 #Labels de Editors/IDEs
 $labelJet = Add-Label -control $panelEditors -Text "Editores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelplusplus = Add-Label -Control $panelEditors -Text "Notepad++ " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
@@ -316,8 +314,6 @@ $labelRufus = Add-Label -Control $panelBootable -Text "Rufus" -X $cx_ar[1] -Y $c
 #Buttons de Bootable USB
 $buttonRufus = Add-ImageButton -Control $panelBootable -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonRufus.Add_Click({$global:app="Rufus.Rufus"; upackages})
-
-
 
 #Labels Virtual Machines
 $labelGPU = Add-Label -control $panelVirtual  -Text "Virtual Machines" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
