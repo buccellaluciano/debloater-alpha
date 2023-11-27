@@ -32,7 +32,7 @@ $panelPlaceholder3 = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelComun = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelAV = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelplaceholder6 = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
-
+$panelEmuladores = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 
 #CONTROLES
 #Posiciones para los controles
@@ -49,7 +49,7 @@ for ($i = 0; $i -lt $posiciones_control; $i++) {
 $botonesnav =@(
 Add-Label -control $panelNavegadores -Text "Navegadores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
 Add-Label-Clickeable -MiControl $panelNavegadores -Texto "Chrome" -X $cx_ar[0] -Y $cy_ar[0]; $buttonchrome = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonchrome.Add_Click({$global:app="Google.Chrome"; ipackages}); 
-Add-Label-Clickeable -MiControl $panelNavegadores -Texto "Brave" -X $cx_ar[1] -Y $cy_ar[1]; $buttonbrave = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonbrave.Add_Click({$global:app="XP8C9QZMS2PC1T"; ipackages}); 
+Add-Label-Clickeable -MiControl $panelNavegadores -Texto "Brave" -X $cx_ar[1] -Y $cy_ar[1]; $buttonbrave = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonbrave.Add_Click({$global:app="XP8C9QZMS2PC1T"; upackages}); 
 Add-Label-Clickeable -MiControl $panelNavegadores -Texto "Firefox" -X $cx_ar[2] -Y $cy_ar[2]; $buttonfirefox = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonfirefox.Add_Click({$global:app="9NZVDKPMR9RD"; ipackages}); 
 Add-Label-Clickeable -MiControl $panelNavegadores -Texto "Opera" -X $cx_ar[3] -Y $cy_ar[3]; $buttonopera = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonopera.Add_Click({$global:app="Opera.Opera"; ipackages}); 
 Add-Label-Clickeable -MiControl $panelNavegadores -Texto "Opera GX" -X $cx_ar[4] -Y $cy_ar[4]; $buttonoperagx = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonoperagx.Add_Click({$global:app="Opera.OperaGX"; ipackages}); 
@@ -104,10 +104,22 @@ Add-Label-Clickeable -MiControl $panelPlaceholder6 -Texto "VS coium" -X $cx_ar[3
 Add-Label-Clickeable -MiControl $panelPlaceholder6 -Texto "Visual Estudio 2022 Community" -X $cx_ar[4] -Y $cy_ar[4]
 Add-Label-Clickeable -MiControl $panelPlaceholder6 -Texto "Jetbrains Toolbox" -X $cx_ar[5] -Y $cy_ar[5]
 
+#Elemento de emuladores
+$labelGPU = Add-Label -control $panelemuladores -Text "emulaores " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelemuladores -Texto "Bluestacks " -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelemuladores -Texto "CEMU" -X $cx_ar[1] -Y $cy_ar[1]
+Add-Label-Clickeable -MiControl $panelemuladores -Texto "Ryujinx" -X $cx_ar[2] -Y $cy_ar[2]
+Add-Label-Clickeable -MiControl $panelemuladores -Texto "Dolphin" -X $cx_ar[3] -Y $cy_ar[3]
+
+#Elemento de emuladores
+$labelGPU = Add-Label -control $panelEmuladores -Text "emulaores " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelEmuladores -Texto "Bluestacks " -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -MiControl $panelEmuladores -Texto "CEMU" -X $cx_ar[1] -Y $cy_ar[1]
+Add-Label-Clickeable -MiControl $panelEmuladores -Texto "Ryujinx" -X $cx_ar[2] -Y $cy_ar[2]
+Add-Label-Clickeable -MiControl $panelEmuladores -Texto "Dolphin" -X $cx_ar[3] -Y $cy_ar[3]
 
 
-
-ajustarPosicionPaneles -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelPlaceholder3, $panelComun , $panelAV , $panelplaceholder6, $panelEmuladores
+ajustarPosicionPaneles -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelPlaceholder3, $panelComun , $panelAV , $panelplaceholder6 , $panelEmuladores, $panelEmuladores
 
 #####POR LAS DUDAS#######
 #$chBoxDiscord DISCORD
