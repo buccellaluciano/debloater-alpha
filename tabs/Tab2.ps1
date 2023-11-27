@@ -90,13 +90,13 @@ $labelGPU = Add-Label -control $panelGpuCpuDrivers -Text "Driver de CPU/GPU" -X 
 $labelControladorAMD = Add-Label -control $panelGpuCpuDrivers -Text "Controlador AMD Ryzen Chipset" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelControladorAMD.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 $labelNvidia = Add-Label -control $panelGpuCpuDrivers -Text "Nvidia Drivers" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelNvidia.Add_Click({$global:app="Nvidia.GeForceExperience"; upackages"})
+    $labelNvidia.Add_Click({$global:app="Nvidia.GeForceExperience"; ipackages});
 
 #Buttons para drivers
 $buttonControladorAMD = Add-ImageButton -Control $panelGpuCpuDrivers -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonControladorAMD.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
 $buttonNvidia = Add-ImageButton -Control $panelGpuCpuDrivers -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonNvidia.Add_Click({cuadroMensaje -Text "BOTON INDEFINIDO"})
+    $buttonNvidia.Add_Click({$global:app="Nvidia.GeForceExperience"; upackages})
 
 #Labels para compresores
 $labelCompresor = Add-Label -control $panelCompresor -Text "Programas de compresion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
