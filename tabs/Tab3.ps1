@@ -1,7 +1,9 @@
 
 ############TAB 3############
 $button3 = Add-Button -Control $tabPage3 -Text "Button 2" -X 10 -Y 10 -Width 100 -Height 20 -ForeColor '#FFFFFF'
+$button3.Add_Click({$global:removebloatware=1; upackages})
 
-$panelExterno = Add-Panel -Control $tabPage3 -X 0 -Y 0 -Width 500 -Height 1500
-$panelExterno.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#2c2c2c")
 ############TAB 3############
+
+$btnTESTa = Add-ImageButton -Control $tabPage3 -ImagePath $global:imagenTroll -X 50 -Y 50 -Width 300 -Height 200
+#$btnTESTa = Add-ImageButton -Control $tabPage3 -ImagePath "M:\Organizate\Desktop\debloater-alpha\src\img\debloaterIcon.jpg" -X 50 -Y 50 -Width 300 -Height 200

@@ -34,9 +34,9 @@ function upackages {
         
     }              
 
-    if ($removebloatware -eq 1){
+    if ($global:removebloatware -eq 1){
         foreach ($line in $apps){
-        Get-AppxPackage -Name $line -AllUsers | Remove-AppxPackage
+            Get-AppxPackage -Name $line -AllUsers | Remove-AppxPackage
         }
     }
 

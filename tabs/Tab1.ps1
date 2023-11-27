@@ -27,7 +27,7 @@ for ($i = 0; $i -lt $posiciones_control; $i++) {
 
 #Modo oscuro
 Add-Label -control $panelDarkMode -Text "Modo oscuro" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
-$btnchangetheme = Add-Button -Control $panelDarkMode -Text "Habilitar/Deshabilitar" -X $cx_ar[0] -Y $cy_ar[0] -Width 100 -Height 30 -ForeColor '#ffffff';
+$btnchangetheme = Add-Button -Control $panelDarkMode -Text "Cambiar" -X $cx_ar[0] -Y $cy_ar[0] -Width 150 -Height 30 -ForeColor '#ffffff';
 $btnchangetheme.Add_Click({$global:text="change_theme1.txt"; changeregs; $global:text="change_theme2.txt"; changeregs})
 
 #Barra de tareas
