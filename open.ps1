@@ -18,4 +18,7 @@ if (-not $adminCheck) {
     # Sale del script actual
     Exit
 }
+
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
 . "$PSScriptRoot\main.ps1"
