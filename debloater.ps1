@@ -39,11 +39,11 @@ function Changeregs {
     Param($Enabled)
     Try{
         if ($Enabled -eq $false){
-            Write-Host "Habilitando..."
+            Write-Host "Habilitando: $regname"
             $value = 1
         }
         else {
-            Write-Host "Desabilitando..."
+            Write-Host "Desabilitando: $regname"
             $value = 0
         }
         $Path = "$regpath"
