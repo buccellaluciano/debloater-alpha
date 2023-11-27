@@ -1,7 +1,7 @@
 function Confirm-Action {
     param (
-        [string]$Message,
-        [string]$Title,
+        [string]$Message = "Estas seguro que quieres hacer esto?",
+        [string]$Title = "Que estas haciendo?",
         [scriptblock]$YesAction,
         [scriptblock]$NoAction
     )
