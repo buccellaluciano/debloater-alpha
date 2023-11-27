@@ -69,11 +69,11 @@ param (
 
 
 
-
+#[Console]::Beep()
 #$buttons=[windows.forms.messagebox]::show('body','title','YesNo')
 #[System.Security.SecurityException]::show
 
 
-Congratulate
+#Congratulate
 $formPrincipal.ShowDialog()
 

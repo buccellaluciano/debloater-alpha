@@ -20,7 +20,7 @@ $cy_ar = New-Object int[] $posiciones_control
 #Definicion automatica para las posiciones de los controles. Soporta hasta 5 posiciones.
 for ($i = 0; $i -lt $posiciones_control; $i++) {
     $cx_ar[$i] = 40
-    $cy_ar[$i] = 40 + ($i * 30) #El 30 es el espacio entre controles, aumentar o reducir si es necesario.
+    $cy_ar[$i] = 40 + ($i * 40) #El 30 es el espacio entre controles, aumentar o reducir si es necesario.
 }
 
 #Modo oscuro
@@ -43,7 +43,7 @@ $btntsk.Add_Click({$global:text="tb\hide_search_taskbar.txt"; changeregs; Update
 $btnttb = Add-Button -Control $paneltb -Text "Barra transparente" -X $cx_ar[5] -Y $cy_ar[5] -Width 150 -Height 30 -ForeColor '#ffffff'
 $btnttb.Add_Click({zVIVE})
 $btnCopilot = Add-Button -Control $paneltb -Text "Copilot" -X $cx_ar[6] -Y $cy_ar[6] -Width 150 -Height 30 -ForeColor '#ffffff'
-$btnCopilot.Add_Click({$global:text="tb\disable_copilot_button.txt"; changeregs; Update-Button-Reg -buttonChanger $btnCopilot;[Console]::Beep()})
+$btnCopilot.Add_Click({$global:text="tb\disable_copilot_button.txt"; changeregs; Update-Button-Reg -buttonChanger $btnCopilot;})
 
 
 #Search
