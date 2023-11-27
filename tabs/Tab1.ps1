@@ -48,7 +48,20 @@ $btnCopilot = Add-Button -Control $paneltb -Text "Copilot" -X $cx_ar[6] -Y $cy_a
 $btnCopilot.Add_Click({$global:text="tb\disable_copilot_button.txt"; changeregs; Update-Button-Reg -buttonChanger $btnCopilot;[Console]::Beep()})
 
 
-#Telemetria
+#Suggestions
+$btnends = Add-Button -Control $paneltb -Text "Sugerencias de inicio" -X $cx_ar[0] -Y $cy_ar[0] -Width 80 -Height 30 -ForeColor '#ffffff'
+$btnends.Add_Click({$global:text="tb\end_suggest.txt"; changeregs;})
+$btnpads = Add-Button -Control $paneltb -Text "Anuncios personalizados" -X $cx_ar[0] -Y $cy_ar[0] -Width 80 -Height 30 -ForeColor '#ffffff'
+$btnpads.Add_Click({$global:text="tb\provider_ads.txt"; changeregs})
+$btnrecom = Add-Button -Control $paneltb -Text "Recomendaciones" -X $cx_ar[0] -Y $cy_ar[0] -Width 80 -Height 30 -ForeColor '#ffffff'
+$btnrecom.Add_Click({$global:text="tb\recomendation_tips.txt"; changeregs})
+
+
+
+
+
+
+$btnends.Add_Click({$global:text="tb\recomendation_tips.txt"; changeregs;$global:text="tb\start_suggest.txt"; changeregs;$global:text="tb\start_suggest2.txt"; changeregs;$global:text="tb\suggested_apps_noti.txt"; changeregs;$global:text="tb\suggested_apps.txt"; changeregs;$global:text="tb\suggested_content.txt"; changeregs;$global:text="tb\suggestedcontent2.txt"; changeregs;$global:text="tb\suggested_content3.txt"; changeregs;$global:text="tb\tips_tricks.txt"; changeregs;$global:text="tb\tips_tricks2.txt"; changeregs;$global:text="tb\welcome_experience.txt"; changeregs; Update-Button-Reg -buttonChanger $btnchattb})
 
 
 ############TAB 1############
