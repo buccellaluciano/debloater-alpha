@@ -279,11 +279,14 @@ $formPrincipal.Controls.Add($button)
             #$selectedapps+=({$sp="1XP8C9QZMS2PC1T"})
         }
         $formPrincipal.Controls.Add($checkBoxbrave)
+         
+
+
 
     $button = New-Object System.Windows.Forms.Button
     $Button.Text = "JUAN SUPER PRO"
     $button.Location = New-Object System.Drawing.Point(540, 330)
-    $Button.Add_Click({Savechanges})
+    $Button.Add_Click({copyfolder})
     $formPrincipal.Controls.Add($button)
 
     #
@@ -312,3 +315,4 @@ $formPrincipal.Controls.Add($button)
 
     
     $selectedapps =@("$sp")
+    $formPrincipal.ShowDialog()
