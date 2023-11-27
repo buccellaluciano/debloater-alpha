@@ -21,6 +21,6 @@ function ipackages() {
     $install ="winget install $global:app --accept-source-agreements --accept-package-agreements"
     Invoke-Expression -Command $install
     $Result=  Add-Type -AssemblyName PresentationCore,PresentationFramework
-    $Result = [System.Windows.MessageBox]::Show("hola","Instalado","Ok")
+    $Result = [System.Windows.MessageBox]::Show("Paquete correctamente instalado.","Instalado","Ok")
     
 }
