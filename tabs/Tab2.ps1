@@ -28,7 +28,7 @@ $panelCompresor = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelGaming = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelPlaceholder3 = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelComun = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
-$panelplaceholder5 = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
+$panelAV = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelplaceholder6 = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 
 
@@ -58,7 +58,7 @@ Add-Label-Clickeable -MiControl $panelGpuCpuDrivers -Texto "Controlador AMD Ryze
 Add-Label-Clickeable -MiControl $panelGpuCpuDrivers -Texto "Nvidia Drivers" -X $cx_ar[1] -Y $cy_ar[1]
 
 #Elementos de paneles para el panel de compresor de archivos.
-$labelGPU = Add-Label -control $panelCompresor -Text "Compresores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+$labelGPU = Add-Label -control $panelCompresor -Text "Programas de compresion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 Add-Label-Clickeable -MiControl $panelCompresor -Texto "Winrar (Version de Prueba)" -X $cx_ar[0] -Y $cy_ar[0]; $buttonwinr = Add-Button -Control $panelCompresor -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonwinr.Add_Click({$global:app="RARLab.WinRAR"; ipackages}) 
 Add-Label-Clickeable -MiControl $panelCompresor -Texto "7-Zip" -X $cx_ar[1] -Y $cy_ar[1]; $button7z = Add-Button -Control $panelCompresor -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $button7z.Add_Click({$global:app="7zip.7zip"; ipackages}) 
 
@@ -78,20 +78,20 @@ Add-Label-Clickeable -MiControl $panelPlaceholder3 -Texto "Netflix " -X $cx_ar[2
 Add-Label-Clickeable -MiControl $panelPlaceholder3 -Texto "Spotify" -X $cx_ar[3] -Y $cy_ar[3]
 
 #Elemento de striming services
-$labelGPU = Add-Label -control $panelPlaceholder4 -Text "Communication" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+$labelComun = Add-Label -control $panelComun -Text "Comunicacion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 Add-Label-Clickeable -MiControl $panelComun -Texto "Discord " -X $cx_ar[0] -Y $cy_ar[0]; $buttondisc = Add-Button -Control $panelComun -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttondisc.Add_Click({$global:app="Discord.Discord"; ipackages}) 
 Add-Label-Clickeable -MiControl $panelComun -Texto "Skype" -X $cx_ar[1] -Y $cy_ar[1]; $buttonsky = Add-Button -Control $panelComun -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonsky.Add_Click({$global:app="9WZDNCRFJ364"; ipackages}) 
 Add-Label-Clickeable -MiControl $panelComun -Texto "Slack" -X $cx_ar[2] -Y $cy_ar[2]; $buttonslack = Add-Button -Control $panelComun -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonslack.Add_Click({$global:app="9WZDNCRDK3WP"; ipackages}) 
 Add-Label-Clickeable -MiControl $panelComun -Texto "WhatsApp Desktop" -X $cx_ar[3] -Y $cy_ar[3]; $buttonwhats = Add-Button -Control $panelComun -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonwhats.Add_Click({$global:app="WhatsApp.WhatsApp"; ipackages}) 
 
 #Elemento de image tools 
-$labelGPU = Add-Label -control $panelPlaceholder5 -Text "Image Tools" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-Add-Label-Clickeable -MiControl $panelPlaceholder5 -Texto "GIMP " -X $cx_ar[0] -Y $cy_ar[0]
-Add-Label-Clickeable -MiControl $panelPlaceholder5 -Texto "Inkscape" -X $cx_ar[1] -Y $cy_ar[1]
-Add-Label-Clickeable -MiControl $panelPlaceholder5 -Texto "Iranview " -X $cx_ar[2] -Y $cy_ar[2]
-Add-Label-Clickeable -MiControl $panelPlaceholder5 -Texto "Krita" -X $cx_ar[3] -Y $cy_ar[3]
-Add-Label-Clickeable -MiControl $panelPlaceholder5 -Texto "Paint.NET" -X $cx_ar[4] -Y $cy_ar[4]
-Add-Label-Clickeable -MiControl $panelPlaceholder5 -Texto "ShareX(Screenshots/Gifs)" -X $cx_ar[5] -Y $cy_ar[5]
+$labelAV = Add-Label -control $panelAV -Text "Audio/Video" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label-Clickeable -MiControl $panelAV -Texto "VLC" -X $cx_ar[0] -Y $cy_ar[0]; $buttonvlc = Add-Button -Control $panelAV -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonvlc.Add_Click({$global:app="XPDM1ZW6815MQM"; ipackages}) 
+Add-Label-Clickeable -MiControl $panelAV -Texto "Spotify" -X $cx_ar[1] -Y $cy_ar[1]; $buttonspoti = Add-Button -Control $panelAV -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonspoti.Add_Click({$global:app="Spotify.Spotify"; ipackages}) 
+Add-Label-Clickeable -MiControl $panelAV -Texto "Audacity" -X $cx_ar[2] -Y $cy_ar[2]; $buttonaud = Add-Button -Control $panelAV -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonaud.Add_Click({$global:app="XP8K0J757HHRDW"; ipackages}) 
+Add-Label-Clickeable -MiControl $panelAV -Texto "MPC-HC" -X $cx_ar[3] -Y $cy_ar[3]; $buttonmpc = Add-Button -Control $panelAV -Text " " -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; $buttonmpc.Add_Click({$global:app="clsid2.mpc-hc"; ipackages}) 
+
+
 
 #Elemento de Text Editors/IDEs
 $labelGPU = Add-Label -control $panelPlaceholder6 -Text "Text Editors/IDEs" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
@@ -105,7 +105,7 @@ Add-Label-Clickeable -MiControl $panelPlaceholder6 -Texto "Jetbrains Toolbox" -X
 
 
 
-ajustarPosicionPaneles -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelPlaceholder3, $panelComun , $panelplaceholder5 , $panelplaceholder6
+ajustarPosicionPaneles -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelPlaceholder3, $panelComun , $panelAV , $panelplaceholder6
 
 #####POR LAS DUDAS#######
 #$chBoxDiscord DISCORD
