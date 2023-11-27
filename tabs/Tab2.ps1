@@ -71,7 +71,8 @@ $labeloperagx = Add-Label -control $panelNavegadores -Text "Opera GX" -X $cx_ar[
     $buttonoperagx.Add_Click({$global:app="Opera.OperaGX"; ipackages});
 
 #Buttons de navegadores
-
+$buttonchrome = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonchrome.Add_Click({$global:app="Google.Chrome"; upackages});
 $buttonbrave = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonbrave.Add_Click({$global:app="XP8C9QZMS2PC1T"; upackages}); 
 $buttonfirefox = Add-Button -Control $panelNavegadores -Text " " -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
@@ -107,11 +108,11 @@ $button7z = Add-Button -Control $panelCompresor -Text " " -X ($cx_ar[1] -35) -Y 
 #Label para gaming
 
 $labelGaming = Add-Label -control $panelGaming -Text "Gaming" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelgog = Add-Label-control $panelGaming -Text "GOG Galaxy " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labelgog = Add-Label -control $panelGaming -Text "GOG Galaxy " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelgog.Add_Click({$global:app="GOG.Galaxy"; ipackages}) 
 $labelepic = Add-Label -control $panelGaming -Text "Epic games Launcher" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelepic.Add_Click({$global:app="EpicGames.EpicGamesLauncher"; ipackages}) 
-$labelsteam = Add-Label-control $panelGaming -Text "Steam " -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+$labelsteam = Add-Label -control $panelGaming -Text "Steam " -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
     $labelsteam.Add_Click({$global:app="Valve.Steam"; ipackages}) 
 $labelubisoft = Add-Label -control $panelGaming -Text "Ubisofft Connct" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
     $labelubisoft.Add_Click({$global:app="Ubisoft.Connect"; ipackages}) 
@@ -142,7 +143,7 @@ Add-Label-Clickeable -MiControl $panelPlaceholder3 -Texto "Spotify" -X $cx_ar[3]
 #Labels de comunicacion
 
 $labelComun = Add-Label -control $panelComun -Text "Comunicacion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labeldisc = Add-Label -control $panelComun -Texto "Discord " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labeldisc = Add-Label -control $panelComun -Text "Discord " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labeldisc.Add_Click({$global:app="Discord.Discord"; ipackages}) 
 $labelsky = Add-Label -control $panelComun -Text "Skype" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelsky.Add_Click({$global:app="9WZDNCRFJ364"; ipackages}) 
