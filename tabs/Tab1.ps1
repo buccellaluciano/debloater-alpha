@@ -57,13 +57,13 @@ $btnpads = Add-Button -Control $panelsuggest -Text "Anuncios personalizados" -X 
 $btnrecom = Add-Button -Control $panelsuggest -Text "Recomendaciones" -X $cx_ar[2] -Y $cy_ar[2] -Width 150 -Height 30 -ForeColor '#ffffff'
     $btnrecom.Add_Click({$global:text="sug\recomendation_tips.txt"; changeregs; Update-Button-Reg -buttonChanger $btnrecom});
 $btnssug = Add-Button -Control $panelsuggest -Text "Sugerencias de inicio" -X $cx_ar[3] -Y $cy_ar[3] -Width 150 -Height 30 -ForeColor '#ffffff'
-    $btnssug.Add_Click({$global:text="sug\start_suggest.txt"; changeregs;$global:text="tb\start_suggest2.txt"; changeregs; Update-Button-Reg -buttonChanger $btnssug});
+    $btnssug.Add_Click({$global:text="sug\start_suggest.txt"; changeregs;$global:text="sug\start_suggest2.txt"; changeregs; Update-Button-Reg -buttonChanger $btnssug});
 $btnsapps = Add-Button -Control $panelsuggest -Text "Apps sugeridas" -X $cx_ar[4] -Y $cy_ar[4] -Width 150 -Height 30 -ForeColor '#ffffff'
-    $btnsapps.Add_Click({$global:text="sug\suggested_apps_noti.txt"; changeregs;$global:text="tb\suggested_apps.txt"; changeregs; Update-Button-Reg -buttonChanger $btnsapps});
+    $btnsapps.Add_Click({$global:text="sug\suggested_apps_noti.txt"; changeregs;$global:text="sug\suggested_apps.txt"; changeregs; Update-Button-Reg -buttonChanger $btnsapps});
 $btnscon = Add-Button -Control $panelsuggest -Text "Contenido sugerido" -X $cx_ar[5] -Y $cy_ar[5] -Width 150 -Height 30 -ForeColor '#ffffff'
-    $btnscon.Add_Click({$global:text="sug\suggested_content.txt"; changeregs;$global:text="tb\suggested_content2.txt"; changeregs;$global:text="tb\suggested_content3.txt"; changeregs; Update-Button-Reg -buttonChanger $btnscon});
+    $btnscon.Add_Click({$global:text="sug\suggested_content.txt"; changeregs;$global:text="sug\suggested_content2.txt"; changeregs;$global:text="sug\suggested_content3.txt"; changeregs; Update-Button-Reg -buttonChanger $btnscon});
 $btntips = Add-Button -Control $panelsuggest -Text "Tips" -X $cx_ar[6] -Y $cy_ar[6] -Width 150 -Height 30 -ForeColor '#ffffff'
-    $btntips.Add_Click({$global:text="sug\tips_tricks.txt"; changeregs;$global:text="tb\tips_tricks2.txt"; changeregs; Update-Button-Reg -buttonChanger $btntips});
+    $btntips.Add_Click({$global:text="sug\tips_tricks.txt"; changeregs;$global:text="sug\tips_tricks2.txt"; changeregs; Update-Button-Reg -buttonChanger $btntips});
 $btnwe= Add-Button -Control $panelsuggest -Text "Experiencia de bienvenida" -X $cx_ar[7] -Y $cy_ar[7] -Width 150 -Height 30 -ForeColor '#ffffff'
     $btnwe.Add_Click({$global:text="sug\welcome_experience.txt"; changeregs; Update-Button-Reg -buttonChanger $btnwe});
 
