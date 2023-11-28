@@ -1,6 +1,26 @@
 ############TAB 1############
 $titlePrincipal = Add-Label -control $tabPage1 -Text "Modificaciones del sistema" -X 0 -Y 10 -Width ($formPrincipal.Width-50) -Height 50 -ForeColor '#f54242' -Size 30
 #Add-Label -control $tabPage1 -Text "Buccella-Gorno-Sandes-Soto" -X 0 -Y 70 -Width ($formPrincipal.Width-50) -Height 30 -ForeColor '#ffffff' -Size 20
+
+#Solo esto y se acaba ;;; RESULTADO HERMOSO
+function centraBotonesDePanel {
+    param ([System.Windows.Forms.Panel]$Panel)
+
+    #ForEach para todos los controles, solo saldran afectados si son botones.
+    $i = 0 #Index
+    foreach ($control in $Panel.Controls) {
+        if ($control -is [System.Windows.Forms.Button]) {
+            #Y finalmente esto los pone al centro en el eje x, uno arriba del otro con respecto a su altura y la posicion.
+            if ($control -is [System.Windows.Forms.Button]) {
+                $nuevaX = ($Panel.Width / 2) - ($control.Width / 2)
+                $nuevaY = (($Panel.Height / $Panel.Controls.Count) * $i) + ($Panel.Height / $Panel.Controls.Count)
+                $control.Location = New-Object System.Drawing.Point($nuevaX, $nuevaY)
+                $i++
+            }
+        }
+    }
+}
+
 ############TITULOS###########
 
 
@@ -23,7 +43,6 @@ $posiciones_control = 20
 $cx_ar = New-Object int[] $posiciones_control
 $cy_ar = New-Object int[] $posiciones_control
 
-#Definicion automatica para las posiciones de los controles. Soporta hasta 5 posiciones.
 for ($i = 0; $i -lt $posiciones_control; $i++) {
     $cx_ar[$i] = 40
     $cy_ar[$i] = 40 + ($i * 40) #El 30 es el espacio entre controles, aumentar o reducir si es necesario.
@@ -94,6 +113,15 @@ $btnBingSearch.Add_Click({$global:text="search\bing_search.txt"; changeregs; Upd
 
 
 ajustarPosicionPaneles -PanelesXColumna 2 -Paneles $panelDarkMode, $paneltb, $panelSearch, $panelsuggest, $panelSysTray, $panelExplorer
+
+#Centrado de Paneles
+centraBotonesDePanel -Panel $panelDarkMode
+centraBotonesDePanel -Panel $paneltb
+centraBotonesDePanel -Panel $panelSearch
+centraBotonesDePanel -Panel $panelsuggest
+centraBotonesDePanel -Panel $panelSysTray
+centraBotonesDePanel -Panel $panelExplorer
+
 $titlePrincipal.Add_Click({
     Set-Wallpaper -Image "$PSScriptRoot\src\img\paparrando.png" -Style Tile
 })
