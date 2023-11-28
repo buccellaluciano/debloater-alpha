@@ -72,10 +72,10 @@ Add-Label -control $tabPage4 -Text "LOREMP IPSUM" -X ($formPrincipal.Width / 2 -
 Add-Label -control $tabPage4 -Text "Mateo" -X ($formPrincipal.Width / 2 - 250) -Y 8540 -Width ($formPrincipal.Width / 2 - 50) -Height 40 -ForeColor '#2ECC71' -Size 17 
 Add-Label -control $tabPage4 -Text "LOREMP IPSUM" -X ($formPrincipal.Width / 2 - 250) -Y 8600 -Width ($formPrincipal.Width / 2 - 50) -Height 150 -ForeColor '#2ECC71' -Size 15
 #julian
-Add-Label -control $tabPage4 -Text "JulianAA" -X ($formPrincipal.Width / 2 - 250) -Y 8800 -Width ($formPrincipal.Width / 2 - 50) -Height 40 -ForeColor '#2ECC71' -Size 17
+Add-Label -control $tabPage4 -Text "Julian" -X ($formPrincipal.Width / 2 - 250) -Y 8800 -Width ($formPrincipal.Width / 2 - 50) -Height 40 -ForeColor '#2ECC71' -Size 17
 Add-Label -control $tabPage4 -Text "LOREMP IPSUM" -X ($formPrincipal.Width / 2 - 250) -Y 8860 -Width ($formPrincipal.Width / 2 - 50) -Height 150 -ForeColor '#2ECC71' -Size 15 
 #rodigor
-Add-Label -control $tabPage4 -Text "RodrigoAAA" -X ($formPrincipal.Width / 2 - 250) -Y 9060 -Width ($formPrincipal.Width / 2 - 50) -Height 40 -ForeColor '#2ECC71' -Size 17
+Add-Label -control $tabPage4 -Text "Rodrigo" -X ($formPrincipal.Width / 2 - 250) -Y 9060 -Width ($formPrincipal.Width / 2 - 50) -Height 40 -ForeColor '#2ECC71' -Size 17
 Add-Label -control $tabPage4 -Text "LOREMP IPSUM" -X ($formPrincipal.Width / 2 - 250) -Y 9120 -Width ($formPrincipal.Width / 2 - 50) -Height 150 -ForeColor '#2ECC71' -Size 15 
 
 

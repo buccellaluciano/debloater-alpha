@@ -37,9 +37,7 @@ $panelEmuladores = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelEditors = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $paneFileDocumet = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelRemote = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
-$panelSubsystem = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelNetwork = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
-$panelUICustomization = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelDevelopment = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelBootable = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 
@@ -330,53 +328,11 @@ $buttonvmware = Add-ImageButton -Control $panelVirtual -ImagePath "$global:image
     $buttonvmware.Add_Click({DESINSTALAR-PACKS -Dpack "VMware.WorkstationPlayer";  })
 
 #ALERTA DE LINDO PEDAZZZZO DE CODIGO ABAJO 
-#Labels Windows Subsystem For Linux
-#!!!SEGUIR NO TERMINADO
-Add-Label -control $panelSubsystem -Text " Windows Subsystem For Linux " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelwsl = Add-Label-Clickeable -Control $panelSubsystem -Text "Install WSL" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labelwsl.Add_Click({ })
-$labelarchwsl = Add-Label-Clickeable -Control $panelSubsystem -Text "ArchWSL (x64)" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelarchwsl.Add_Click({ })
-$labeldebian = Add-Label-Clickeable -Control $panelSubsystem -Text "Debian GNU/Linux" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
-    $labeldebian.Add_Click({ })
-$labelkali = Add-Label-Clickeable -Control $panelSubsystem -Text "Kali Linux Polling" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
-    $labelkali.Add_Click({ })
-$labelsuse = Add-Label-Clickeable -Control $panelSubsystem -Text "Open SUSE 42" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
-    $labelsuse.Add_Click({ })
-$labelsles = Add-Label-Clickeable -Control $panelSubsystem -Text "SLES v12" -X $cx_ar[5] -Y $cy_ar[5] -ForeColor '#FFFF66'
-    $labelsles.Add_Click({ })
-$labelubuntu = Add-Label-Clickeable -Control $panelSubsystem -Text "Ubuntu" -X $cx_ar[6] -Y $cy_ar[6] -ForeColor '#FFFF66'
-    $labelubuntu.Add_Click({ })
-$labelubuntu18 = Add-Label-Clickeable -Control $panelSubsystem -Text "Ubuntu LTS v18.04" -X $cx_ar[7] -Y $cy_ar[7] -ForeColor '#FFFF66'
-    $labelubuntu18.Add_Click({ })
-$labelubuntu20 = Add-Label-Clickeable -Control $panelSubsystem -Text "Ubuntu LTS v18.04" -X $cx_ar[8] -Y $cy_ar[8] -ForeColor '#FFFF66'
-    $labelubuntu20.Add_Click({ })
-
-#Buttons para Windows Subsystem For Linux
-$buttonwsl = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonwsl.Add_Click({ })
-$buttonarchwsl = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonarchwsl.Add_Click({ })
-$buttondebian = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttondebian.Add_Click({ })
-$buttonkali = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonkali.Add_Click({ })
-$buttonsuse = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonsuse.Add_Click({ })
-$buttonsles = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[5] -35) -Y ($cy_ar[5]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonsles.Add_Click({ })
-$buttonubuntu = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[6] -35) -Y ($cy_ar[6]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonubuntu.Add_Click({ })
-$buttonubuntu18 = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[7] -35) -Y ($cy_ar[7]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonubuntu18.Add_Click({ })
-$buttonubuntu24 = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:imagenTroll" -X ($cx_ar[8] -35) -Y ($cy_ar[8]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonubuntu24.Add_Click({ })
-
-
+#!!!SEGUIR NO TERMINAD
 #Labels de Network Management
-$labelGPU = Add-Label -control $panelNetwork -Text " Network Manegement " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelhamachi = Add-Label-Clickeable -Control $panelNetwork -Text "Homochi (LAN)" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labelhamachi.Add_Click({ })
+Add-Label -control $panelNetwork -Text " Network Manegement " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+$labelhamachi = Add-Label-Clickeable -Control $panelNetwork -Text "Hamachi (LAN)" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+    $labelhamachi.Add_Click({ INSTALAR-PACK -Pack "LogMeIn.Hamachi"})
 $labelputty = Add-Label-Clickeable -Control $panelNetwork -Text "PuTTY" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelputty.Add_Click({ })
 $labelradmi = Add-Label-Clickeable -Control $panelNetwork -Text "Radmi VPN (LAN)" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
@@ -388,7 +344,7 @@ $labelwiresh = Add-Label-Clickeable -Control $panelNetwork -Text "Wireshark" -X 
 
 #Buttons de Network Management
 $buttonhamachi = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonhamachi.Add_Click({ })
+    $buttonhamachi.Add_Click({DESINSTALAR-PACKS -Dpack "LogMeIn.Hamachi"})
 $buttonputty = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonputty.Add_Click({ })
 $buttonradmi = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
@@ -398,21 +354,9 @@ $buttonwinscp = Add-ImageButton -Control $panelNetwork -ImagePath "$global:image
 $buttonwiresh = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonwiresh.Add_Click({ })
 
-#Labels de UI Customization
-$labelGPU = Add-Label -control $panelUICustomization -Text "Interfaz Personalizada" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelrounded = Add-Label -Control $panelUICustomization -Text "Rounded TaskBar (BDT Redondeada)" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labelrounded.Add_Click({ })
-
-
-#Button de UI Customization
-$buttonOracleVM = Add-ImageButton -Control $panelUICustomization -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonOracleVM.Add_Click({ })
-$buttonQEMU = Add-ImageButton -Control $panelUICustomization -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonQEMU.Add_Click({ })
-
 #ALERTA DE LINDO PEDAZZZZO DE CODIGO ABAJO
 #Labels de Development On Windows
-$labelGPU = Add-Label -control $panelDevelopment -Text "Development On Windows" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label -control $panelDevelopment -Text "Development On Windows" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelwt = Add-Label -Control $panelDevelopment -Text "Windows Terminal" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelwt.Add_Click({ })
 $labelggs = Add-Label -Control $panelDevelopment -Text "Git + GnuPG + SSH (Setup)" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
@@ -429,6 +373,10 @@ $labelnodejs = Add-Label -Control $panelDevelopment -Text "NodeJS" -X $cx_ar[6] 
     $labelnodejs.Add_Click({ })
 $labelpyth3 = Add-Label -Control $panelDevelopment -Text "Python 3" -X $cx_ar[7] -Y $cy_ar[7] -ForeColor '#FFFF66'
     $labelpyth3.Add_Click({ })
+$labelOracleVM = Add-Label -Control $panelDevelopment -Text "Oracle VM" -X $cx_ar[8] -Y $cy_ar[8] -ForeColor '#FFFF66'
+    $labelOracleVM.Add_Click({ })
+$labelQEMU = Add-Label -Control $panelDevelopment -Text "QEMU" -X $cx_ar[9] -Y $cy_ar[9] -ForeColor '#FFFF66'
+    $labelQEMU.Add_Click({ })
 
 #Button para Development On Windows
 $buttonwt = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
@@ -447,14 +395,18 @@ $buttonnodejs = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:i
     $buttonnodejs.Add_Click({ })
 $buttonpyth3 = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[7] -35) -Y ($cy_ar[7]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonpyth3.Add_Click({ })
+$buttonOracleVM = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[8] -35) -Y ($cy_ar[8]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonOracleVM.Add_Click({ })
+$buttonQEMU = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[9] -35) -Y ($cy_ar[9]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+    $buttonQEMU.Add_Click({ })
 
 #Elementos de Wep Browsers
-$labelGPU = Add-Label -control $panelBrowser -Text " Development on Windows " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label -control $panelBrowser -Text " Development on Windows " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 Add-Label-Clickeable -control $panelDevelopment  -Text "Windows Terminal" -X $cx_ar[0] -Y $cy_ar[0]
 Add-Label-Clickeable -control $panelDevelopment -Text "Install Nerd Fornt" -X $cx_ar[1] -Y $cy_ar[1]
 Add-Label-Clickeable -control $panelDevelopment  -Text "Git + GnuPG + SSH (Setup)" -X $cx_ar[2] -Y $cy_ar[2]
 
 #Posicionamiento de los Paneles
-ajustarPosicionPaneles -PanelesXColumna 6 -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelComun, $panelAV, $panelEmuladores, $panelEditors, $paneFileDocumet, $panelRemote, $panelSubsystem, $panelNetwork, $panelUICustomization, $panelDevelopment, $panelBootable
+ajustarPosicionPaneles -PanelesXColumna 6 -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelComun, $panelAV, $panelEmuladores, $panelEditors, $paneFileDocumet, $panelRemote, $panelNetwork, $panelDevelopment, $panelBootable
 #####POR LAS DUDAS#######
 #$panelStreaming
