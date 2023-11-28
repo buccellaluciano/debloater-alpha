@@ -25,23 +25,34 @@ $formPrincipal.Icon = $icon
 $global:imagenTroll="$PSScriptRoot\src\img\paparrando.png"
 
 ###IMPORTAR MODULOS, CARGALOS TODOS DE UNA DESPUES CAMBIAR... ?####
-Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UI\UI-Creator.psm1" -Force
-Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UI\UI-Automation.psm1" -Force
-Import-Module -DisableNameChecking "$PSScriptRoot\src\scripts\Set-Wallpaper.psm1" -Force
-Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\installpackages.psm1" -Force
-Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\ajustarposicionpaneles.psm1" -Force
-Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\Add-Label-Clickeable.psm1" -Force
-Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\Update-Button-Reg.psm1" -Force
-Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\uninstallpackages.psm1" -Force
-Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\Confirm-Action.psm1" -Force
-Import-Module -DisableNameChecking "$PSScriptRoot\src\tweaks\translucenttb.psm1" -Force
-Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\changeregs.psm1" -Force
-Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\removegapps.psm1" -Force
+##TROLLS##
 Import-Module -DisableNameChecking "$PSScriptRoot\src\scripts\Congrats.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\scripts\Set-Wallpaper.psm1" -Force
+##TROLLS##
+##UI##
+Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UI\UI-Creator.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UImod\UI-Automation.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UImod\Update-Button.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UImod\Add-Label-Clickeable.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UImod\ajustarposicionpaneles.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UImod\Update-Button-Reg.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UImod\Confirm-Action.psm1" -Force
+##UI##
+##INSTALL##
+Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\installpackages.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\uninstallpackages.psm1" -Force
+##INSTALL##
+##REMOVE##
+Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\changeregs.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\deleteregs.psm1" -Force
-
-
-
+##REMOVE##
+##TWEAKS##
+Import-Module -DisableNameChecking "$PSScriptRoot\src\scripts\hideTaskbar.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\tweaks\translucenttb.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\tweaks\translucenttb.psm1" -Force
+##TWEAKS##
+##? AYUDA PORFGAVOR
+Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\removegapps.psm1" -Force
 ###IMPORTAR MODULOS, CARGALOS TODOS DE UNA DESPUES CAMBIAR... ?####
 
 $pwpath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"

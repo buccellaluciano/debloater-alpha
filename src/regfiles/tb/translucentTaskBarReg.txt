@@ -1,0 +1,3 @@
+HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize
+EnableTransparency
+00000001

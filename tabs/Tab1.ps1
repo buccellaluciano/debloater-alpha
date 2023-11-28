@@ -8,10 +8,11 @@ $paneltb = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
 $panelSearch = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
 $panelsuggest = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
 $panelDarkMode = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
-#$panelDarkMode = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
+$panel = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
 #$panelDarkMode = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
 
-
+#$btnttb = Add-Button -Control $paneltb -Text "Barra transparente" -X $cx_ar[5] -Y $cy_ar[5] -Width 150 -Height 30 -ForeColor '#ffffff'
+#$btnttb.Add_Click({zVIVE})
 #$panelTweaks = Add-Panel -Control $tabPage1 -X 10 -Y 300 -Width 300 -Height 400
 
 
@@ -45,7 +46,7 @@ $btnwidgtb.Add_Click({$global:text="tb\widgets_tb1.txt"; changeregs; $global:tex
 $btntsk = Add-Button -Control $paneltb -Text "Task View" -X $cx_ar[4] -Y $cy_ar[4] -Width 150 -Height 30 -ForeColor '#ffffff'
 $btntsk.Add_Click({$global:text="tb\hide_search_taskbar.txt"; changeregs; Update-Button-Reg -buttonChanger $btntsk})
 $btnttb = Add-Button -Control $paneltb -Text "Barra transparente" -X $cx_ar[5] -Y $cy_ar[5] -Width 150 -Height 30 -ForeColor '#ffffff'
-$btnttb.Add_Click({zVIVE})
+$btnttb.Add_Click({$global:text="tb\translucentTaskBarReg.txt"; changeregs; Update-Button-Reg -buttonChanger $btnttb})
 $btnCopilot = Add-Button -Control $paneltb -Text "Copilot" -X $cx_ar[6] -Y $cy_ar[6] -Width 150 -Height 30 -ForeColor '#ffffff'
 $btnCopilot.Add_Click({$global:text="tb\disable_copilot_button.txt"; changeregs; Update-Button-Reg -buttonChanger $btnCopilot;})
 
