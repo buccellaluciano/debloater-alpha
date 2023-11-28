@@ -1,29 +1,30 @@
 $removebloatware=0
-function upackages {
+function DESINSTALAR-PACKS {
+    param (
+        [string]$Dpack
+    )
     $j
     foreach ($i in $apps) {
         $j ++
-        
     if ($j -ne $apps.length){
-        if ($app -eq $i){
-            $app=$i
-            Write-Host ("$app")
-            $appinfo=Get-AppxPackage -Name $app | Format-List -Property *
+        if ($Dpack -eq $i){
+            Write-Host ("$Dpack")
+            $appinfo=Get-AppxPackage -Name $Dpack | Format-List -Property *
             if ($appinfo -ne $null){
-                Get-AppxPackage -Name $app -AllUsers | Remove-AppxPackage
+                Get-AppxPackage -Name $Dpack -AllUsers | Remove-AppxPackage
                 $Result=  Add-Type -AssemblyName PresentationCore,PresentationFramework
-                $Result = [System.Windows.MessageBox]::Show("Paquete $app correctamente desinstalado con GetAppx.","Desinstalado","Ok")
+                $Result = [System.Windows.MessageBox]::Show("Paquete $Dpack correctamente desinstalado con GetAppx.","Desinstalado","Ok")
             }
         }
     }
     else {
         Write-Warning ("El programa no esta instalado o no se reconoce con Get-Appx, probando con winget...")
         try {
-            $app = $app.Trim('*')
-            $uninstall ="winget uninstall $app"
+            $Dpack = $Dpack.Trim('*')
+            $uninstall ="winget uninstall $Dpack"
             Invoke-Expression -Command $uninstall
             $Result=  Add-Type -AssemblyName PresentationCore,PresentationFramework
-            $Result = [System.Windows.MessageBox]::Show("Paquete $app correctamente desinstalado con Winget.","Desinstalado","Ok")
+            $Result = [System.Windows.MessageBox]::Show("Paquete $Dpack correctamente desinstalado con Winget.","Desinstalado","Ok")
 
         }
         catch {

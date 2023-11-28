@@ -26,4 +26,5 @@ $nowexname = $MyInvocation.MyCommand.Name
 $scrpath= $nowex.Replace("$nowexname","main.ps1")
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 
-Start-Process -FilePath "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -ArgumentList "-WindowStyle Hidden -File $scrpath"
+Start-Process -FilePath "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -ArgumentList " -File $scrpath"
+#-WindowStyle Hidden

@@ -2,25 +2,18 @@ $pwpath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
 $expath= $MyInvocation.MyCommand.Definition
 $exname = $MyInvocation.MyCommand.Name
 
-function ipackages() {
-    $defaultpack=0
-    $applistpath = $expath.Replace("utils\$exname","apps\defaultapps.txt")
-    Write-Host ("$app")
-    $global:app
+function INSTALAR-PACK {
+    param (
+        [string]$Pack
+    )
+        
 
-    if ($defaultpack -eq 1){
-    foreach ($line in $lines){
-        $global:app=$line
-        Write-Host ("$global:app")
-        $install ="winget install $global:app --accept-source-agreements --accept-package-agreements"
-        Invoke-Expression -Command $install
-    }
-    $install ="winget install $global:app --accept-source-agreements --accept-package-agreements"
-    
-}
-    $install ="winget install $global:app --accept-source-agreements --accept-package-agreements"
+    $install ="winget install $Pack --accept-source-agreements --accept-package-agreements"
+    Write-Host("$Pack")
     Invoke-Expression -Command $install
     $Result=  Add-Type -AssemblyName PresentationCore,PresentationFramework
-    $Result = [System.Windows.MessageBox]::Show("Paquete $app correctamente instalado.","Instalado","Ok")
+    $Result = [System.Windows.MessageBox]::Show("Paquete $Pack correctamente instalado.","Instalado","Ok")
     
+    
+
 }
