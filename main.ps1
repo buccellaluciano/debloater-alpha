@@ -23,6 +23,12 @@ $icon = [System.Drawing.Icon]::ExtractAssociatedIcon($iconPath)
 $formPrincipal.Icon = $icon
 ####CONFIGURACION FORM PRINCIPAL, UNICO####
 $global:imagenTroll="$PSScriptRoot\src\img\paparrando.png"
+$global:imagenCocking="$PSScriptRoot\src\img\cocking.png"
+$global:imagenJulian="$PSScriptRoot\src\img\julian.png"
+$global:imagenLuciano="$PSScriptRoot\src\img\luciano.png"
+$global:imagenRodigor="$PSScriptRoot\src\img\rodigor.png"
+$global:imagenPtg="$PSScriptRoot\src\img\chatptg.png"
+$global:imagenFran="$PSScriptRoot\src\img\fran.png"
 
 ###IMPORTAR MODULOS, CARGALOS TODOS DE UNA DESPUES CAMBIAR... ?####
 ##TROLLS##
@@ -77,9 +83,9 @@ function openscript {
 $tabControl = Add-TabControl -Form $formPrincipal
 
 $tabPage1 = Add-TabPage -TabControl $tabControl -Text "Tweaks"
-$tab2Install = Add-TabPage -TabControl $tabControl -Text "Install"
+$tab2Install = Add-TabPage -TabControl $tabControl -Text "Administracion de software"
 $tabPage3 = Add-TabPage -TabControl $tabControl -Text "Debloat"
-$tabPage4 = Add-TabPage -TabControl $tabControl -Text "LAST DEBUG" #guardar para que ferrando vea que tan tontos somos
+$tabPage4 = Add-TabPage -TabControl $tabControl -Text "Creditos" #guardar para que ferrando vea que tan tontos somos
 
 
 . "$PSScriptRoot\tabs\Tab1.ps1"

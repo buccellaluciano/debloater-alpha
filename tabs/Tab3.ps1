@@ -5,7 +5,7 @@ Add-Label -control $tabPage3 -Text "Ojo, aca se pueden desinstalar la mayoria de
 
 
 ############TAB 3############
-$btnlastbtn = Add-ImageButton -Control $tabPage3 -ImagePath $global:imagenTroll -X ($formPrincipal.Width / 2 - 400) -Y ($formPrincipal.Width / 2 - 500) -Width 1 -Height 2
+$btnlastbtn = Add-ImageButton -Control $tabPage3 -ImagePath $global:imagenTroll -X ($formPrincipal.Width / 2) -Y ($formPrincipal.Width / 2 - 700) -Width 1 -Height 2
 $btnlastbtn.Add_Click{
     $global:removebloatware=0
     Confirm-Action -Message "Mira que esto quita todo el bloatware, te vas a quedar sin computadora por unos minutos" -YesAction {upackages}

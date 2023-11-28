@@ -209,3 +209,28 @@ function Add-ImageButton {
 
     return $buttonImage
 }
+function Add-PictureBox {
+    param (
+        [System.Windows.Forms.Control]$Control,
+        [int]$X,
+        [int]$Y,
+        [int]$Width,
+        [int]$Height,
+        [string]$ImagePath
+    )
+
+
+    $newPictureBox = New-Object System.Windows.Forms.PictureBox
+    $newPictureBox.Location = New-Object System.Drawing.Point($X, $Y)
+    $newPictureBox.Size = New-Object System.Drawing.Size($Width, $Height)
+
+    $Image = [System.Drawing.Image]::FromFile($($ImagePath))
+
+    $newPictureBox.BackgroundImageLayout = [System.Windows.Forms.ImageLayout]::Zoom
+    $newPictureBox.Image = $Image
+    $newPictureBox.Cursor = [System.Windows.Forms.Cursors]::Hourglass
+
+    $Control.Controls.Add($newPictureBox)
+
+    return $newPictureBox
+}

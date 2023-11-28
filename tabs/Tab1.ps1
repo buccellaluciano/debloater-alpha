@@ -1,6 +1,6 @@
 ############TAB 1############
 $titlePrincipal = Add-Label -control $tabPage1 -Text "Modificaciones del sistema" -X 0 -Y 10 -Width ($formPrincipal.Width-50) -Height 50 -ForeColor '#f54242' -Size 30
-Add-Label -control $tabPage1 -Text "Recorda reiniciar el sistema al terminar! O podes sufrir corrupciones graves" -X 0 -Y 70 -Width ($formPrincipal.Width-50) -Height 40 -ForeColor '#ffffff' -Size 20
+Add-Label -control $tabPage1 -Text "Recorda reiniciar el sistema al terminar! O podes sufrir corrupciones graves" -X 0 -Y 70 -Width ($formPrincipal.Width-50) -Height 40 -ForeColor '#ffffff' -Size 15
 
 #Solo esto y se acaba ;;; RESULTADO HERMOSO
 function centraBotonesDePanel 

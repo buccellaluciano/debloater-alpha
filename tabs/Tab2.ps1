@@ -2,11 +2,11 @@
 ####RODRIGO Y JULIAN: TIENEN QUE HACER FUNCIONES DE LOS BOTONES.###########
 Add-Type -Assembly System.Drawing
 $paparrando="$PSScriptRoot\src\img\paparrando.png"
-$tituloTab2 = Add-Label -control $tab2Install -Text "Instalacion de software" -X 0 -Y 10 -Width ($formPrincipal.Width-50) -Height 50 -ForeColor '#f54242' -Size 30
-Add-Label -control $tab2Install -Text "DEVTEST" -X 0 -Y 70 -Width ($formPrincipal.Width-50) -Height 30 -ForeColor '#ffffff' -Size 20
+Add-Label -control $tab2Install -Text "Instalacion de software" -X 0 -Y 10 -Width ($formPrincipal.Width-50) -Height 50 -ForeColor '#f54242' -Size 30
+Add-Label -control $tab2Install -Text "Nombre = Instalar - Boton = Desinstalar" -X 0 -Y 70 -Width ($formPrincipal.Width-50) -Height 30 -ForeColor '#ffffff' -Size 15
 
 
-$buttonInstalUnin = Add-Button -Control $tab2Install -Text "ACTUALIZAR TODO" -X ($formPrincipal.Width / 2 -225) -Y 100 -Width 225 -Height 30 -ForeColor '#00FF00'; $buttonInstalUnin.Add_Click({zVIVE})
+$buttonInstalUnin = Add-Button -Control $tab2Install -Text "ACTUALIZAR TODO" -X ($formPrincipal.Width / 2 -300) -Y 100 -Width 225 -Height 30 -ForeColor '#00FF00'; $buttonInstalUnin.Add_Click({zVIVE})
 
 $buttonInstalUnin.Add_Click{
     Confirm-Action -Message 'Estas seguro que quieres actualizar todo Algunas aplicaciones no se actualizaran (no winget)?' -Title 'Confirmacion' -YesAction {
@@ -35,7 +35,6 @@ $panelComun = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelAV = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelEmuladores = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelEditors = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
-$paneFileCompression = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $paneFileDocumet = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelRemote = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelSubsystem = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
@@ -304,8 +303,8 @@ $buttonTV = Add-ImageButton -Control $panelRemote -ImagePath "$global:imagenTrol
 #Add-Label-Clickeable -MiControl $panelAcaemic -Texto "Zotero " -X $cx_ar[0] -Y $cy_ar[0]
 
 #Labels de Bootable* USB
-$labelUSB = Add-Label -control $panelBootable -Text "Bootable USB" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelRufus = Add-Label-Clickeable -Control $panelBootable -Text "Rufus" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+Add-Label -control $panelBootable -Text "Bootable USB" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+$labelRufus = Add-Label-Clickeable -Control $panelBootable -Text "Rufus" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelRufus.Add_Click({INSTALAR-PACK -Pack "Rufus.Rufus" })
 
 
@@ -455,8 +454,7 @@ Add-Label-Clickeable -control $panelDevelopment -Text "Install Nerd Fornt" -X $c
 Add-Label-Clickeable -control $panelDevelopment  -Text "Git + GnuPG + SSH (Setup)" -X $cx_ar[2] -Y $cy_ar[2]
 
 #Posicionamiento de los Paneles
-ajustarPosicionPaneles -PanelesXColumna 6 -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelStreaming, $panelComun , $panelAV , $panelEmuladores , $panelEditors , $paneFileCompression , $paneFileDocumet , $panelRemote , $panelSubsystem , $panelNetwork, $panelUICustomization , $panelDevelopment, $panelBooteable
-
+ajustarPosicionPaneles -PanelesXColumna 6 -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelStreaming, $panelComun, $panelAV, $panelEmuladores, $panelEditors, $paneFileDocumet, $panelRemote, $panelSubsystem, $panelNetwork, $panelUICustomization, $panelDevelopment, $panelBootable
 #####POR LAS DUDAS#######
 #$chBoxDiscord DISCORD
 #chBoxUbiConnect UBISOFT CONNECT
