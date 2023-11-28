@@ -132,12 +132,17 @@ $btnBingSearch = Add-Button -Control $panelSearch -Text "Busqueda por Bing" -X $
 $btnBingSearch.Add_Click({$global:text="search\bing_search.txt"; changeregs; Update-Button-Reg -buttonChanger $btnBingSearch})
 
 
-Add-Label -control $tabpage1 -Text "Cambia el estado de la taskbar y reinicia el explorer:" -X 700 -Y 200 -Width 300 -Height 100 -ForeColor '#8E44AD' -Size 15;
-$btnlastbtn = Add-ImageButton -Control $tabPage1 -ImagePath $global:imagenTroll -X 700 -Y 350 -Width 300 -Height 175
+Add-Label -control $tabpage1 -Text "Cambia el estado de la taskbar (reinicia explorer solo)" -X 700 -Y 100 -Width 300 -Height 100 -ForeColor '#8E44AD' -Size 15;
+$btnlastbtn = Add-ImageButton -Control $tabPage1 -ImagePath $global:imagenTaskbarRebot -X 700 -Y 200 -Width 300 -Height 175
 $btnlastbtn.Add_Click{
     autoHideTaskbar
 }
 
+Add-Label -control $tabpage1 -Text "Reinicia el explorer:" -X 700 -Y 400 -Width 300 -Height 100 -ForeColor '#8E44AD' -Size 15;
+$btnlastbtn = Add-ImageButton -Control $tabPage1 -ImagePath $global:imagenExplorerRestart -X 700 -Y 500 -Width 300 -Height 175
+$btnlastbtn.Add_Click{
+    Stop-Process -Force -Name explorer
+}
 ############TAB 1############
 
 #Centrado de Paneles

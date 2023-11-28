@@ -5,16 +5,17 @@ Add-Label -control $tabPage3 -Text "Ojo, aca se pueden desinstalar la mayoria de
 
 
 ############TAB 3############
-$btnlastbtn = Add-ImageButton -Control $tabPage3 -ImagePath $global:imagenTroll -X ($formPrincipal.Width / 2) -Y ($formPrincipal.Width / 2 - 700) -Width 1 -Height 2
+
+Add-Label -control $tabpage3 -Text "Remueve bloatware" -X 175 -Y 200 -Width 300 -Height 50 -ForeColor '#d61142' -Size 17
+$btnlastbtn = Add-ImageButton -Control $tabPage3 -ImagePath $global:imagenTrollJR -X 175 -Y 250 -Width 300 -Height 200
 $btnlastbtn.Add_Click{
     $global:removebloatware=0
     Confirm-Action -Message "Mira que esto quita todo el bloatware, te vas a quedar sin computadora por unos minutos" -YesAction {upackages}
 }
 
-$btntel = Add-ImageButton -Control $tabPage3 -ImagePath $global:imagenTroll -X ($formPrincipal.Width / 3 - 400) -Y ($formPrincipal.Width / 2 - 500) -Width 800 -Height 500
-$btntel.Add_Click{Disable-Telemetry}
-
-############TAB 3############
-
-$btnTESTa = Add-ImageButton -Control $tabPage3 -ImagePath $global:imagenTroll -X 50 -Y 50 -Width 300 -Height 200
-#$btnTESTa = Add-ImageButton -Control $tabPage3 -ImagePath "M:\Organizate\Desktop\debloater-alpha\src\img\debloaterIcon.jpg" -X 50 -Y 50 -Width 300 -Height 200
+Add-Label -control $tabpage3 -Text "Remueve telemetria" -X 575 -Y 200 -Width 300 -Height 40 -ForeColor '#d61142' -Size 17
+$btntel = Add-ImageButton -Control $tabPage3 -ImagePath $global:imagenTroll -X 575 -Y 250 -Width 300 -Height 200
+$btntel.Add_Click{
+    Confirm-Action -Message "Mira que esto remueve toda la telemetria, microsoft no va a saber que tenes computadora! (Te vas a quedar sin computadora por unos minutos)" -YesAction {Disable-Telemetry}
+    
+}

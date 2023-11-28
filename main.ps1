@@ -36,6 +36,9 @@ $global:imagenRodigorGraph="$PSScriptRoot\src\img\rodigorGraph.png"
 $global:imagenCockingGraph="$PSScriptRoot\src\img\cockingGraph.png"
 $global:imagenJulianGraph="$PSScriptRoot\src\img\julianGraph.png"
 $global:imagenComitBarras="$PSScriptRoot\src\img\comitsBarras.png"
+$global:imagenExplorerRestart="$PSScriptRoot\src\img\explorerRestart.png"
+$global:imagenTaskbarRebot="$PSScriptRoot\src\img\taskbarReboot.png"
+
 #no
 $global:lastEasterEgg="$PSScriptRoot\src\lib\peligro\WORK IN PROGRESS aachitear.bat"
 
