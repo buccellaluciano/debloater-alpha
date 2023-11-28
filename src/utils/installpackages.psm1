@@ -2,7 +2,7 @@ function INSTALAR-PACK {
     param (
         [string]$Pack
     )
-
+    cuadroMensaje -Text "Instalando $Pack..." -Title "Instalando..."
     $job = Start-Job -ScriptBlock {
         param($Pack)
         $install = "winget install $Pack --accept-source-agreements --accept-package-agreements"
