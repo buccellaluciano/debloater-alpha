@@ -1,14 +1,14 @@
-$removebloatware=0
 function DESINSTALAR-PACKS {
     param (
         [string]$Dpack
     )
     $j
+    Write-Host ("$Dpack")
     foreach ($i in $apps) {
         $j ++
+        
     if ($j -ne $apps.length){
         if ($Dpack -eq $i){
-            Write-Host ("$Dpack")
             $appinfo=Get-AppxPackage -Name $Dpack | Format-List -Property *
             if ($appinfo -ne $null){
                 Get-AppxPackage -Name $Dpack -AllUsers | Remove-AppxPackage
@@ -151,5 +151,3 @@ function DESINSTALAR-PACKS {
     "*Microsoft.YourPhone*"                    # Phone link
     "*Microsoft.ZuneMusic*"                    # Modern Media Player
     )
-
-    
