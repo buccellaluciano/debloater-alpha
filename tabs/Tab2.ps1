@@ -38,8 +38,6 @@ $panelEditors = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $paneFileCompression = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $paneFileDocumet = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelRemote = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
-$panelTorrent = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
-$panelAcaemic = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelSubsystem = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelNetwork = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelUICustomization = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
@@ -61,15 +59,15 @@ for ($i = 0; $i -lt $posiciones_control; $i++) {
 
 #Label de Navegadores
 Add-Label -control $panelNavegadores -Text "Navegadores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
-$labelchrome = Add-Label -control $panelNavegadores -Text "Chrome" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labelchrome = Add-Label-Clickeable -control $panelNavegadores -Text "Chrome" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelchrome.Add_Click({INSTALAR-PACK -Pack "Google.Chrome" })
-$labelbrave = Add-Label -control $panelNavegadores -Text "Brave" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$labelbrave = Add-Label-Clickeable -control $panelNavegadores -Text "Brave" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelbrave.Add_Click({INSTALAR-PACK -Pack "XP8C9QZMS2PC1T" })
-$labelfirefox = Add-Label -control $panelNavegadores -Text "Firefox" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+$labelfirefox = Add-Label-Clickeable -control $panelNavegadores -Text "Firefox" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
     $labelfirefox.Add_Click({INSTALAR-PACK -Pack "9NZVDKPMR9RD" })
-$labelopera = Add-Label -control $panelNavegadores -Text "Opera" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+$labelopera = Add-Label-Clickeable -control $panelNavegadores -Text "Opera" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
     $labelopera.Add_Click({INSTALAR-PACK -Pack "Opera.Opera" })
-$labeloperagx = Add-Label -control $panelNavegadores -Text "Opera GX" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
+$labeloperagx = Add-Label-Clickeable -control $panelNavegadores -Text "Opera GX" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
     $labeloperagx.Add_Click({INSTALAR-PACK -Pack "Opera.OperaGX" });
 
 #Buttons de Navegadores
@@ -88,9 +86,9 @@ $buttonoperagx = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:
 
 #Elementos de paneles para los drivers
 $labelGPU = Add-Label -control $panelGpuCpuDrivers -Text "Driver de CPU/GPU" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelControladorAMD = Add-Label -control $panelGpuCpuDrivers -Text "Controlador AMD Ryzen Chipset" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labelControladorAMD = Add-Label-Clickeable -control $panelGpuCpuDrivers -Text "Controlador AMD Ryzen Chipset" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelControladorAMD.Add_Click({ })
-$labelNvidia = Add-Label -control $panelGpuCpuDrivers -Text "Nvidia Drivers" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$labelNvidia = Add-Label-Clickeable -control $panelGpuCpuDrivers -Text "Nvidia Drivers" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelNvidia.Add_Click({INSTALAR-PACK -Pack "Nvidia.GeForceExperience" });
 
 #Buttons para drivers
@@ -101,9 +99,9 @@ $buttonNvidia = Add-ImageButton -Control $panelGpuCpuDrivers -ImagePath "$global
 
 #Labels para compresores
 $labelCompresor = Add-Label -control $panelCompresor -Text "Programas de compresion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelwinrar = Add-Label -control $panelCompresor -Text "Winrar (Version de Prueba)" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labelwinrar = Add-Label-Clickeable -control $panelCompresor -Text "Winrar (Version de Prueba)" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelwinrar.Add_Click({INSTALAR-PACK -Pack "RARLab.WinRAR" }) 
-$label7z = Add-Label -control $panelCompresor -Text "7-Zip" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$label7z = Add-Label-Clickeable -control $panelCompresor -Text "7-Zip" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $label7z.Add_Click({INSTALAR-PACK -Pack "7zip.7zip" }) 
 
 #Buttons para compresores
@@ -115,15 +113,15 @@ $button7z = Add-ImageButton -Control $panelCompresor -ImagePath "$global:imagenT
 
 #Label para gaming
 $labelGaming = Add-Label -control $panelGaming -Text "Gaming" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelgog = Add-Label -control $panelGaming -Text "GOG Galaxy " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labelgog = Add-Label-Clickeable -control $panelGaming -Text "GOG Galaxy " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelgog.Add_Click({INSTALAR-PACK -Pack "GOG.Galaxy" }) 
-$labelepic = Add-Label -control $panelGaming -Text "Epic games Launcher" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$labelepic = Add-Label-Clickeable -control $panelGaming -Text "Epic games Launcher" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelepic.Add_Click({INSTALAR-PACK -Pack "EpicGames.EpicGamesLauncher" }) 
-$labelsteam = Add-Label -control $panelGaming -Text "Steam " -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+$labelsteam = Add-Label-Clickeable -control $panelGaming -Text "Steam " -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
     $labelsteam.Add_Click({INSTALAR-PACK -Pack "Valve.Steam" }) 
-$labelubisoft = Add-Label -control $panelGaming -Text "Ubisofft Connct" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+$labelubisoft = Add-Label-Clickeable -control $panelGaming -Text "Ubisofft Connct" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
     $labelubisoft.Add_Click({INSTALAR-PACK -Pack "Ubisoft.Connect" }) 
-$labeleadesk = Add-Label -control $panelGaming -Text "Ea Desktop" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
+$labeleadesk = Add-Label-Clickeable -control $panelGaming -Text "Ea Desktop" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
     $labeleadesk.Add_Click({INSTALAR-PACK -Pack "ElectronicArts.EADesktop" }) 
 
 #Buttons para gaming
@@ -141,13 +139,13 @@ $buttoneadesk = Add-ImageButton -Control $panelGaming -ImagePath "$global:imagen
 
 #Elemento de streaming* services
 $labelGPU = Add-Label -control $panelStreaming -Text "Streaming Services" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelAmazon = Add-Label -control $panelStreaming -Text "Amazon Prime Video" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labelAmazon = Add-Label-Clickeable -control $panelStreaming -Text "Amazon Prime Video" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelAmazon.Add_Click({ })
-$labelDisney = Add-Label -control $panelStreaming -Text "Disney+" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$labelDisney = Add-Label-Clickeable -control $panelStreaming -Text "Disney+" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelDisney.Add_Click({ })
-$labelNetflix = Add-Label -control $panelStreaming -Text "Netflix" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+$labelNetflix = Add-Label-Clickeable -control $panelStreaming -Text "Netflix" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
     $labelNetflix.Add_Click({ })
-$labelSpoti = Add-Label -control $panelStreaming -Text "Spotify" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+$labelSpoti = Add-Label-Clickeable -control $panelStreaming -Text "Spotify" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
     $labelSpoti.Add_Click({ })
 
 #Buttons de Streaming services
@@ -162,13 +160,13 @@ $buttonSpoti = Add-ImageButton -Control $panelStreaming -ImagePath "$global:imag
 
 #Labels de Comunicacion
 $labelComun = Add-Label -control $panelComun -Text "Comunicacion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labeldisc = Add-Label -control $panelComun -Text "Discord " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labeldisc = Add-Label-Clickeable -control $panelComun -Text "Discord " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labeldisc.Add_Click({INSTALAR-PACK -Pack "Discord.Discord" }) 
-$labelsky = Add-Label -control $panelComun -Text "Skype" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$labelsky = Add-Label-Clickeable -control $panelComun -Text "Skype" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelsky.Add_Click({INSTALAR-PACK -Pack "9WZDNCRFJ364" }) 
-$labelslack = Add-Label -control $panelComun -Text "Slack" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+$labelslack = Add-Label-Clickeable -control $panelComun -Text "Slack" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
     $labelslack.Add_Click({INSTALAR-PACK -Pack "9WZDNCRDK3WP" }) 
-$labelwhats = Add-Label -control $panelComun -Text "WhatsApp Desktop" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+$labelwhats = Add-Label-Clickeable -control $panelComun -Text "WhatsApp Desktop" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
     $labelwhats.Add_Click({INSTALAR-PACK -Pack "WhatsApp.WhatsApp" })
 
 #Buttons de Comunicacion
@@ -183,13 +181,13 @@ $buttonwhats = Add-ImageButton -Control $panelComun -ImagePath "$global:imagenTr
 
 #Labels de AV
 $labelAV = Add-Label -control $panelAV -Text "Audio/Video" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelvlc = Add-Label -control $panelAV -Text "VLC" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labelvlc = Add-Label-Clickeable -control $panelAV -Text "VLC" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelvlc.Add_Click({INSTALAR-PACK -Pack "XPDM1ZW6815MQM" })
-$labelspoti = Add-Label -control $panelAV -Text "Spotify" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$labelspoti = Add-Label-Clickeable -control $panelAV -Text "Spotify" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelspoti.Add_Click({INSTALAR-PACK -Pack "Spotify.Spotify" })
-$labelaud = Add-Label -control $panelAV -Text "Audacity" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+$labelaud = Add-Label-Clickeable -control $panelAV -Text "Audacity" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
     $labelaud.Add_Click({INSTALAR-PACK -Pack "XP8K0J757HHRDW" }) 
-$labelmpc = Add-Label -control $panelAV -Text "MPC-HC" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+$labelmpc = Add-Label-Clickeable -control $panelAV -Text "MPC-HC" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
     $labelmpc.Add_Click({INSTALAR-PACK -Pack "clsid2.mpc-hc" })
 
 #Buttons de AV
@@ -206,15 +204,15 @@ $buttonmpc = Add-ImageButton -Control $panelAV -ImagePath "$global:imagenTroll" 
 
 #Labels de emuladores
 $labelEmu = Add-Label -control $panelEmuladores -Text "Emuladores " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelblue = Add-Label -Control $panelEmuladores -Text "Bluestacks " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labelblue = Add-Label-Clickeable -Control $panelEmuladores -Text "Bluestacks " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelblue.Add_Click({INSTALAR-PACK -Pack "BlueStack.BlueStacks" })
-$labelcemu = Add-Label -Control $panelEmuladores -Text "CEMU" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$labelcemu = Add-Label-Clickeable -Control $panelEmuladores -Text "CEMU" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelcemu.Add_Click({INSTALAR-PACK -Pack "Cemu.Cemu" }) 
-$labelryu = Add-Label -Control $panelEmuladores -Text "Ryujinx" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+$labelryu = Add-Label-Clickeable -Control $panelEmuladores -Text "Ryujinx" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
     $labelryu.Add_Click({INSTALAR-PACK -Pack "Ryujinx.Ryujinx.Ava" }) 
-$labeldol = Add-Label -Control $panelEmuladores -Text "Dolphin" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+$labeldol = Add-Label-Clickeable -Control $panelEmuladores -Text "Dolphin" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
     $labeldol.Add_Click({INSTALAR-PACK -Pack " DolphinEmulator.Dolphin" })
-$labelyuzu = Add-Label -Control $panelEmuladores -Text "Yuzu" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
+$labelyuzu = Add-Label-Clickeable -Control $panelEmuladores -Text "Yuzu" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
     $labelyuzu.Add_Click({INSTALAR-PACK -Pack "YuzuEmu.Yuzu.Mainline" }) 
 
 #Buttons de emuladores
@@ -232,13 +230,13 @@ $buttonyuzu = Add-ImageButton -Control $panelEmuladores -ImagePath "$global:imag
     
 #Labels de Editors/IDEs
 $labelJet = Add-Label -control $panelEditors -Text "Editores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelplusplus = Add-Label -Control $panelEditors -Text "Notepad++ " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labelplusplus = Add-Label-Clickeable -Control $panelEditors -Text "Notepad++ " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelplusplus.Add_Click({INSTALAR-PACK -Pack "Notepad++.Notepad++" })
-$labelVS2022 = Add-Label -Control $panelEditors -Text "Visual Studio 2022 Community" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$labelVS2022 = Add-Label-Clickeable -Control $panelEditors -Text "Visual Studio 2022 Community" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelVS2022.Add_Click({INSTALAR-PACK -Pack "Microsoft.VisualStudio.2022.Community"  })
-$labelVSC = Add-Label -Control $panelEditors -Text "Visual Studio Code" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+$labelVSC = Add-Label-Clickeable -Control $panelEditors -Text "Visual Studio Code" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
     $labelVSC.Add_Click({INSTALAR-PACK -Pack "Microsoft.VisualStudioCode" })
-$labelGhub = Add-Label -Control $panelEditors -Text "GitHub" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+$labelGhub = Add-Label-Clickeable -Control $panelEditors -Text "GitHub" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
     $labelGhub.Add_Click({INSTALAR-PACK -Pack "GitHub.GitHubDesktop.Beta" })
 
 #Buttons de Editors/IDEs
@@ -254,13 +252,13 @@ $buttonGhub = Add-ImageButton -Control $panelEditors -ImagePath "$global:imagenT
 
 #Labels de Documents Editor/Reader(s)
 $labelDER = Add-Label -control $paneFileDocumet  -Text "Lector/Editor de Documentos" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelAdober = Add-Label -Control $paneFileDocumet -Text "Adobe Reader" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labelAdober = Add-Label-Clickeable -Control $paneFileDocumet -Text "Adobe Reader" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelAdober.Add_Click({INSTALAR-PACK -Pack "Adobe.Acrobat.Reader.64-bit" })
-$labelOO = Add-Label -Control $paneFileDocumet -Text "LibreOffice (Desktop Editor)" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$labelOO = Add-Label-Clickeable -Control $paneFileDocumet -Text "LibreOffice (Desktop Editor)" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelOO.Add_Click({INSTALAR-PACK -Pack "TheDocumentFoundation.LibreOffice" })
-$labelPDFCC = Add-Label -Control $paneFileDocumet -Text "PDF Creator/Converter" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+$labelPDFCC = Add-Label-Clickeable -Control $paneFileDocumet -Text "PDF Creator/Converter" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
     $labelPDFCC.Add_Click({INSTALAR-PACK -Pack "pdfforge.PDFCreator" })
-$labelb1 = Add-Label -Control $paneFileDocumet -Text "Open Office" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+$labelb1 = Add-Label-Clickeable -Control $paneFileDocumet -Text "Open Office" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
     $labelb1.Add_Click({INSTALAR-PACK -Pack "Apache.OpenOffice" })
 
 
@@ -278,13 +276,13 @@ $buttonb1 = Add-ImageButton -Control $paneFileDocumet -ImagePath "$global:imagen
 
 #Labels de Remote Connection
 $labelRemote = Add-Label -control $panelRemote -Text "Remote Connection" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelAnydesk = Add-Label -Control $panelRemote -Text "AnyDesk" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labelAnydesk = Add-Label-Clickeable -Control $panelRemote -Text "AnyDesk" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelAnydesk.Add_Click({INSTALAR-PACK -Pack "AnyDeskSoftwareGmbH.AnyDesk" })
-$labelParsec = Add-Label -Control $panelRemote -Text "Parsec" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$labelParsec = Add-Label-Clickeable -Control $panelRemote -Text "Parsec" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelParsec.Add_Click({INSTALAR-PACK -Pack "Parsec.Parsec" })
-$labelScr = Add-Label -Control $panelRemote -Text "ScrCpy (Android)" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+$labelScr = Add-Label-Clickeable -Control $panelRemote -Text "ScrCpy (Android)" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
     $labelScr.Add_Click({INSTALAR-PACK -Pack "Genymobile.scrcpy" })
-$labelTV = Add-Label -Control $panelRemote -Text "Team Viewer" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+$labelTV = Add-Label-Clickeable -Control $panelRemote -Text "Team Viewer" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
     $labelTV.Add_Click({INSTALAR-PACK -Pack "TeamViewer.TeamViewer" })
 
 #Buttons de Documents Editor/Reader(s)
@@ -299,15 +297,15 @@ $buttonTV = Add-ImageButton -Control $panelRemote -ImagePath "$global:imagenTrol
 
 #Estos paneles fueron sacados por su nivel de inutilidad
 #Elementos de Torrent
-#$labelGPU = Add-Label -control $panelTorrent -Text " Torrent " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+#$labelGPU = Add-Label-Clickeable-Clickeable -control $panelTorrent -Text " Torrent " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 #Add-Label-Clickeable -MiControl $panelTorrent  -Texto "qBittorrent " -X $cx_ar[0] -Y $cy_ar[0]
 #Elementos Academic Research 
-#$labelGPU = Add-Label -control $panelAcaemic -Text " Academic Research" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+#$labelGPU = Add-Label-Clickeable-Clickeable -control $panelAcaemic -Text " Academic Research" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 #Add-Label-Clickeable -MiControl $panelAcaemic -Texto "Zotero " -X $cx_ar[0] -Y $cy_ar[0]
 
 #Labels de Bootable* USB
 $labelUSB = Add-Label -control $panelBootable -Text "Bootable USB" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelRufus = Add-Label -Control $panelBootable -Text "Rufus" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$labelRufus = Add-Label-Clickeable -Control $panelBootable -Text "Rufus" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelRufus.Add_Click({INSTALAR-PACK -Pack "Rufus.Rufus" })
 
 
@@ -317,11 +315,11 @@ $buttonRufus = Add-ImageButton -Control $panelBootable -ImagePath "$global:image
 
 #Labels Virtual Machines
 $labelGPU = Add-Label -control $panelVirtual  -Text "Virtual Machines" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelOracleVM = Add-Label -Control $panelVirtual -Text "Oracle VM VirtualBox" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labelOracleVM = Add-Label-Clickeable -Control $panelVirtual -Text "Oracle VM VirtualBox" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelOracleVM.Add_Click({INSTALAR-PACK -Pack "Oracle.VirtualBox" })
-$labelQEMU = Add-Label -Control $panelVirtual -Text "QEMU" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$labelQEMU = Add-Label-Clickeable -Control $panelVirtual -Text "QEMU" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelQEMU.Add_Click({INSTALAR-PACK -Pack "SoftwareFreedomConservancy.QEMU" })
-$labelvmware = Add-Label -Control $panelVirtual -Text "VMware Workstation Player" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+$labelvmware = Add-Label-Clickeable -Control $panelVirtual -Text "VMware Workstation Player" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
     $labelvmware.Add_Click({INSTALAR-PACK -Pack "VMware.WorkstationPlayer" })
 
 #Button Virtual Machines
@@ -335,23 +333,23 @@ $buttonvmware = Add-ImageButton -Control $panelVirtual -ImagePath "$global:image
 #ALERTA DE LINDO PEDAZZZZO DE CODIGO ABAJO 
 #Labels Windows Subsystem For Linux
 $labelGPU = Add-Label -control $panelSubsystem -Text " Windows Subsystem For Linux " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelwsl = Add-Label -Control $panelSubsystem -Text "Install WSL" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labelwsl = Add-Label-Clickeable -Control $panelSubsystem -Text "Install WSL" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelwsl.Add_Click({ })
-$labelarchwsl = Add-Label -Control $panelSubsystem -Text "ArchWSL (x64)" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$labelarchwsl = Add-Label-Clickeable -Control $panelSubsystem -Text "ArchWSL (x64)" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelarchwsl.Add_Click({ })
-$labeldebian = Add-Label -Control $panelSubsystem -Text "Debian GNU/Linux" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+$labeldebian = Add-Label-Clickeable -Control $panelSubsystem -Text "Debian GNU/Linux" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
     $labeldebian.Add_Click({ })
-$labelkali = Add-Label -Control $panelSubsystem -Text "Kali Linux Polling" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+$labelkali = Add-Label-Clickeable -Control $panelSubsystem -Text "Kali Linux Polling" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
     $labelkali.Add_Click({ })
-$labelsuse = Add-Label -Control $panelSubsystem -Text "Open SUSE 42" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
+$labelsuse = Add-Label-Clickeable -Control $panelSubsystem -Text "Open SUSE 42" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
     $labelsuse.Add_Click({ })
-$labelsles = Add-Label -Control $panelSubsystem -Text "SLES v12" -X $cx_ar[5] -Y $cy_ar[5] -ForeColor '#FFFF66'
+$labelsles = Add-Label-Clickeable -Control $panelSubsystem -Text "SLES v12" -X $cx_ar[5] -Y $cy_ar[5] -ForeColor '#FFFF66'
     $labelsles.Add_Click({ })
-$labelubuntu = Add-Label -Control $panelSubsystem -Text "Ubuntu" -X $cx_ar[6] -Y $cy_ar[6] -ForeColor '#FFFF66'
+$labelubuntu = Add-Label-Clickeable -Control $panelSubsystem -Text "Ubuntu" -X $cx_ar[6] -Y $cy_ar[6] -ForeColor '#FFFF66'
     $labelubuntu.Add_Click({ })
-$labelubuntu18 = Add-Label -Control $panelSubsystem -Text "Ubuntu LTS v18.04" -X $cx_ar[7] -Y $cy_ar[7] -ForeColor '#FFFF66'
+$labelubuntu18 = Add-Label-Clickeable -Control $panelSubsystem -Text "Ubuntu LTS v18.04" -X $cx_ar[7] -Y $cy_ar[7] -ForeColor '#FFFF66'
     $labelubuntu18.Add_Click({ })
-$labelubuntu20 = Add-Label -Control $panelSubsystem -Text "Ubuntu LTS v18.04" -X $cx_ar[8] -Y $cy_ar[8] -ForeColor '#FFFF66'
+$labelubuntu20 = Add-Label-Clickeable -Control $panelSubsystem -Text "Ubuntu LTS v18.04" -X $cx_ar[8] -Y $cy_ar[8] -ForeColor '#FFFF66'
     $labelubuntu20.Add_Click({ })
 
 #Buttons para Windows Subsystem For Linux
@@ -377,15 +375,15 @@ $buttonubuntu24 = Add-ImageButton -Control $panelSubsystem -ImagePath "$global:i
 
 #Labels de Network Management
 $labelGPU = Add-Label -control $panelNetwork -Text " Network Manegement " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelhamachi = Add-Label -Control $panelNetwork -Text "Homochi (LAN)" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+$labelhamachi = Add-Label-Clickeable -Control $panelNetwork -Text "Homochi (LAN)" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelhamachi.Add_Click({ })
-$labelputty = Add-Label -Control $panelNetwork -Text "PuTTY" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+$labelputty = Add-Label-Clickeable -Control $panelNetwork -Text "PuTTY" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelputty.Add_Click({ })
-$labelradmi = Add-Label -Control $panelNetwork -Text "Radmi VPN (LAN)" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+$labelradmi = Add-Label-Clickeable -Control $panelNetwork -Text "Radmi VPN (LAN)" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
     $labelradmi.Add_Click({ })
-$labelwinscp = Add-Label -Control $panelNetwork -Text "WinSCP" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+$labelwinscp = Add-Label-Clickeable -Control $panelNetwork -Text "WinSCP" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
     $labelwinscp.Add_Click({ })
-$labelwiresh = Add-Label -Control $panelNetwork -Text "Wireshark" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
+$labelwiresh = Add-Label-Clickeable -Control $panelNetwork -Text "Wireshark" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
     $labelwiresh.Add_Click({ })
 
 #Buttons de Network Management
@@ -452,9 +450,9 @@ $buttonpyth3 = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:im
 
 #Elementos de Wep Browsers
 $labelGPU = Add-Label -control $panelBrowser -Text " Development on Windows " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-Add-Label-Clickeable -MiControl $panelDevelopment  -Texto "Windows Terminal" -X $cx_ar[0] -Y $cy_ar[0]
-Add-Label-Clickeable -MiControl $panelDevelopment -Texto "Install Nerd Fornt" -X $cx_ar[1] -Y $cy_ar[1]
-Add-Label-Clickeable -MiControl $panelDevelopment  -Texto "Git + GnuPG + SSH (Setup)" -X $cx_ar[2] -Y $cy_ar[2]
+Add-Label-Clickeable -control $panelDevelopment  -Text "Windows Terminal" -X $cx_ar[0] -Y $cy_ar[0]
+Add-Label-Clickeable -control $panelDevelopment -Text "Install Nerd Fornt" -X $cx_ar[1] -Y $cy_ar[1]
+Add-Label-Clickeable -control $panelDevelopment  -Text "Git + GnuPG + SSH (Setup)" -X $cx_ar[2] -Y $cy_ar[2]
 
 #Posicionamiento de los Paneles
 ajustarPosicionPaneles -PanelesXColumna 6 -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelStreaming, $panelComun , $panelAV , $panelEmuladores , $panelEditors , $paneFileCompression , $paneFileDocumet , $panelRemote , $panelSubsystem , $panelNetwork, $panelUICustomization , $panelDevelopment, $panelBooteable

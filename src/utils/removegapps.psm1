@@ -1,6 +1,9 @@
 function FunctionName {
-    $removegapps = 0
-    if ($removegapps -eq 1){
+    param (
+        [string]$gapps = 0
+    )
+
+    if ($gapps -eq 1){
         foreach ($line in $gamingapps){
             Get-AppxPackage -Name $line -AllUsers | Remove-AppxPackage
             $Result=  Add-Type -AssemblyName PresentationCore,PresentationFramework

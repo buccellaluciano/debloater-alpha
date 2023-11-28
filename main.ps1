@@ -41,6 +41,7 @@ Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UImod\Confirm-Action.p
 ##INSTALL##
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\installpackages.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\uninstallpackages.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\removegapps.psm1" -Force
 ##INSTALL##
 ##REMOVE##
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\changeregs.psm1" -Force
