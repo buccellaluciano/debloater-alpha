@@ -18,7 +18,9 @@ function Disable-Telemetry {
         [string] $folder
     )
         foreach ($i in $tfiles){
-            $telpath = $expath.Replace("utils\$exname","regfiles\telemetry\$($files[$i])")
+            $string = $files[$i]
+            Write-Host("string $string")
+            $telpath = $expath.Replace("utils\$exname","regfiles\telemetry\$string")
             $selected = Get-Content -Path $telpath
             Write-Host ("selected $selected")                
         }
