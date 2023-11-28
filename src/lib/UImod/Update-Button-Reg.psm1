@@ -7,7 +7,7 @@ $regname =@("$text")
     foreach ($e in $regname){
         $regname+=$global:text
         $enabled
-        $regpath = $expath.Replace("lib\UIMOD\$exname","regfiles\$regname")
+        $regpath = $expath.Replace("utils\$exname","regfiles\$regname")
         $lines = Get-Content -Path $regpath
         Write-Host ("$regpath")
         $j
