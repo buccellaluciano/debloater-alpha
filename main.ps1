@@ -45,6 +45,7 @@ Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\uninstallpackages.ps
 ##REMOVE##
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\changeregs.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\deleteregs.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\disable-telemetry.psm1" -Force
 ##REMOVE##
 ##TWEAKS##
 Import-Module -DisableNameChecking "$PSScriptRoot\src\scripts\hideTaskbar.psm1" -Force
