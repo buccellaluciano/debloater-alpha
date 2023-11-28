@@ -50,7 +50,13 @@ Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\deleteregs.psm1" -Fo
 Import-Module -DisableNameChecking "$PSScriptRoot\src\scripts\hideTaskbar.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\tweaks\translucenttb.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\tweaks\translucenttb.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\Update-ItemHEX.psm1" -Force
+
+
 ##TWEAKS##
+##SCRIPTS##
+Import-Module -DisableNameChecking "$PSScriptRoot\src\tweaks\autoHideTaskbar.psm1" -Force
+
 ##? AYUDA PORFGAVOR
 Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\removegapps.psm1" -Force
 ###IMPORTAR MODULOS, CARGALOS TODOS DE UNA DESPUES CAMBIAR... ?####
@@ -70,11 +76,15 @@ $tabControl = Add-TabControl -Form $formPrincipal
 
 $tabPage1 = Add-TabPage -TabControl $tabControl -Text "Tweaks"
 $tab2Install = Add-TabPage -TabControl $tabControl -Text "Install"
-$tabPage3 = Add-TabPage -TabControl $tabControl -Text "DEBUG"
+$tabPage3 = Add-TabPage -TabControl $tabControl -Text "Debloat"
+$tabPage4 = Add-TabPage -TabControl $tabControl -Text "LAST DEBUG" #guardar para que ferrando vea que tan tontos somos
+
 
 . "$PSScriptRoot\tabs\Tab1.ps1"
 . "$PSScriptRoot\tabs\Tab2.ps1"
 . "$PSScriptRoot\tabs\Tab3.ps1"
+. "$PSScriptRoot\tabs\Tab4.ps1"
+
 $value= $MyInvocation.MyCommand.Definition
 $appsname = $MyInvocation.MyCommand.Name
 
