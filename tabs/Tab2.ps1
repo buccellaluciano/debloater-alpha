@@ -57,7 +57,7 @@ $cy_ar = New-Object int[] $posiciones_control
 for ($i = 0; $i -lt $posiciones_control; $i++) {
     $cx_ar[$i] = 40
     $cy_ar[$i] = 40 + ($i * 30) #El 30 es el espacio entre controles, aumentar o reducir si es necesario.
-}INSTALAR-PACK -Pack " "
+}
 
 #Label de Navegadores
 Add-Label -control $panelNavegadores -Text "Navegadores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;

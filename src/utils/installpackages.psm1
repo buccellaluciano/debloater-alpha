@@ -1,7 +1,3 @@
-$pwpath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
-$expath= $MyInvocation.MyCommand.Definition
-$exname = $MyInvocation.MyCommand.Name
-
 function INSTALAR-PACK {
     param (
         [string]$Pack
