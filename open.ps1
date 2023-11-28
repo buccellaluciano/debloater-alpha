@@ -21,20 +21,6 @@ if (-not $adminCheck) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $nowex= $MyInvocation.MyCommand.Definition
 $nowexname = $MyInvocation.MyCommand.Name
 $scrpath= $nowex.Replace("$nowexname","main.ps1")
