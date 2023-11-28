@@ -3,7 +3,8 @@ $titlePrincipal = Add-Label -control $tabPage1 -Text "Modificaciones del sistema
 Add-Label -control $tabPage1 -Text "Recorda reiniciar el sistema al terminar! O podes sufrir corrupciones graves" -X 0 -Y 70 -Width ($formPrincipal.Width-50) -Height 40 -ForeColor '#ffffff' -Size 20
 
 #Solo esto y se acaba ;;; RESULTADO HERMOSO
-function centraBotonesDePanel {
+function centraBotonesDePanel 
+{
     param ([System.Windows.Forms.Panel]$Panel)
 
     #ForEach para todos los controles, solo saldran afectados si son botones.
