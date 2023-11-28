@@ -62,27 +62,27 @@ for ($i = 0; $i -lt $posiciones_control; $i++) {
 #Label de Navegadores
 Add-Label -control $panelNavegadores -Text "Navegadores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
 $labelchrome = Add-Label -control $panelNavegadores -Text "Chrome" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labelchrome.Add_Click({INSTALAR-PACK -Pack"Google.Chrome" })
+    $labelchrome.Add_Click({INSTALAR-PACK -Pack "Google.Chrome" })
 $labelbrave = Add-Label -control $panelNavegadores -Text "Brave" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
     $labelbrave.Add_Click({INSTALAR-PACK -Pack "XP8C9QZMS2PC1T" })
 $labelfirefox = Add-Label -control $panelNavegadores -Text "Firefox" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
-    $labelfirefox.Add_Click({INSTALAR-PACK -Pack"9NZVDKPMR9RD" })
+    $labelfirefox.Add_Click({INSTALAR-PACK -Pack "9NZVDKPMR9RD" })
 $labelopera = Add-Label -control $panelNavegadores -Text "Opera" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
-    $labelopera.Add_Click({INSTALAR-PACK -Pack"Opera.Opera" })
+    $labelopera.Add_Click({INSTALAR-PACK -Pack "Opera.Opera" })
 $labeloperagx = Add-Label -control $panelNavegadores -Text "Opera GX" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
-    $labeloperagx.Add_Click({INSTALAR-PACK -Pack"Opera.OperaGX" });
+    $labeloperagx.Add_Click({INSTALAR-PACK -Pack "Opera.OperaGX" });
 
 #Buttons de Navegadores
 $buttonchrome = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20;
-    $buttonchrome.Add_Click({DESINSTALAR-PACKS -Dpack"Google.Chrome";  });
+    $buttonchrome.Add_Click({DESINSTALAR-PACKS -Dpack "Google.Chrome";  });
 $buttonbrave = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20;
     $buttonbrave.Add_Click({DESINSTALAR-PACKS -Dpack "XP8C9QZMS2PC1T";  }); 
 $buttonfirefox = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20; 
     $buttonfirefox.Add_Click({DESINSTALAR-PACKS -Dpack "9NZVDKPMR9RD";  }); 
 $buttonopera = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20;
-    $buttonopera.Add_Click({DESINSTALAR-PACKS -Dpack"Opera.Opera";  }); 
+    $buttonopera.Add_Click({DESINSTALAR-PACKS -Dpack "Opera.Opera";  }); 
 $buttonoperagx = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:imagenTroll" -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20; 
-    $buttonoperagx.Add_Click({DESINSTALAR-PACKS -Dpack"Opera.OperaGX";  }); 
+    $buttonoperagx.Add_Click({DESINSTALAR-PACKS -Dpack "Opera.OperaGX";  }); 
 
 
 
@@ -91,52 +91,52 @@ $labelGPU = Add-Label -control $panelGpuCpuDrivers -Text "Driver de CPU/GPU" -X 
 $labelControladorAMD = Add-Label -control $panelGpuCpuDrivers -Text "Controlador AMD Ryzen Chipset" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelControladorAMD.Add_Click({ })
 $labelNvidia = Add-Label -control $panelGpuCpuDrivers -Text "Nvidia Drivers" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelNvidia.Add_Click({INSTALAR-PACK -Pack"Nvidia.GeForceExperience" });
+    $labelNvidia.Add_Click({INSTALAR-PACK -Pack "Nvidia.GeForceExperience" });
 
 #Buttons para drivers
 $buttonControladorAMD = Add-ImageButton -Control $panelGpuCpuDrivers -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonControladorAMD.Add_Click({ })
 $buttonNvidia = Add-ImageButton -Control $panelGpuCpuDrivers -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonNvidia.Add_Click({DESINSTALAR-PACKS -Dpack"Nvidia.GeForceExperience";  })
+    $buttonNvidia.Add_Click({DESINSTALAR-PACKS -Dpack "Nvidia.GeForceExperience";  })
 
 #Labels para compresores
 $labelCompresor = Add-Label -control $panelCompresor -Text "Programas de compresion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelwinrar = Add-Label -control $panelCompresor -Text "Winrar (Version de Prueba)" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labelwinrar.Add_Click({INSTALAR-PACK -Pack"RARLab.WinRAR" }) 
+    $labelwinrar.Add_Click({INSTALAR-PACK -Pack "RARLab.WinRAR" }) 
 $label7z = Add-Label -control $panelCompresor -Text "7-Zip" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $label7z.Add_Click({INSTALAR-PACK -Pack"7zip.7zip" }) 
+    $label7z.Add_Click({INSTALAR-PACK -Pack "7zip.7zip" }) 
 
 #Buttons para compresores
 $buttonwinr = Add-ImageButton -Control $panelCompresor -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonwinr.Add_Click({DESINSTALAR-PACKS -Dpack"RARLab.WinRAR";  }) 
+    $buttonwinr.Add_Click({DESINSTALAR-PACKS -Dpack "RARLab.WinRAR";  }) 
 $button7z = Add-ImageButton -Control $panelCompresor -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $button7z.Add_Click({DESINSTALAR-PACKS -Dpack"7zip.7zip";  }) 
+    $button7z.Add_Click({DESINSTALAR-PACKS -Dpack "7zip.7zip";  }) 
 
 
 #Label para gaming
 $labelGaming = Add-Label -control $panelGaming -Text "Gaming" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelgog = Add-Label -control $panelGaming -Text "GOG Galaxy " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labelgog.Add_Click({INSTALAR-PACK -Pack"GOG.Galaxy" }) 
+    $labelgog.Add_Click({INSTALAR-PACK -Pack "GOG.Galaxy" }) 
 $labelepic = Add-Label -control $panelGaming -Text "Epic games Launcher" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelepic.Add_Click({INSTALAR-PACK -Pack"EpicGames.EpicGamesLauncher" }) 
+    $labelepic.Add_Click({INSTALAR-PACK -Pack "EpicGames.EpicGamesLauncher" }) 
 $labelsteam = Add-Label -control $panelGaming -Text "Steam " -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
-    $labelsteam.Add_Click({INSTALAR-PACK -Pack"Valve.Steam" }) 
+    $labelsteam.Add_Click({INSTALAR-PACK -Pack "Valve.Steam" }) 
 $labelubisoft = Add-Label -control $panelGaming -Text "Ubisofft Connct" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
-    $labelubisoft.Add_Click({INSTALAR-PACK -Pack"Ubisoft.Connect" }) 
+    $labelubisoft.Add_Click({INSTALAR-PACK -Pack "Ubisoft.Connect" }) 
 $labeleadesk = Add-Label -control $panelGaming -Text "Ea Desktop" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
-    $labeleadesk.Add_Click({INSTALAR-PACK -Pack"ElectronicArts.EADesktop" }) 
+    $labeleadesk.Add_Click({INSTALAR-PACK -Pack "ElectronicArts.EADesktop" }) 
 
 #Buttons para gaming
 $buttongog = Add-ImageButton -Control $panelGaming -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttongog.Add_Click({DESINSTALAR-PACKS -Dpack"GOG.Galaxy";  }) 
+    $buttongog.Add_Click({DESINSTALAR-PACKS -Dpack "GOG.Galaxy";  }) 
 $buttonepic = Add-ImageButton -Control $panelGaming -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonepic.Add_Click({DESINSTALAR-PACKS -Dpack"EpicGames.EpicGamesLauncher";  }) 
+    $buttonepic.Add_Click({DESINSTALAR-PACKS -Dpack "EpicGames.EpicGamesLauncher";  }) 
 $buttonsteam = Add-ImageButton -Control $panelGaming -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonsteam.Add_Click({DESINSTALAR-PACKS -Dpack"Valve.Steam";  }) 
+    $buttonsteam.Add_Click({DESINSTALAR-PACKS -Dpack "Valve.Steam";  }) 
 $buttonubisoft = Add-ImageButton -Control $panelGaming -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonubisoft.Add_Click({DESINSTALAR-PACKS -Dpack"Ubisoft.Connect";  }) 
+    $buttonubisoft.Add_Click({DESINSTALAR-PACKS -Dpack "Ubisoft.Connect";  }) 
 $buttoneadesk = Add-ImageButton -Control $panelGaming -ImagePath "$global:imagenTroll" -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttoneadesk.Add_Click({DESINSTALAR-PACKS -Dpack"ElectronicArts.EADesktop";  }) 
+    $buttoneadesk.Add_Click({DESINSTALAR-PACKS -Dpack "ElectronicArts.EADesktop";  }) 
 
 
 #Elemento de streaming* services
@@ -163,116 +163,116 @@ $buttonSpoti = Add-ImageButton -Control $panelStreaming -ImagePath "$global:imag
 #Labels de Comunicacion
 $labelComun = Add-Label -control $panelComun -Text "Comunicacion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labeldisc = Add-Label -control $panelComun -Text "Discord " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labeldisc.Add_Click({INSTALAR-PACK -Pack"Discord.Discord" }) 
+    $labeldisc.Add_Click({INSTALAR-PACK -Pack "Discord.Discord" }) 
 $labelsky = Add-Label -control $panelComun -Text "Skype" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelsky.Add_Click({INSTALAR-PACK -Pack"9WZDNCRFJ364" }) 
+    $labelsky.Add_Click({INSTALAR-PACK -Pack "9WZDNCRFJ364" }) 
 $labelslack = Add-Label -control $panelComun -Text "Slack" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
-    $labelslack.Add_Click({INSTALAR-PACK -Pack"9WZDNCRDK3WP" }) 
+    $labelslack.Add_Click({INSTALAR-PACK -Pack "9WZDNCRDK3WP" }) 
 $labelwhats = Add-Label -control $panelComun -Text "WhatsApp Desktop" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
-    $labelwhats.Add_Click({INSTALAR-PACK -Pack"WhatsApp.WhatsApp" })
+    $labelwhats.Add_Click({INSTALAR-PACK -Pack "WhatsApp.WhatsApp" })
 
 #Buttons de Comunicacion
 $buttondisc = Add-ImageButton -Control $panelComun -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttondisc.Add_Click({DESINSTALAR-PACKS -Dpack"Discord.Discord";  }) 
+    $buttondisc.Add_Click({DESINSTALAR-PACKS -Dpack "Discord.Discord";  }) 
 $buttonsky = Add-ImageButton -Control $panelComun -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonsky.Add_Click({DESINSTALAR-PACKS -Dpack"9WZDNCRFJ364";  }) 
+    $buttonsky.Add_Click({DESINSTALAR-PACKS -Dpack "9WZDNCRFJ364";  }) 
 $buttonslack = Add-ImageButton -Control $panelComun -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonslack.Add_Click({DESINSTALAR-PACKS -Dpack"9WZDNCRDK3WP";  }) 
+    $buttonslack.Add_Click({DESINSTALAR-PACKS -Dpack "9WZDNCRDK3WP";  }) 
 $buttonwhats = Add-ImageButton -Control $panelComun -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonwhats.Add_Click({DESINSTALAR-PACKS -Dpack"WhatsApp.WhatsApp";  }) 
+    $buttonwhats.Add_Click({DESINSTALAR-PACKS -Dpack "WhatsApp.WhatsApp";  }) 
 
 #Labels de AV
 $labelAV = Add-Label -control $panelAV -Text "Audio/Video" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelvlc = Add-Label -control $panelAV -Text "VLC" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labelvlc.Add_Click({INSTALAR-PACK -Pack"XPDM1ZW6815MQM" })
+    $labelvlc.Add_Click({INSTALAR-PACK -Pack "XPDM1ZW6815MQM" })
 $labelspoti = Add-Label -control $panelAV -Text "Spotify" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelspoti.Add_Click({INSTALAR-PACK -Pack"Spotify.Spotify" })
+    $labelspoti.Add_Click({INSTALAR-PACK -Pack "Spotify.Spotify" })
 $labelaud = Add-Label -control $panelAV -Text "Audacity" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
-    $labelaud.Add_Click({INSTALAR-PACK -Pack"XP8K0J757HHRDW" }) 
+    $labelaud.Add_Click({INSTALAR-PACK -Pack "XP8K0J757HHRDW" }) 
 $labelmpc = Add-Label -control $panelAV -Text "MPC-HC" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
-    $labelmpc.Add_Click({INSTALAR-PACK -Pack"clsid2.mpc-hc" })
+    $labelmpc.Add_Click({INSTALAR-PACK -Pack "clsid2.mpc-hc" })
 
 #Buttons de AV
 $buttonvlc = Add-ImageButton -Control $panelAV -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonvlc.Add_Click({DESINSTALAR-PACKS -Dpack"XPDM1ZW6815MQM";  }) 
+    $buttonvlc.Add_Click({DESINSTALAR-PACKS -Dpack "XPDM1ZW6815MQM";  }) 
 $buttonspoti = Add-ImageButton -Control $panelAV -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonspoti.Add_Click({DESINSTALAR-PACKS -Dpack"Spotify.Spotify";  }) 
+    $buttonspoti.Add_Click({DESINSTALAR-PACKS -Dpack "Spotify.Spotify";  }) 
 $buttonaud = Add-ImageButton -Control $panelAV -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonaud.Add_Click({DESINSTALAR-PACKS -Dpack"XP8K0J757HHRDW";  }) 
+    $buttonaud.Add_Click({DESINSTALAR-PACKS -Dpack "XP8K0J757HHRDW";  }) 
 $buttonmpc = Add-ImageButton -Control $panelAV -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonmpc.Add_Click({DESINSTALAR-PACKS -Dpack"clsid2.mpc-hc";  })
+    $buttonmpc.Add_Click({DESINSTALAR-PACKS -Dpack "clsid2.mpc-hc";  })
 
 
 
 #Labels de emuladores
 $labelEmu = Add-Label -control $panelEmuladores -Text "Emuladores " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelblue = Add-Label -Control $panelEmuladores -Text "Bluestacks " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labelblue.Add_Click({INSTALAR-PACK -Pack"BlueStack.BlueStacks" })
+    $labelblue.Add_Click({INSTALAR-PACK -Pack "BlueStack.BlueStacks" })
 $labelcemu = Add-Label -Control $panelEmuladores -Text "CEMU" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelcemu.Add_Click({INSTALAR-PACK -Pack"Cemu.Cemu" }) 
+    $labelcemu.Add_Click({INSTALAR-PACK -Pack "Cemu.Cemu" }) 
 $labelryu = Add-Label -Control $panelEmuladores -Text "Ryujinx" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
-    $labelryu.Add_Click({INSTALAR-PACK -Pack"Ryujinx.Ryujinx.Ava" }) 
+    $labelryu.Add_Click({INSTALAR-PACK -Pack "Ryujinx.Ryujinx.Ava" }) 
 $labeldol = Add-Label -Control $panelEmuladores -Text "Dolphin" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
-    $labeldol.Add_Click({INSTALAR-PACK -Pack" DolphinEmulator.Dolphin" })
+    $labeldol.Add_Click({INSTALAR-PACK -Pack " DolphinEmulator.Dolphin" })
 $labelyuzu = Add-Label -Control $panelEmuladores -Text "Yuzu" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
-    $labelyuzu.Add_Click({INSTALAR-PACK -Pack"YuzuEmu.Yuzu.Mainline" }) 
+    $labelyuzu.Add_Click({INSTALAR-PACK -Pack "YuzuEmu.Yuzu.Mainline" }) 
 
 #Buttons de emuladores
 $buttonblue = Add-ImageButton -Control $panelEmuladores -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonblue.Add_Click({DESINSTALAR-PACKS -Dpack"BlueStack.BlueStacks";  })
+    $buttonblue.Add_Click({DESINSTALAR-PACKS -Dpack "BlueStack.BlueStacks";  })
 $buttoncemu = Add-ImageButton -Control $panelEmuladores -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttoncemu.Add_Click({DESINSTALAR-PACKS -Dpack"Cemu.Cemu";  }) 
+    $buttoncemu.Add_Click({DESINSTALAR-PACKS -Dpack "Cemu.Cemu";  }) 
 $buttonryu = Add-ImageButton -Control $panelEmuladores -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonryu.Add_Click({DESINSTALAR-PACKS -Dpack"Ryujinx.Ryujinx.Ava";  }) 
+    $buttonryu.Add_Click({DESINSTALAR-PACKS -Dpack "Ryujinx.Ryujinx.Ava";  }) 
 $buttondol = Add-ImageButton -Control $panelEmuladores -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttondol.Add_Click({DESINSTALAR-PACKS -Dpack" DolphinEmulator.Dolphin";  }) 
+    $buttondol.Add_Click({DESINSTALAR-PACKS -Dpack " DolphinEmulator.Dolphin";  }) 
 $buttonyuzu = Add-ImageButton -Control $panelEmuladores -ImagePath "$global:imagenTroll" -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonyuzu.Add_Click({DESINSTALAR-PACKS -Dpack"YuzuEmu.Yuzu.Mainline";  }) 
+    $buttonyuzu.Add_Click({DESINSTALAR-PACKS -Dpack "YuzuEmu.Yuzu.Mainline";  }) 
 
     
 #Labels de Editors/IDEs
 $labelJet = Add-Label -control $panelEditors -Text "Editores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelplusplus = Add-Label -Control $panelEditors -Text "Notepad++ " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labelplusplus.Add_Click({INSTALAR-PACK -Pack"Notepad++.Notepad++" })
+    $labelplusplus.Add_Click({INSTALAR-PACK -Pack "Notepad++.Notepad++" })
 $labelVS2022 = Add-Label -Control $panelEditors -Text "Visual Studio 2022 Community" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelVS2022.Add_Click({INSTALAR-PACK -Pack"Microsoft.VisualStudio.2022.Community"  })
+    $labelVS2022.Add_Click({INSTALAR-PACK -Pack "Microsoft.VisualStudio.2022.Community"  })
 $labelVSC = Add-Label -Control $panelEditors -Text "Visual Studio Code" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
-    $labelVSC.Add_Click({INSTALAR-PACK -Pack"Microsoft.VisualStudioCode" })
+    $labelVSC.Add_Click({INSTALAR-PACK -Pack "Microsoft.VisualStudioCode" })
 $labelGhub = Add-Label -Control $panelEditors -Text "GitHub" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
-    $labelGhub.Add_Click({INSTALAR-PACK -Pack"GitHub.GitHubDesktop.Beta" })
+    $labelGhub.Add_Click({INSTALAR-PACK -Pack "GitHub.GitHubDesktop.Beta" })
 
 #Buttons de Editors/IDEs
 $buttonplusplus = Add-ImageButton -Control $panelEditors -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonplusplus.Add_Click({DESINSTALAR-PACKS -Dpack"Notepad++.Notepad++";  })
+    $buttonplusplus.Add_Click({DESINSTALAR-PACKS -Dpack "Notepad++.Notepad++";  })
 $buttonVS2022 = Add-ImageButton -Control $panelEditors -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonVS2022.Add_Click({DESINSTALAR-PACKS -Dpack"Microsoft.VisualStudio.2022.Community";  })
+    $buttonVS2022.Add_Click({DESINSTALAR-PACKS -Dpack "Microsoft.VisualStudio.2022.Community";  })
 $buttonVSC = Add-ImageButton -Control $panelEditors -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonVSC.Add_Click({DESINSTALAR-PACKS -Dpack"Microsoft.VisualStudioCode";  })
+    $buttonVSC.Add_Click({DESINSTALAR-PACKS -Dpack "Microsoft.VisualStudioCode";  })
 $buttonGhub = Add-ImageButton -Control $panelEditors -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonGhub.Add_Click({DESINSTALAR-PACKS -Dpack"GitHub.GitHubDesktop.Beta";  })
+    $buttonGhub.Add_Click({DESINSTALAR-PACKS -Dpack "GitHub.GitHubDesktop.Beta";  })
 
 
 #Labels de Documents Editor/Reader(s)
 $labelDER = Add-Label -control $paneFileDocumet  -Text "Lector/Editor de Documentos" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelAdober = Add-Label -Control $paneFileDocumet -Text "Adobe Reader" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labelAdober.Add_Click({INSTALAR-PACK -Pack"Adobe.Acrobat.Reader.64-bit" })
+    $labelAdober.Add_Click({INSTALAR-PACK -Pack "Adobe.Acrobat.Reader.64-bit" })
 $labelOO = Add-Label -Control $paneFileDocumet -Text "LibreOffice (Desktop Editor)" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelOO.Add_Click({INSTALAR-PACK -Pack"TheDocumentFoundation.LibreOffice" })
+    $labelOO.Add_Click({INSTALAR-PACK -Pack "TheDocumentFoundation.LibreOffice" })
 $labelPDFCC = Add-Label -Control $paneFileDocumet -Text "PDF Creator/Converter" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
-    $labelPDFCC.Add_Click({INSTALAR-PACK -Pack"pdfforge.PDFCreator" })
+    $labelPDFCC.Add_Click({INSTALAR-PACK -Pack "pdfforge.PDFCreator" })
 $labelb1 = Add-Label -Control $paneFileDocumet -Text "Open Office" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
-    $labelb1.Add_Click({INSTALAR-PACK -Pack"Apache.OpenOffice" })
+    $labelb1.Add_Click({INSTALAR-PACK -Pack "Apache.OpenOffice" })
 
 
 #Buttons de Documents Editor/Reader(s)
 $buttonAdober = Add-ImageButton -Control $paneFileDocumet -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonAdober.Add_Click({DESINSTALAR-PACKS -Dpack"Adobe.Acrobat.Reader.64-bit";  })
+    $buttonAdober.Add_Click({DESINSTALAR-PACKS -Dpack "Adobe.Acrobat.Reader.64-bit";  })
 $buttonOO = Add-ImageButton -Control $paneFileDocumet -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonOO.Add_Click({DESINSTALAR-PACKS -Dpack"TheDocumentFoundation.LibreOffice";  })
+    $buttonOO.Add_Click({DESINSTALAR-PACKS -Dpack "TheDocumentFoundation.LibreOffice";  })
 $buttonPDFCC = Add-ImageButton -Control $paneFileDocumet -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonPDFCC.Add_Click({DESINSTALAR-PACKS -Dpack"pdfforge.PDFCreator";  })
+    $buttonPDFCC.Add_Click({DESINSTALAR-PACKS -Dpack "pdfforge.PDFCreator";  })
 $buttonb1 = Add-ImageButton -Control $paneFileDocumet -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonb1.Add_Click({$labelb1.Add_Click({DESINSTALAR-PACKS -Dpack"Apache.OpenOffice"; unpackages})})
+    $buttonb1.Add_Click({$labelb1.Add_Click({DESINSTALAR-PACKS -Dpack "Apache.OpenOffice"; unpackages})})
 
 
 
@@ -289,13 +289,13 @@ $labelTV = Add-Label -Control $panelRemote -Text "Team Viewer" -X $cx_ar[3] -Y $
 
 #Buttons de Documents Editor/Reader(s)
 $buttonAnydesk = Add-ImageButton -Control $panelRemote -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonAnydesk.Add_Click({DESINSTALAR-PACKS -Dpack"AnyDeskSoftwareGmbH.AnyDesk";  })
+    $buttonAnydesk.Add_Click({DESINSTALAR-PACKS -Dpack "AnyDeskSoftwareGmbH.AnyDesk";  })
 $buttonParsec = Add-ImageButton -Control $panelRemote -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonParsec.Add_Click({DESINSTALAR-PACKS -Dpack"Parsec.Parsec";  })
+    $buttonParsec.Add_Click({DESINSTALAR-PACKS -Dpack "Parsec.Parsec";  })
 $buttonScr = Add-ImageButton -Control $panelRemote -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonScr.Add_Click({DESINSTALAR-PACKS -Dpack"Genymobile.scrcpy";  })
+    $buttonScr.Add_Click({DESINSTALAR-PACKS -Dpack "Genymobile.scrcpy";  })
 $buttonTV = Add-ImageButton -Control $panelRemote -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonTV.Add_Click({DESINSTALAR-PACKS -Dpack"TeamViewer.TeamViewer";  })
+    $buttonTV.Add_Click({DESINSTALAR-PACKS -Dpack "TeamViewer.TeamViewer";  })
 
 #Estos paneles fueron sacados por su nivel de inutilidad
 #Elementos de Torrent
@@ -326,11 +326,11 @@ $labelvmware = Add-Label -Control $panelVirtual -Text "VMware Workstation Player
 
 #Button Virtual Machines
 $buttonOracleVM = Add-ImageButton -Control $panelVirtual -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonOracleVM.Add_Click({DESINSTALAR-PACKS -Dpack"VMware.WorkstationPlayer";  })
+    $buttonOracleVM.Add_Click({DESINSTALAR-PACKS -Dpack "VMware.WorkstationPlayer";  })
 $buttonQEMU = Add-ImageButton -Control $panelVirtual -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonQEMU.Add_Click({DESINSTALAR-PACKS -Dpack"VMware.WorkstationPlayer";  })
+    $buttonQEMU.Add_Click({DESINSTALAR-PACKS -Dpack "VMware.WorkstationPlayer";  })
 $buttonvmware = Add-ImageButton -Control $panelVirtual -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonvmware.Add_Click({DESINSTALAR-PACKS -Dpack"VMware.WorkstationPlayer";  })
+    $buttonvmware.Add_Click({DESINSTALAR-PACKS -Dpack "VMware.WorkstationPlayer";  })
 
 #ALERTA DE LINDO PEDAZZZZO DE CODIGO ABAJO 
 #Labels Windows Subsystem For Linux
