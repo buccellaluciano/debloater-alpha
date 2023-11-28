@@ -103,7 +103,7 @@ function Add-Label {
     $newLabel.Text = $Text
     $newLabel.Font = New-Object System.Drawing.Font('Terminal', $Size, [System.Drawing.FontStyle]::Bold)
     $newLabel.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$ForeColor")
-    $newLabel.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#FFFFFF")
+    #$newLabel.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#FFFFFF")
     $newLabel.TextAlign = 'MiddleCenter'
 
     
