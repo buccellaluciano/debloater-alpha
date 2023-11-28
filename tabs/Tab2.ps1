@@ -78,7 +78,7 @@ $buttonchrome = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:i
 $buttonbrave = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20;
     $buttonbrave.Add_Click({DESINSTALAR-PACKS -Dpack "XP8C9QZMS2PC1T";  }); 
 $buttonfirefox = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20; 
-    $buttonfirefox.Add_Click({DESINSTALAR-PACKS -Dpack"9NZVDKPMR9RD";  }); 
+    $buttonfirefox.Add_Click({DESINSTALAR-PACKS -Dpack "9NZVDKPMR9RD";  }); 
 $buttonopera = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20;
     $buttonopera.Add_Click({DESINSTALAR-PACKS -Dpack"Opera.Opera";  }); 
 $buttonoperagx = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:imagenTroll" -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20; 
@@ -318,11 +318,11 @@ $buttonRufus = Add-ImageButton -Control $panelBootable -ImagePath "$global:image
 #Labels Virtual Machines
 $labelGPU = Add-Label -control $panelVirtual  -Text "Virtual Machines" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelOracleVM = Add-Label -Control $panelVirtual -Text "Oracle VM VirtualBox" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labelOracleVM.Add_Click({INSTALAR-PACK -Pack"Oracle.VirtualBox" })
+    $labelOracleVM.Add_Click({INSTALAR-PACK -Pack "Oracle.VirtualBox" })
 $labelQEMU = Add-Label -Control $panelVirtual -Text "QEMU" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelQEMU.Add_Click({INSTALAR-PACK -Pack"SoftwareFreedomConservancy.QEMU" })
+    $labelQEMU.Add_Click({INSTALAR-PACK -Pack "SoftwareFreedomConservancy.QEMU" })
 $labelvmware = Add-Label -Control $panelVirtual -Text "VMware Workstation Player" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
-    $labelvmware.Add_Click({INSTALAR-PACK -Pack"VMware.WorkstationPlayer" })
+    $labelvmware.Add_Click({INSTALAR-PACK -Pack "VMware.WorkstationPlayer" })
 
 #Button Virtual Machines
 $buttonOracleVM = Add-ImageButton -Control $panelVirtual -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
