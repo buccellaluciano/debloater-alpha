@@ -57,11 +57,37 @@ $btnTbFlashing.Add_Click({$global:text="tb\taskbarFlashing.txt"; changeregs; Upd
 
 #Systray
 Add-Label -control $panelSysTray -Text "Bandeja del sistema" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
-$btnSystrayDate = Add-Button -Control $panelSysTray -Text "Mostrar fecha y hora" -X $cx_ar[1] -Y $cy_ar[1] -Width 150 -Height 30 -ForeColor '#ffffff'
-$btnSystrayDate.Add_Click({$global:text="tb\sysTrayShowDateTime.txt"; changeregs; Update-Button-Reg -buttonChanger $btnSystrayDate;})
-$btnSystraySeconds = Add-Button -Control $panelSysTray -Text "Mostar segundos." -X $cx_ar[2] -Y $cy_ar[2] -Width 150 -Height 30 -ForeColor '#ffffff'
-$btnSystraySeconds.Add_Click({$global:text="tb\showSecondSystray.txt"; changeregs; Update-Button-Reg -buttonChanger $btnSystraySeconds;})
+$btnAutoCheck = Add-Button -Control $panelSysTray -Text "Checklist explorer" -X $cx_ar[0] -Y $cy_ar[0] -Width 150 -Height 30 -ForeColor '#ffffff'
+$btnAutoCheck.Add_Click({$global:text="explorer\AutoCheckSelect.txt"; changeregs; Update-Button-Reg -buttonChanger $btnAutoCheck})
+$btnCompact = Add-Button -Control $panelSysTray -Text "Modo compacto" -X $cx_ar[1] -Y $cy_ar[1] -Width 150 -Height 30 -ForeColor '#ffffff'
+$btnCompact.Add_Click({$global:text="explorer\compactMode.txt"; changeregs; Update-Button-Reg -buttonChanger $btnCompact})
+$btnPreviewDesktop = Add-Button -Control $panelSysTray -Text "!!!! CHNAGEDeshabilitar vista previa de escritorio" -X $cx_ar[2] -Y $cy_ar[2] -Width 150 -Height 35 -ForeColor '#ffffff'
+$btnPreviewDesktop.Add_Click({$global:text="explorer\DisablePreviewDesktop.txt"; changeregs; Update-Button-Reg -buttonChanger $btnPreviewDesktop})
+$dissShaking = Add-Button -Control $panelSysTray -Text "Negar sacudidas" -X $cx_ar[3] -Y $cy_ar[3] -Width 150 -Height 30 -ForeColor '#ffffff'
+$dissShaking.Add_Click({$global:text="explorer\DissallowShaking.txt"; changeregs; Update-Button-Reg -buttonChanger $dissShaking})
+$noPathBonito = Add-Button -Control $panelSysTray -Text "Path normalizado" -X $cx_ar[4] -Y $cy_ar[4] -Width 150 -Height 30 -ForeColor '#ffffff'
+$noPathBonito.Add_Click({$global:text="explorer\dontPrettyPath.txt"; changeregs; Update-Button-Reg -buttonChanger $noPathBonito})
+$btnHiddenFiles = Add-Button -Control $panelSysTray -Text "Mostrar archivos ocultos" -X $cx_ar[5] -Y $cy_ar[5] -Width 150 -Height 30 -ForeColor '#ffffff'
+$btnHiddenFiles.Add_Click({$global:text="explorer\hidden.txt"; changeregs; Update-Button-Reg -buttonChanger $btnHiddenFiles})
+$btnHideFileExt = Add-Button -Control $panelSysTray -Text "Extension de archivo oculta" -X $cx_ar[6] -Y $cy_ar[6] -Width 150 -Height 30 -ForeColor '#ffffff'
+$btnHideFileExt.Add_Click({$global:text="explorer\hiddeFileExt.txt"; changeregs; Update-Button-Reg -buttonChanger $btnHideFileExt;})
+$btnHideIcons = Add-Button -Control $panelSysTray -Text "Mostrar iconos" -X $cx_ar[7] -Y $cy_ar[7] -Width 150 -Height 30 -ForeColor '#ffffff'
+$btnHideIcons.Add_Click({$global:text="explorer\hideIcons.txt"; changeregs; Update-Button-Reg -buttonChanger $btnHideIcons;})
+$btnHideMergeConflict = Add-Button -Control $panelSysTray -Text "Parpadeo de la barra" -X $cx_ar[8] -Y $cy_ar[8] -Width 150 -Height 30 -ForeColor '#ffffff'
+$btnHideMergeConflict.Add_Click({$global:text="explorer\hideMergeConflict.txt"; changeregs; Update-Button-Reg -buttonChanger $btnHideMergeConflict;})
+$btnIconsOnly = Add-Button -Control $panelSysTray -Text "Solo iconos" -X $cx_ar[9] -Y $cy_ar[9] -Width 150 -Height 30 -ForeColor '#ffffff'
+$btnIconsOnly.Add_Click({$global:text="explorer\iconsOnly.txt"; changeregs; Update-Button-Reg -buttonChanger $btnIconsOnly;})
+$btnExplorerSeparado = Add-Button -Control $panelSysTray -Text "Explorer en proceso separado" -X $cx_ar[10] -Y $cy_ar[10] -Width 150 -Height 30 -ForeColor '#ffffff'
+$btnExplorerSeparado.Add_Click({$global:text="explorer\separatedProccessExplorer.txt"; changeregs; Update-Button-Reg -buttonChanger $btnExplorerSeparado;})
+$btnShowStatusBar = Add-Button -Control $panelSysTray -Text "Mostrar barra de estado" -X $cx_ar[11] -Y $cy_ar[11] -Width 150 -Height 30 -ForeColor '#ffffff'
+$btnShowStatusBar.Add_Click({$global:text="explorer\ShowStatusBar.txt"; changeregs; Update-Button-Reg -buttonChanger $btnShowStatusBar;})
 
+#Explorer
+Add-Label -control $panelExplorer -Text "Bandeja del sistema" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
+$btnSystrayDate = Add-Button -Control $panelExplorer -Text "Mostrar fecha y hora" -X $cx_ar[1] -Y $cy_ar[1] -Width 150 -Height 30 -ForeColor '#ffffff'
+$btnSystrayDate.Add_Click({$global:text="tb\sysTrayShowDateTime.txt"; changeregs; Update-Button-Reg -buttonChanger $btnSystrayDate;})
+$btnSystraySeconds = Add-Button -Control $panelExplorer -Text "Mostar segundos." -X $cx_ar[2] -Y $cy_ar[2] -Width 150 -Height 30 -ForeColor '#ffffff'
+$btnSystraySeconds.Add_Click({$global:text="tb\showSecondSystray.txt"; changeregs; Update-Button-Reg -buttonChanger $btnSystraySeconds;})
 
 #Suggestions
 Add-Label -control $panelsuggest -Text "Sugerencias" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
