@@ -334,77 +334,44 @@ Add-Label -control $panelNetwork -Text " Network Manegement " -X 0 -Y 5 -Width $
 $labelhamachi = Add-Label-Clickeable -Control $panelNetwork -Text "Hamachi (LAN)" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelhamachi.Add_Click({ INSTALAR-PACK -Pack "LogMeIn.Hamachi"})
 $labelputty = Add-Label-Clickeable -Control $panelNetwork -Text "PuTTY" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelputty.Add_Click({ })
-$labelradmi = Add-Label-Clickeable -Control $panelNetwork -Text "Radmi VPN (LAN)" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
-    $labelradmi.Add_Click({ })
-$labelwinscp = Add-Label-Clickeable -Control $panelNetwork -Text "WinSCP" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
-    $labelwinscp.Add_Click({ })
-$labelwiresh = Add-Label-Clickeable -Control $panelNetwork -Text "Wireshark" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
-    $labelwiresh.Add_Click({ })
+    $labelputty.Add_Click({ INSTALAR-PACK -Pack "PuTTY.PuTTY" })
+$labelwinscp = Add-Label-Clickeable -Control $panelNetwork -Text "WinSCP" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+    $labelwinscp.Add_Click({ INSTALAR-PACK -Pack "WinSCP.WinSCP" })
+$labelwiresh = Add-Label-Clickeable -Control $panelNetwork -Text "Wireshark" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+    $labelwiresh.Add_Click({INSTALAR-PACK -Pack "WiresharkFoundation.Wireshark" })
 
 #Buttons de Network Management
 $buttonhamachi = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
     $buttonhamachi.Add_Click({DESINSTALAR-PACKS -Dpack "LogMeIn.Hamachi"})
 $buttonputty = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonputty.Add_Click({ })
-$buttonradmi = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonradmi.Add_Click({ })
-$buttonwinscp = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonwinscp.Add_Click({ })
-$buttonwiresh = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonwiresh.Add_Click({ })
+    $buttonputty.Add_Click({DESINSTALAR-PACKS -Dpack "PuTTY.PuTTY" })
+$buttonwinscp = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+    $buttonwinscp.Add_Click({DESINSTALAR-PACKS -Dpack "WinSCP.WinSCP" })
+$buttonwiresh = Add-ImageButton -Control $panelNetwork -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+    $buttonwiresh.Add_Click({DESINSTALAR-PACKS -Dpack "WiresharkFoundation.Wireshark" })
 
 #ALERTA DE LINDO PEDAZZZZO DE CODIGO ABAJO
 #Labels de Development On Windows
+
+
 Add-Label -control $panelDevelopment -Text "Development On Windows" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelwt = Add-Label -Control $panelDevelopment -Text "Windows Terminal" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labelwt.Add_Click({ })
-$labelggs = Add-Label -Control $panelDevelopment -Text "Git + GnuPG + SSH (Setup)" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelggs.Add_Click({ })
-$lbeladb = Add-Label -Control $panelDevelopment -Text "Android Debug Bridge (ADB)" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
-    $lbeladb.Add_Click({ })
-$labelands = Add-Label -Control $panelDevelopment -Text "Android Studio" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
-    $labelands.Add_Click({ })
-$labeljava = Add-Label -Control $panelDevelopment -Text "Java Oracle JRE" -X $cx_ar[4] -Y $cy_ar[4] -ForeColor '#FFFF66'
-    $labeljava.Add_Click({ })
-$labelmysql = Add-Label -Control $panelDevelopment -Text "MySQL" -X $cx_ar[5] -Y $cy_ar[5] -ForeColor '#FFFF66'
-    $labelmysql.Add_Click({ })
-$labelnodejs = Add-Label -Control $panelDevelopment -Text "NodeJS" -X $cx_ar[6] -Y $cy_ar[6] -ForeColor '#FFFF66'
-    $labelnodejs.Add_Click({ })
-$labelpyth3 = Add-Label -Control $panelDevelopment -Text "Python 3" -X $cx_ar[7] -Y $cy_ar[7] -ForeColor '#FFFF66'
-    $labelpyth3.Add_Click({ })
-$labelOracleVM = Add-Label -Control $panelDevelopment -Text "Oracle VM" -X $cx_ar[8] -Y $cy_ar[8] -ForeColor '#FFFF66'
-    $labelOracleVM.Add_Click({ })
-$labelQEMU = Add-Label -Control $panelDevelopment -Text "QEMU" -X $cx_ar[9] -Y $cy_ar[9] -ForeColor '#FFFF66'
-    $labelQEMU.Add_Click({ })
+$labelmysql = Add-Label -Control $panelDevelopment -Text "MySQL" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+    $labelmysql.Add_Click({ INSTALAR-PACK -Pack "Oracle.MySQL"})
+$labelnodejs = Add-Label -Control $panelDevelopment -Text "NodeJS" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+    $labelnodejs.Add_Click({INSTALAR-PACK -Pack "OpenJS.NodeJS" })
+$labelQEMU = Add-Label -Control $panelDevelopment -Text "QEMU" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+    $labelQEMU.Add_Click({ INSTALAR-PACK -Pack "SoftwareFreedomConservancy.QEMU"})
 
 #Button para Development On Windows
-$buttonwt = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonwt.Add_Click({ })
-$buttonggs = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonggs.Add_Click({ })
-$buttonadb = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonadb.Add_Click({ })
-$buttonands = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonands.Add_Click({ })
-$buttonjava = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[4] -35) -Y ($cy_ar[4]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonjava.Add_Click({ })
-$buttonmysql = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[5] -35) -Y ($cy_ar[5]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonmysql.Add_Click({ })
-$buttonnodejs = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[6] -35) -Y ($cy_ar[6]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonnodejs.Add_Click({ })
-$buttonpyth3 = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[7] -35) -Y ($cy_ar[7]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonpyth3.Add_Click({ })
-$buttonOracleVM = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[8] -35) -Y ($cy_ar[8]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
-    $buttonOracleVM.Add_Click({ })
-$buttonQEMU = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[9] -35) -Y ($cy_ar[9]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
-    $buttonQEMU.Add_Click({ })
 
-#Elementos de Wep Browsers
-Add-Label -control $panelBrowser -Text " Development on Windows " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-Add-Label-Clickeable -control $panelDevelopment  -Text "Windows Terminal" -X $cx_ar[0] -Y $cy_ar[0]
-Add-Label-Clickeable -control $panelDevelopment -Text "Install Nerd Fornt" -X $cx_ar[1] -Y $cy_ar[1]
-Add-Label-Clickeable -control $panelDevelopment  -Text "Git + GnuPG + SSH (Setup)" -X $cx_ar[2] -Y $cy_ar[2]
+$buttonmysql = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonmysql.Add_Click({DESINSTALAR-PACKS -Dpack "Oracle.MySQL" })
+$buttonnodejs = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
+    $buttonnodejs.Add_Click({DESINSTALAR-PACKS -Dpack "OpenJS.NodeJS" })
+$buttonQEMU = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+    $buttonQEMU.Add_Click({ DESINSTALAR-PACKS -Dpack "SoftwareFreedomConservancy.QEMU"})
+
+
 
 #Posicionamiento de los Paneles
 ajustarPosicionPaneles -PanelesXColumna 6 -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelComun, $panelAV, $panelEmuladores, $panelEditors, $paneFileDocumet, $panelRemote, $panelNetwork, $panelDevelopment, $panelBootable
