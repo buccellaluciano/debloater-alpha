@@ -1,4 +1,3 @@
-$removebloatware=0
 function DESINSTALAR-PACKS {
     param (
         [string]$Dpack
@@ -7,35 +6,38 @@ function DESINSTALAR-PACKS {
     $apps = @("List", "of", "installed", "apps")  # Replace this with your actual list of installed apps
     $j = 0
 
+    Write-Host ("$Dpack")
     foreach ($i in $apps) {
-        $j++
-
-        if ($j -ne $apps.length) {
-            if ($Dpack -eq $i) {
-                Write-Host ("Uninstalling $Dpack...")
-
-                $appinfo = Get-AppxPackage -Name $Dpack -ErrorAction SilentlyContinue
-
-                if ($appinfo -ne $null) {
-                    Get-AppxPackage -Name $Dpack -AllUsers | Remove-AppxPackage
-                    $Result = [System.Windows.MessageBox]::Show("Package $Dpack successfully uninstalled with Get-AppxPackage.", "Uninstalled", "Ok")
-                }
-            }
-        }
-        else {
-            Write-Warning ("The program is not installed or not recognized with Get-Appx, trying with winget...")
-
-            try {
-                Write-Host "Uninstalling $Dpack with Winget..."
-                $uninstall = "winget uninstall $Dpack"
-                Invoke-Expression -Command $uninstall
-                $Result = [System.Windows.MessageBox]::Show("Package $Dpack successfully uninstalled with Winget.", "Uninstalled", "Ok")
-            }
-            catch {
-                $Result = [System.Windows.MessageBox]::Show("The package could not be uninstalled.", "Error", "Ok")
+        $j ++
+    if ($j -ne $apps.length){
+        if ($Dpack -eq $i){
+            Write-Host ("$Dpack")
+            $appinfo=Get-AppxPackage -Name $Dpack | Format-List -Property *
+            if ($appinfo -ne $null){
+                Get-AppxPackage -Name $Dpack -AllUsers | Remove-AppxPackage
+                $Result=  Add-Type -AssemblyName PresentationCore,PresentationFramework
+                $Result = [System.Windows.MessageBox]::Show("Paquete $Dpack correctamente desinstalado con GetAppx.","Desinstalado","Ok")
             }
         }
     }
+    else {
+        Write-Warning ("El programa no esta instalado o no se reconoce con Get-Appx, probando con winget...")
+        try {
+            WRITE-HOST "$Dpack"
+            $Dpack = $Dpack.Trim("-Dpack")
+            $uninstall ="winget uninstall $Dpack"
+            Invoke-Expression -Command $uninstall
+            $Result=  Add-Type -AssemblyName PresentationCore,PresentationFramework
+            $Result = [System.Windows.MessageBox]::Show("Paquete $Dpack correctamente desinstalado con Winget.","Desinstalado","Ok")
+
+        }
+        catch {
+            $Result=  Add-Type -AssemblyName PresentationCore,PresentationFramework
+            $Result = [System.Windows.MessageBox]::Show("El paquete no se pudo desinstalar.","Error","Ok")
+        }
+}
+        
+    }              
 
     if ($global:removebloatware -eq 1) {
         foreach ($line in $apps) {
@@ -152,5 +154,3 @@ function DESINSTALAR-PACKS {
     "*Microsoft.YourPhone*"                    # Phone link
     "*Microsoft.ZuneMusic*"                    # Modern Media Player
     )
-
-    
