@@ -5,7 +5,7 @@ $titlePrincipal = Add-Label -control $tabPage4 -Text "Creditos" -X 0 -Y 10 -Widt
 
 
 #first image
-$1ImagenCredito = Add-PictureBox -control $tabPage4 -ImagePath "$global:comitsBarras" -X ($formPrincipal.Width / 2 - 250) -Y 100 -Width 500 -Height 300
+$1ImagenCredito = Add-PictureBox -control $tabPage4 -ImagePath "$global:imagenComitBarras" -X ($formPrincipal.Width / 2 - 250) -Y 100 -Width 500 -Height 300
 Add-Label -control $tabPage4 -Text "Excluyendo merges, 4 autores pushearon 163 commits a la version 0.1 y 170 commits a todas las branches. En la 0.1, 115 archivos fueron modificados y hubo 10,917 adiciones y 300 eliminaciones." -X ($formPrincipal.Width / 2 - 250) -Y 420 -Width ($formPrincipal.Width / 2 - 50) -Height 120 -ForeColor '#2ECC71' -Size 15
 
 

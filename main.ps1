@@ -35,7 +35,7 @@ $global:imagenLucianoGraph="$PSScriptRoot\src\img\lucianoGraph.png"
 $global:imagenRodigorGraph="$PSScriptRoot\src\img\rodigorGraph.png"
 $global:imagenCockingGraph="$PSScriptRoot\src\img\cockingGraph.png"
 $global:imagenJulianGraph="$PSScriptRoot\src\img\julianGraph.png"
-
+$global:imagenComitBarras="$PSScriptRoot\src\img\comitsBarras.png"
 #no
 $global:lastEasterEgg="$PSScriptRoot\src\lib\peligro\WORK IN PROGRESS aachitear.bat"
 
