@@ -3,7 +3,7 @@
 Add-Type -Assembly System.Drawing
 $paparrando="$PSScriptRoot\src\img\paparrando.png"
 Add-Label -control $tab2Install -Text "Instalacion de software" -X 0 -Y 10 -Width ($formPrincipal.Width-50) -Height 50 -ForeColor '#f54242' -Size 30
-Add-Label -control $tab2Install -Text "Nombre = Instalar - Boton = Desinstalar" -X 0 -Y 70 -Width ($formPrincipal.Width-50) -Height 30 -ForeColor '#ffffff' -Size 15
+Add-Label -control $tab2Install -Text "Boton = Desinstalar - Nombre = Instalar" -X 0 -Y 70 -Width ($formPrincipal.Width-50) -Height 30 -ForeColor '#ffffff' -Size 15
 
 
 $buttonInstalUnin = Add-Button -Control $tab2Install -Text "ACTUALIZAR TODO" -X 412 -Y 100 -Width 225 -Height 30 -ForeColor '#00FF00'; $buttonInstalUnin.Add_Click({zVIVE})
@@ -30,7 +30,7 @@ $panelNavegadores = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelGpuCpuDrivers = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelCompresor = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelGaming = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
-$panelStreaming = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
+#$panelStreaming = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelComun = Add-Panel-Autosized -Control $tab2Install -X 0 -Y 0
 $panelAV = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
 $panelEmuladores = Add-Panel-Autosized -control $tab2Install -X 0 -Y 0
@@ -84,7 +84,7 @@ $buttonoperagx = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:
 
 
 #Elementos de paneles para los drivers
-$labelGPU = Add-Label -control $panelGpuCpuDrivers -Text "Driver de CPU/GPU" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label -control $panelGpuCpuDrivers -Text "Driver de CPU/GPU" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelControladorAMD = Add-Label-Clickeable -control $panelGpuCpuDrivers -Text "Controlador AMD Ryzen Chipset" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelControladorAMD.Add_Click({ })
 $labelNvidia = Add-Label-Clickeable -control $panelGpuCpuDrivers -Text "Nvidia Drivers" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
@@ -97,7 +97,7 @@ $buttonNvidia = Add-ImageButton -Control $panelGpuCpuDrivers -ImagePath "$global
     $buttonNvidia.Add_Click({DESINSTALAR-PACKS -Dpack "Nvidia.GeForceExperience";  })
 
 #Labels para compresores
-$labelCompresor = Add-Label -control $panelCompresor -Text "Programas de compresion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label -control $panelCompresor -Text "Programas de compresion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelwinrar = Add-Label-Clickeable -control $panelCompresor -Text "Winrar (Version de Prueba)" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelwinrar.Add_Click({INSTALAR-PACK -Pack "RARLab.WinRAR" }) 
 $label7z = Add-Label-Clickeable -control $panelCompresor -Text "7-Zip" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
@@ -111,7 +111,7 @@ $button7z = Add-ImageButton -Control $panelCompresor -ImagePath "$global:imagenT
 
 
 #Label para gaming
-$labelGaming = Add-Label -control $panelGaming -Text "Gaming" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label -control $panelGaming -Text "Gaming" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelgog = Add-Label-Clickeable -control $panelGaming -Text "GOG Galaxy " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelgog.Add_Click({INSTALAR-PACK -Pack "GOG.Galaxy" }) 
 $labelepic = Add-Label-Clickeable -control $panelGaming -Text "Epic games Launcher" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
@@ -137,28 +137,28 @@ $buttoneadesk = Add-ImageButton -Control $panelGaming -ImagePath "$global:imagen
 
 
 #Elemento de streaming* services
-$labelGPU = Add-Label -control $panelStreaming -Text "Streaming Services" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
-$labelAmazon = Add-Label-Clickeable -control $panelStreaming -Text "Amazon Prime Video" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labelAmazon.Add_Click({ })
-$labelDisney = Add-Label-Clickeable -control $panelStreaming -Text "Disney+" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelDisney.Add_Click({ })
-$labelNetflix = Add-Label-Clickeable -control $panelStreaming -Text "Netflix" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
-    $labelNetflix.Add_Click({ })
-$labelSpoti = Add-Label-Clickeable -control $panelStreaming -Text "Spotify" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
-    $labelSpoti.Add_Click({ })
+#$labelGPU = Add-Label -control $panelStreaming -Text "Streaming Services" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+#$labelAmazon = Add-Label-Clickeable -control $panelStreaming -Text "Amazon Prime Video" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
+#    $labelAmazon.Add_Click({ })
+#$labelDisney = Add-Label-Clickeable -control $panelStreaming -Text "Disney+" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
+#    $labelDisney.Add_Click({ })
+#$labelNetflix = Add-Label-Clickeable -control $panelStreaming -Text "Netflix" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
+#    $labelNetflix.Add_Click({ })
+#labelSpoti = Add-Label-Clickeable -control $panelStreaming -Text "Spotify" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
+#    $labelSpoti.Add_Click({ })
 
 #Buttons de Streaming services
-$buttonAmazon = Add-ImageButton -Control $panelStreaming -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
-    $buttonAmazon.Add_Click({ })
-$buttonDisney = Add-ImageButton -Control $panelStreaming -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
-    $buttonDisney.Add_Click({ })
-$buttonNetflix = Add-ImageButton -Control $panelStreaming -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
-    $buttonNetflix.Add_Click({ })
-$buttonSpoti = Add-ImageButton -Control $panelStreaming -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
-    $buttonSpoti.Add_Click({ })
+#$buttonAmazon = Add-ImageButton -Control $panelStreaming -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
+#    $buttonAmazon.Add_Click({ })
+#$buttonDisney = Add-ImageButton -Control $panelStreaming -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
+#    $buttonDisney.Add_Click({ })
+#$buttonNetflix = Add-ImageButton -Control $panelStreaming -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
+#    $buttonNetflix.Add_Click({ })
+#$buttonSpoti = Add-ImageButton -Control $panelStreaming -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20 -ForeColor '#FFFFFF'
+#    $buttonSpoti.Add_Click({ })
 
 #Labels de Comunicacion
-$labelComun = Add-Label -control $panelComun -Text "Comunicacion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label -control $panelComun -Text "Comunicacion" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labeldisc = Add-Label-Clickeable -control $panelComun -Text "Discord " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labeldisc.Add_Click({INSTALAR-PACK -Pack "Discord.Discord" }) 
 $labelsky = Add-Label-Clickeable -control $panelComun -Text "Skype" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
@@ -179,7 +179,7 @@ $buttonwhats = Add-ImageButton -Control $panelComun -ImagePath "$global:imagenTr
     $buttonwhats.Add_Click({DESINSTALAR-PACKS -Dpack "WhatsApp.WhatsApp";  }) 
 
 #Labels de AV
-$labelAV = Add-Label -control $panelAV -Text "Audio/Video" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label -control $panelAV -Text "Audio/Video" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelvlc = Add-Label-Clickeable -control $panelAV -Text "VLC" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelvlc.Add_Click({INSTALAR-PACK -Pack "XPDM1ZW6815MQM" })
 $labelspoti = Add-Label-Clickeable -control $panelAV -Text "Spotify" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
@@ -202,7 +202,7 @@ $buttonmpc = Add-ImageButton -Control $panelAV -ImagePath "$global:imagenTroll" 
 
 
 #Labels de emuladores
-$labelEmu = Add-Label -control $panelEmuladores -Text "Emuladores " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label -control $panelEmuladores -Text "Emuladores " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelblue = Add-Label-Clickeable -Control $panelEmuladores -Text "Bluestacks " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelblue.Add_Click({INSTALAR-PACK -Pack "BlueStack.BlueStacks" })
 $labelcemu = Add-Label-Clickeable -Control $panelEmuladores -Text "CEMU" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
@@ -228,7 +228,7 @@ $buttonyuzu = Add-ImageButton -Control $panelEmuladores -ImagePath "$global:imag
 
     
 #Labels de Editors/IDEs
-$labelJet = Add-Label -control $panelEditors -Text "Editores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label -control $panelEditors -Text "Editores" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelplusplus = Add-Label-Clickeable -Control $panelEditors -Text "Notepad++ " -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelplusplus.Add_Click({INSTALAR-PACK -Pack "Notepad++.Notepad++" })
 $labelVS2022 = Add-Label-Clickeable -Control $panelEditors -Text "Visual Studio 2022 Community" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
@@ -250,7 +250,7 @@ $buttonGhub = Add-ImageButton -Control $panelEditors -ImagePath "$global:imagenT
 
 
 #Labels de Documents Editor/Reader(s)
-$labelDER = Add-Label -control $paneFileDocumet  -Text "Lector/Editor de Documentos" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label -control $paneFileDocumet  -Text "Lector/Editor de Documentos" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelAdober = Add-Label-Clickeable -Control $paneFileDocumet -Text "Adobe Reader" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelAdober.Add_Click({INSTALAR-PACK -Pack "Adobe.Acrobat.Reader.64-bit" })
 $labelOO = Add-Label-Clickeable -Control $paneFileDocumet -Text "LibreOffice (Desktop Editor)" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
@@ -274,7 +274,7 @@ $buttonb1 = Add-ImageButton -Control $paneFileDocumet -ImagePath "$global:imagen
 
 
 #Labels de Remote Connection
-$labelRemote = Add-Label -control $panelRemote -Text "Remote Connection" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label -control $panelRemote -Text "Remote Connection" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelAnydesk = Add-Label-Clickeable -Control $panelRemote -Text "AnyDesk" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelAnydesk.Add_Click({INSTALAR-PACK -Pack "AnyDeskSoftwareGmbH.AnyDesk" })
 $labelParsec = Add-Label-Clickeable -Control $panelRemote -Text "Parsec" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
@@ -313,7 +313,7 @@ $buttonRufus = Add-ImageButton -Control $panelBootable -ImagePath "$global:image
     $buttonRufus.Add_Click({DESINSTALAR-PACKS -Dpack "Rufus.Rufus" })
 
 #Labels Virtual Machines
-$labelGPU = Add-Label -control $panelVirtual  -Text "Virtual Machines" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+Add-Label -control $panelVirtual  -Text "Virtual Machines" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelOracleVM = Add-Label-Clickeable -Control $panelVirtual -Text "Oracle VM VirtualBox" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelOracleVM.Add_Click({INSTALAR-PACK -Pack "Oracle.VirtualBox" })
 $labelQEMU = Add-Label-Clickeable -Control $panelVirtual -Text "QEMU" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
@@ -331,7 +331,8 @@ $buttonvmware = Add-ImageButton -Control $panelVirtual -ImagePath "$global:image
 
 #ALERTA DE LINDO PEDAZZZZO DE CODIGO ABAJO 
 #Labels Windows Subsystem For Linux
-$labelGPU = Add-Label -control $panelSubsystem -Text " Windows Subsystem For Linux " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
+#!!!SEGUIR NO TERMINADO
+Add-Label -control $panelSubsystem -Text " Windows Subsystem For Linux " -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelwsl = Add-Label-Clickeable -Control $panelSubsystem -Text "Install WSL" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
     $labelwsl.Add_Click({ })
 $labelarchwsl = Add-Label-Clickeable -Control $panelSubsystem -Text "ArchWSL (x64)" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
@@ -454,7 +455,6 @@ Add-Label-Clickeable -control $panelDevelopment -Text "Install Nerd Fornt" -X $c
 Add-Label-Clickeable -control $panelDevelopment  -Text "Git + GnuPG + SSH (Setup)" -X $cx_ar[2] -Y $cy_ar[2]
 
 #Posicionamiento de los Paneles
-ajustarPosicionPaneles -PanelesXColumna 6 -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelStreaming, $panelComun, $panelAV, $panelEmuladores, $panelEditors, $paneFileDocumet, $panelRemote, $panelSubsystem, $panelNetwork, $panelUICustomization, $panelDevelopment, $panelBootable
+ajustarPosicionPaneles -PanelesXColumna 6 -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelComun, $panelAV, $panelEmuladores, $panelEditors, $paneFileDocumet, $panelRemote, $panelSubsystem, $panelNetwork, $panelUICustomization, $panelDevelopment, $panelBootable
 #####POR LAS DUDAS#######
-#$chBoxDiscord DISCORD
-#chBoxUbiConnect UBISOFT CONNECT
+#$panelStreaming
