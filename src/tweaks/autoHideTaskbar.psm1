@@ -11,10 +11,12 @@ if ($v[8] -eq 122) {
         $v[8]= 123
         Set-ItemProperty -Path $p -Name Settings -Value $v
         Stop-Process -Force -ProcessName explorer
-    elseif ($v[8] -eq 123) {
-        $v[8]=122
-        Set-ItemProperty -Path $p -Name Settings -Value $v
-        Stop-Process -f -ProcessName explorer
-    }
 }
+
+if ($v[8] -eq 123) {
+    $v[8]= 122
+    Set-ItemProperty -Path $p -Name Settings -Value $v
+    Stop-Process -f -ProcessName explorer
+}
+
 }
