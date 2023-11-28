@@ -19,4 +19,7 @@ if (-not $adminCheck) {
     Exit
     
 }
+
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
 . "$PSScriptRoot\main.ps1"
