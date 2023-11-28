@@ -10,26 +10,22 @@ function Add-Label-Clickeable {
         [string]$ForeColor = "#FFFFFF"
     )
     
-    $newLabel = New-Object System.Windows.Forms.Label  # Cambiado de Panel a Label
-    $newLabel.Location = New-Object System.Drawing.Size($X, $Y)
+    $newLabel = New-Object System.Windows.Forms.Label
+    $newLabel.Location = New-Object System.Drawing.Point($X, $Y)
 
-    #Nuevo ajuste de tamaño
-    if ($Width -gt 0 -and $Height -gt 0)
-    {
+    if ($Width -gt 0 -and $Height -gt 0) {
         $newLabel.Size = New-Object System.Drawing.Size($Width, $Height)
-    }
-    else
-    {
+    } else {
         $newLabel.AutoSize = $true
     }
+
     $newLabel.Text = $Text
     $newLabel.Font = New-Object System.Drawing.Font('Terminal', $Size, [System.Drawing.FontStyle]::Bold)
     $newLabel.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$ForeColor")
-    #$newLabel.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#FFFFFF")
     $newLabel.TextAlign = 'MiddleCenter'
-    $newLabel.Cursor = [Windows.Forms.Cursors]::Hand
+    $newLabel.Cursor = [System.Windows.Forms.Cursors]::Hand
 
-    
+
     $Control.Controls.Add($newLabel)
 
     return $newLabel
