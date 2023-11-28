@@ -1,16 +1,16 @@
 $expath= $MyInvocation.MyCommand.Definition
 $exname = $MyInvocation.MyCommand.Name
 $tfiles =@(
-    "dtelemetry1.txt"
-    "dtelemetry2.txt"
-    "dtelemetry3.txt"
-    "dtelemetry4.txt"
-    "dtelemetry5.txt"
-    "dtelemetry6.txt"
-    "dtelemetry7.txt"
-    "dtelemetry8.txt"
-    "dtelemetry9.txt"
-    "dtelemetry10.txt"
+    "dtelemetry1.txt",
+    "dtelemetry2.txt",
+    "dtelemetry3.txt",
+    "dtelemetry4.txt",
+    "dtelemetry5.txt",
+    "dtelemetry6.txt",
+    "dtelemetry7.txt",
+    "dtelemetry8.txt",
+    "dtelemetry9.txt",
+    "dtelemetry10.txt",
     "dtelemetry11.txt"
 )
 function Disable-Telemetry {
