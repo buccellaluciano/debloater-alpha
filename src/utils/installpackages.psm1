@@ -4,7 +4,7 @@ function INSTALAR-PACK {
     )
         
 
-    $install ="winget install $Pack --accept-source-agreements --accept-package-agreements"
+    $install = "winget install $Pack --accept-source-agreements --accept-package-agreements"
     Write-Host("$Pack")
     Invoke-Expression -Command $install
     $Result=  Add-Type -AssemblyName PresentationCore,PresentationFramework
