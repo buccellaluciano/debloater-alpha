@@ -76,7 +76,7 @@ $btnTbFlashing = Add-Button -Control $paneltb -Text "Parpadeo de la barra" -X $c
 $btnTbFlashing.Add_Click({$global:text="tb\taskbarFlashing.txt"; changeregs; Update-Button-Reg -buttonChanger $btnTbFlashing;})
 
 #Systray
-Add-Label -control $panelSysTray -Text "Bandeja del sistema" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
+Add-Label -control $panelSysTray -Text "Explorer" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
 $btnAutoCheck = Add-Button -Control $panelSysTray -Text "Checklist explorer" -X $cx_ar[0] -Y $cy_ar[0] -Width 150 -Height 40 -ForeColor '#ffffff'
 $btnAutoCheck.Add_Click({$global:text="explorer\AutoCheckSelect.txt"; changeregs; Update-Button-Reg -buttonChanger $btnAutoCheck})
 $btnCompact = Add-Button -Control $panelSysTray -Text "Modo compacto" -X $cx_ar[1] -Y $cy_ar[1] -Width 150 -Height 40 -ForeColor '#ffffff'

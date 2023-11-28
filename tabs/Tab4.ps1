@@ -89,14 +89,16 @@ Add-Label -control $tabPage4 -Text "LOREMP IPSUM" -X ($formPrincipal.Width / 2 -
 
 $1ImagenCredito.Add_Click{
     $1ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTroll)
+    [Console]::Beep()
 }
 $2ImagenCredito.Add_Click{ #IMAGEN DE HIJORRANDO POSTIÑA
     $2ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenLuciano)
     #$2ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTrollJR)
+    [Console]::Beep()
 }
 $3ImagenCredito.Add_Click{
-    $2ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenLuciano)
-    #$2ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTrollJR)
+    $2ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTrollJR)
+    [Console]::Beep()
 }
 $4ImagenCredito.Add_Click{
     $4ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTroll)
@@ -106,28 +108,36 @@ $5ImagenCredito.Add_Click{
     Start-Process -FilePath $global:lastEasterEgg
 }
 $6ImagenCredito.Add_Click{
-    $4ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTroll)
+    $6ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTroll)
+    [Console]::Beep()
 }
 $7ImagenCredito.Add_Click{
-    $4ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTroll)
+    $7ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTrollJR)
+    [Console]::Beep()
 }
 $8ImagenCredito.Add_Click{
-    $4ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTroll)
+    $8ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTroll)
+    [Console]::Beep()
 }
 $9ImagenCredito.Add_Click{
-    $4ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTrollJR)
+    $9ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTrollJR)
+    [Console]::Beep()
 }
 $10ImagenCredito.Add_Click{
-    $4ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTrollJR)
+    $10ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTroll)
+    [Console]::Beep()
 }
 $11ImagenCredito.Add_Click{ #IMAGEN DE PPARANDO POSTIÑA
-    $4ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTrollJR)
+    $11ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTrollJR)
+    [Console]::Beep()
 }
 $12ImagenCredito.Add_Click{
-    $4ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTrollJR)
+    $12ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTroll)
+    [Console]::Beep()
 }
 $13ImagenCredito.Add_Click{
-    $4ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTrollJR)
+    $13ImagenCredito.Image = [System.Drawing.Image]::FromFile($global:imagenTrollJR)
+    [Console]::Beep()
 }
 
 
