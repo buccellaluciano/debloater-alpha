@@ -21,7 +21,7 @@ function DESINSTALAR-PACKS {
         Write-Warning ("El programa no esta instalado o no se reconoce con Get-Appx, probando con winget...")
         try {
             WRITE-HOST "$Dpack"
-            $Dpack = $Dpack.Trim("-Dpack")
+            #$Dpack = $Dpack.Trim("-Dpack")
             $uninstall ="winget uninstall $Dpack"
             Invoke-Expression -Command $uninstall
             $Result=  Add-Type -AssemblyName PresentationCore,PresentationFramework
