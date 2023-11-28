@@ -23,12 +23,20 @@ $icon = [System.Drawing.Icon]::ExtractAssociatedIcon($iconPath)
 $formPrincipal.Icon = $icon
 ####CONFIGURACION FORM PRINCIPAL, UNICO####
 $global:imagenTroll="$PSScriptRoot\src\img\paparrando.png"
+$global:imagenTrollJR="$PSScriptRoot\src\img\hijorrando.png"
 $global:imagenCocking="$PSScriptRoot\src\img\cocking.png"
 $global:imagenJulian="$PSScriptRoot\src\img\julian.png"
 $global:imagenLuciano="$PSScriptRoot\src\img\luciano.png"
 $global:imagenRodigor="$PSScriptRoot\src\img\rodigor.png"
 $global:imagenPtg="$PSScriptRoot\src\img\chatptg.png"
 $global:imagenFran="$PSScriptRoot\src\img\fran.png"
+$global:imagenLucianoGraph="$PSScriptRoot\src\img\lucianoGraph.png"
+$global:imagenRodigorGraph="$PSScriptRoot\src\img\rodigorGraph.png"
+$global:imagenCockingGraph="$PSScriptRoot\src\img\cockingGraph.png"
+$global:imagenJulianGraph="$PSScriptRoot\src\img\julianGraph.png"
+
+#no
+$global:lastEasterEgg="$PSScriptRoot\src\lib\peligro\WORK IN PROGRESS aachitear.bat"
 
 ###IMPORTAR MODULOS, CARGALOS TODOS DE UNA DESPUES CAMBIAR... ?####
 ##TROLLS##
@@ -92,15 +100,6 @@ $tabPage4 = Add-TabPage -TabControl $tabControl -Text "Creditos" #guardar para q
 . "$PSScriptRoot\tabs\Tab2.ps1"
 . "$PSScriptRoot\tabs\Tab3.ps1"
 . "$PSScriptRoot\tabs\Tab4.ps1"
-
-$value= $MyInvocation.MyCommand.Definition
-$appsname = $MyInvocation.MyCommand.Name
-
-
-param (
-    [string]$Pasarapp
-)
-
 
 
 #[Console]::Beep()

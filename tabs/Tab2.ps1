@@ -6,7 +6,7 @@ Add-Label -control $tab2Install -Text "Instalacion de software" -X 0 -Y 10 -Widt
 Add-Label -control $tab2Install -Text "Nombre = Instalar - Boton = Desinstalar" -X 0 -Y 70 -Width ($formPrincipal.Width-50) -Height 30 -ForeColor '#ffffff' -Size 15
 
 
-$buttonInstalUnin = Add-Button -Control $tab2Install -Text "ACTUALIZAR TODO" -X ($formPrincipal.Width / 2 -300) -Y 100 -Width 225 -Height 30 -ForeColor '#00FF00'; $buttonInstalUnin.Add_Click({zVIVE})
+$buttonInstalUnin = Add-Button -Control $tab2Install -Text "ACTUALIZAR TODO" -X 412 -Y 100 -Width 225 -Height 30 -ForeColor '#00FF00'; $buttonInstalUnin.Add_Click({zVIVE})
 
 $buttonInstalUnin.Add_Click{
     Confirm-Action -Message 'Estas seguro que quieres actualizar todo Algunas aplicaciones no se actualizaran (no winget)?' -Title 'Confirmacion' -YesAction {
@@ -309,7 +309,7 @@ $labelRufus = Add-Label-Clickeable -Control $panelBootable -Text "Rufus" -X $cx_
 
 
 #Buttons de Bootable USB
-$buttonRufus = Add-ImageButton -Control $panelBootable -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
+$buttonRufus = Add-ImageButton -Control $panelBootable -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF';
     $buttonRufus.Add_Click({DESINSTALAR-PACKS -Dpack "Rufus.Rufus" })
 
 #Labels Virtual Machines

@@ -103,7 +103,7 @@ function Add-Label {
     $newLabel.Text = $Text
     $newLabel.Font = New-Object System.Drawing.Font('Terminal', $Size, [System.Drawing.FontStyle]::Bold)
     $newLabel.ForeColor = [System.Drawing.ColorTranslator]::FromHtml("$ForeColor")
-    #$newLabel.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#FFFFFF")
+    $newLabel.BackColor = [System.Drawing.ColorTranslator]::FromHtml("#FFFFFF")
     $newLabel.TextAlign = 'MiddleCenter'
 
     
@@ -226,9 +226,8 @@ function Add-PictureBox {
 
     $Image = [System.Drawing.Image]::FromFile($($ImagePath))
 
-    $newPictureBox.BackgroundImageLayout = [System.Windows.Forms.ImageLayout]::Zoom
+    $newPictureBox.SizeMode = [System.Windows.Forms.PictureBoxSizeMode]::Zoom
     $newPictureBox.Image = $Image
-    $newPictureBox.Cursor = [System.Windows.Forms.Cursors]::Hourglass
 
     $Control.Controls.Add($newPictureBox)
 
