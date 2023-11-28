@@ -18,30 +18,28 @@ function Disable-Telemetry {
         [string] $folder
     )
         foreach ($i in $tfiles){
-            $string = $files[$i]
-            Write-Host("string $string")
-            $telpath = $expath.Replace("utils\$exname","regfiles\telemetry\$string")
-            $selected = Get-Content -Path $telpath
-            Write-Host ("selected $selected")                
+            $telpath = $expath.Replace("utils\$exname","regfiles\telemetry\$i")
+            $selected = Get-Content -Path $telpath               
+            $j
+            foreach ($line in $selected){
+                $j++
+                    if ($j -eq 1){
+                        $regroute = $line
+                    }elseif ($j -eq 2){
+                        $name = $line
+                    }
+                $valor =Get-ItemPropertyValue -Path $regroute -Name $name
+                    if ($valor-eq 0){
+                        $value=1
+                        
+                    }if ($valor -eq 1){
+                        $value=0 
+                    }
+            Write-Host ("$regroute")
+            Write-Host ("$name")
+                    #Set-ItemProperty -Path "$regroute" -Name "$name" -Value "$value" -ErrorAction SilentlyContinue
+            }
         }
-        $j
-        foreach ($line in $selected){
-            $j++
-                if ($j -eq 1){
-                    $regroute = $line
-                }elseif ($j -eq 2){
-                    $name = $line
-                }
-            $valor =Get-ItemPropertyValue -Path $regroute -Name $name
-                if ($valor-eq 0){
-                    $value=1
-                    
-                }if ($valor -eq 1){
-                    $value=0 
-                }
-        Write-Host ("$regroute")
-        Write-Host ("$name")
-                #Set-ItemProperty -Path "$regroute" -Name "$name" -Value "$value" -ErrorAction SilentlyContinue
-        }
+        
 
 }
