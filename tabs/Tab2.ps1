@@ -15,14 +15,6 @@ $buttonInstalUnin.Add_Click{
 }
 
 ############TAB 2############
-#VARIABLES PARA LOS PANELES DE SANDES, TOCAR SI ES NECESARIO
-
-#Distancia entre los paneles.
-#MODIFICAR SI SE NECESITA MAS ESPACIO!
-$xsep = 10 #Separacion horizontal de los paneles.
-$ysep = 10 #Separacion vertical de los paneles.
-
-
 # Crear los paneles
 #Los hice autosized para que no anden ocupando espacio al pedo, se van estirando conforme agregas controles.
 #La posicion va a ser automaticamente establecida, asi que no se molesten en modificar argumentos aca.
@@ -374,6 +366,6 @@ $buttonQEMU = Add-ImageButton -Control $panelDevelopment -ImagePath "$global:ima
 
 
 #Posicionamiento de los Paneles
-ajustarPosicionPaneles -PanelesXColumna 6 -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelComun, $panelAV, $panelEmuladores, $panelEditors, $paneFileDocumet, $panelRemote, $panelNetwork, $panelDevelopment, $panelBootable
+ajustarPosicionPaneles -posInicialX 100 -PanelesXColumna 5 -Paneles $panelNavegadores, $panelGpuCpuDrivers, $panelCompresor, $panelGaming, $panelComun, $panelAV, $panelEmuladores, $panelEditors, $paneFileDocumet, $panelRemote, $panelNetwork, $panelDevelopment, $panelBootable
 #####POR LAS DUDAS#######
 #$panelStreaming

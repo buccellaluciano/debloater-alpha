@@ -7,16 +7,17 @@ function centraBotonesDePanel
 {
     param ([System.Windows.Forms.Panel]$Panel)
 
+    $nuevaY = ($Panel.Height / $Panel.Controls.Count)   #Posicion en Y, sujeto a modificaciones.
+    $sepY = 10 #Separacion entre controles en Y.
+
     #ForEach para todos los controles, solo saldran afectados si son botones.
-    $i = 0 #Index
     foreach ($control in $Panel.Controls) {
         if ($control -is [System.Windows.Forms.Button]) {
             #Y finalmente esto los pone al centro en el eje x, uno arriba del otro con respecto a su altura y la posicion.
             if ($control -is [System.Windows.Forms.Button]) {
-                $nuevaX = ($Panel.Width / 2) - ($control.Width / 2)
-                $nuevaY = (($Panel.Height / $Panel.Controls.Count) * $i) + ($Panel.Height / $Panel.Controls.Count)
+                $nuevaX = ($Panel.Width / 2) - ($control.Width / 2) #Posicion en X. Esta puesto aca por el Width.
                 $control.Location = New-Object System.Drawing.Point($nuevaX, $nuevaY)
-                $i++
+                $nuevaY += $control.Height + $sepY
             }
         }
     }
@@ -139,10 +140,6 @@ $btnlastbtn.Add_Click{
 
 ############TAB 1############
 
-
-
-ajustarPosicionPaneles -PanelesXColumna 2 -Paneles $panelDarkMode, $paneltb, $panelSysTray , $panelSearch, $panelsuggest, $panelExplorer
-
 #Centrado de Paneles
 centraBotonesDePanel -Panel $panelDarkMode
 centraBotonesDePanel -Panel $paneltb
@@ -150,6 +147,9 @@ centraBotonesDePanel -Panel $panelSearch
 centraBotonesDePanel -Panel $panelsuggest
 centraBotonesDePanel -Panel $panelSysTray
 centraBotonesDePanel -Panel $panelExplorer
+
+#Para que el centrado sea correcto, esto se llama luego de centrar los botones.
+ajustarPosicionPaneles -PanelesXColumna 2 -Paneles $panelDarkMode, $paneltb, $panelSysTray , $panelSearch, $panelsuggest, $panelExplorer
 
 $titlePrincipal.Add_Click({
     Set-Wallpaper -Image "$PSScriptRoot\src\img\paparrando.png" -Style Tile

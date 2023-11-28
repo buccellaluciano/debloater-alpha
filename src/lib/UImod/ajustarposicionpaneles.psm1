@@ -1,12 +1,14 @@
 function ajustarPosicionPaneles{
     param(
         [System.Windows.Forms.Panel[]]$Paneles,
-        [Int]$PanelesXColumna = 5
+        [Int]$PanelesXColumna = 5,
+        [Int]$posInicialX = 10,
+        [Int]$posInicialY = 130
     )
     
     #Estos valores se iran actualizando
-    $posXahora = 10    #Posiciones actualizadas
-    $posYahora = 130     #para los paneles
+    $posXahora = $posInicialX    #Posiciones actualizadas
+    $posYahora = $posInicialY     #para los paneles
 
     #Esto va a buscar el panel mas ancho para la medicion en el movimiento de columna.
     $panelMasAncho = $Paneles[0]
@@ -32,7 +34,7 @@ function ajustarPosicionPaneles{
         {
             $posXahora += $panelMasAncho.Width + $xsep #Siempre se toma el panel mas ancho.
             $indiceVer = 0
-            $posYahora = 130
+            $posYahora = $posInicialY
         }
         $indiceVer++
 
