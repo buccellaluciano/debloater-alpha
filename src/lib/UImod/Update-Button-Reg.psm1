@@ -1,8 +1,9 @@
-$expath= $MyInvocation.MyCommand.Definition
+$expath = $MyInvocation.MyCommand.Definition
 $exname = $MyInvocation.MyCommand.Name
 $regname =@("$text")
     function Update-Button-Reg {
         param([System.Windows.Forms.Control]$buttonChanger)
+        write-host = "$PSScriptRoot"
 
     foreach ($e in $regname){
         $regname+=$global:text
