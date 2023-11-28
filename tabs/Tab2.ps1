@@ -279,13 +279,13 @@ $buttonb1 = Add-ImageButton -Control $paneFileDocumet -ImagePath "$global:imagen
 #Labels de Remote Connection
 $labelRemote = Add-Label -control $panelRemote -Text "Remote Connection" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelAnydesk = Add-Label -Control $panelRemote -Text "AnyDesk" -X $cx_ar[0] -Y $cy_ar[0] -ForeColor '#FFFF66'
-    $labelAnydesk.Add_Click({INSTALAR-PACK -Pack"AnyDeskSoftwareGmbH.AnyDesk" })
+    $labelAnydesk.Add_Click({INSTALAR-PACK -Pack "AnyDeskSoftwareGmbH.AnyDesk" })
 $labelParsec = Add-Label -Control $panelRemote -Text "Parsec" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelParsec.Add_Click({INSTALAR-PACK -Pack"Parsec.Parsec" })
+    $labelParsec.Add_Click({INSTALAR-PACK -Pack "Parsec.Parsec" })
 $labelScr = Add-Label -Control $panelRemote -Text "ScrCpy (Android)" -X $cx_ar[2] -Y $cy_ar[2] -ForeColor '#FFFF66'
-    $labelScr.Add_Click({INSTALAR-PACK -Pack"Genymobile.scrcpy" })
+    $labelScr.Add_Click({INSTALAR-PACK -Pack "Genymobile.scrcpy" })
 $labelTV = Add-Label -Control $panelRemote -Text "Team Viewer" -X $cx_ar[3] -Y $cy_ar[3] -ForeColor '#FFFF66'
-    $labelTV.Add_Click({INSTALAR-PACK -Pack"TeamViewer.TeamViewer" })
+    $labelTV.Add_Click({INSTALAR-PACK -Pack "TeamViewer.TeamViewer" })
 
 #Buttons de Documents Editor/Reader(s)
 $buttonAnydesk = Add-ImageButton -Control $panelRemote -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20 -ForeColor '#FFFFFF'; 
@@ -308,7 +308,7 @@ $buttonTV = Add-ImageButton -Control $panelRemote -ImagePath "$global:imagenTrol
 #Labels de Bootable* USB
 $labelUSB = Add-Label -control $panelBootable -Text "Bootable USB" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15
 $labelRufus = Add-Label -Control $panelBootable -Text "Rufus" -X $cx_ar[1] -Y $cy_ar[1] -ForeColor '#FFFF66'
-    $labelRufus.Add_Click({INSTALAR-PACK -Pack"Rufus.Rufus" })
+    $labelRufus.Add_Click({INSTALAR-PACK -Pack "Rufus.Rufus" })
 
 
 #Buttons de Bootable USB
