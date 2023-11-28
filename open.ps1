@@ -20,4 +20,10 @@ if (-not $adminCheck) {
     
 }
 
-. "$PSScriptRoot\main.ps1"
+
+$nowex= $MyInvocation.MyCommand.Definition
+$nowexname = $MyInvocation.MyCommand.Name
+$scrpath= $nowex.Replace("$nowexname","main.ps1")
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+
+Start-Process -FilePath "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -ArgumentList "-WindowStyle Hidden -File $scrpath"
