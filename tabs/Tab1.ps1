@@ -8,7 +8,8 @@ $paneltb = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
 $panelSearch = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
 $panelsuggest = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
 $panelDarkMode = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
-$panel = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
+$panelSysTray = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
+$panelExplorer = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
 #$panelDarkMode = Add-Panel-Autosized -Control $tabPage1 -X 0 -Y 0
 
 #$btnttb = Add-Button -Control $paneltb -Text "Barra transparente" -X $cx_ar[5] -Y $cy_ar[5] -Width 150 -Height 30 -ForeColor '#ffffff'
@@ -31,7 +32,7 @@ for ($i = 0; $i -lt $posiciones_control; $i++) {
 #Modo oscuro
 Add-Label -control $panelDarkMode -Text "Modo oscuro" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
 $btnchangetheme = Add-Button -Control $panelDarkMode -Text "Cambiar" -X $cx_ar[0] -Y $cy_ar[0] -Width 150 -Height 30 -ForeColor '#ffffff';
-$btnchangetheme.Add_Click({$global:text="change_theme1.txt"; changeregs; $global:text="change_theme2.txt"; changeregs})
+$btnchangetheme.Add_Click({$global:text="change_theme1.txt"; changeregs; $global:text="change_theme2.txt"; changeregs; Update-Button-Reg -buttonChanger $btnchangetheme})
 
 #Barra de tareas
 Add-Label -control $paneltb -Text "Barra de tareas" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
@@ -49,6 +50,17 @@ $btnttb = Add-Button -Control $paneltb -Text "Barra transparente" -X $cx_ar[5] -
 $btnttb.Add_Click({$global:text="tb\translucentTaskBarReg.txt"; changeregs; Update-Button-Reg -buttonChanger $btnttb})
 $btnCopilot = Add-Button -Control $paneltb -Text "Copilot" -X $cx_ar[6] -Y $cy_ar[6] -Width 150 -Height 30 -ForeColor '#ffffff'
 $btnCopilot.Add_Click({$global:text="tb\disable_copilot_button.txt"; changeregs; Update-Button-Reg -buttonChanger $btnCopilot;})
+$btnTbAnimation = Add-Button -Control $paneltb -Text "Animaciones de la barra" -X $cx_ar[7] -Y $cy_ar[7] -Width 150 -Height 30 -ForeColor '#ffffff'
+$btnTbAnimation.Add_Click({$global:text="tb\TaskbarAnimations.txt"; changeregs; Update-Button-Reg -buttonChanger $btnTbAnimation;})
+$btnTbFlashing = Add-Button -Control $paneltb -Text "Parpadeo de la barra" -X $cx_ar[8] -Y $cy_ar[8] -Width 150 -Height 30 -ForeColor '#ffffff'
+$btnTbFlashing.Add_Click({$global:text="tb\taskbarFlashing.txt"; changeregs; Update-Button-Reg -buttonChanger $btnTbFlashing;})
+
+#Systray
+Add-Label -control $panelSysTray -Text "Bandeja del sistema" -X 0 -Y 5 -Width $panel_width -Height 25 -ForeColor '#8E44AD' -Size 15;
+$btnSystrayDate = Add-Button -Control $panelSysTray -Text "Mostrar fecha y hora" -X $cx_ar[1] -Y $cy_ar[1] -Width 150 -Height 30 -ForeColor '#ffffff'
+$btnSystrayDate.Add_Click({$global:text="tb\sysTrayShowDateTime.txt"; changeregs; Update-Button-Reg -buttonChanger $btnSystrayDate;})
+$btnSystraySeconds = Add-Button -Control $panelSysTray -Text "Mostar segundos." -X $cx_ar[2] -Y $cy_ar[2] -Width 150 -Height 30 -ForeColor '#ffffff'
+$btnSystraySeconds.Add_Click({$global:text="tb\showSecondSystray.txt"; changeregs; Update-Button-Reg -buttonChanger $btnSystraySeconds;})
 
 
 #Suggestions
@@ -81,7 +93,7 @@ $btnBingSearch.Add_Click({$global:text="search\bing_search.txt"; changeregs; Upd
 
 
 
-ajustarPosicionPaneles -Paneles $panelDarkMode, $paneltb, $panelSearch, $panelsuggest
+ajustarPosicionPaneles -PanelesXColumna 2 -Paneles $panelDarkMode, $paneltb, $panelSearch, $panelsuggest, $panelSysTray, $panelExplorer
 $titlePrincipal.Add_Click({
     Set-Wallpaper -Image "$PSScriptRoot\src\img\paparrando.png" -Style Tile
 })
