@@ -35,7 +35,7 @@ Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UImod\UI-Automation.ps
 Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UImod\Update-Button.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UImod\Add-Label-Clickeable.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UImod\ajustarposicionpaneles.psm1" -Force
-Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UImod\Update-Button-Reg.psm1" -Force
+Import-Module -DisableNameChecking "$PSScriptRoot\src\utils\Update-Button-Reg.psm1" -Force
 Import-Module -DisableNameChecking "$PSScriptRoot\src\lib\UImod\Confirm-Action.psm1" -Force
 ##UI##
 ##INSTALL##
