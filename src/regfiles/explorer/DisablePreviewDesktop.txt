@@ -1,2 +1,2 @@
-HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
-DisablePreviewDesktop
+HKCU:\Software\Microsoft\Windows\DWM
+EnableAeroPeek
