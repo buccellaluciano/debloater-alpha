@@ -76,7 +76,7 @@ $labeloperagx = Add-Label -control $panelNavegadores -Text "Opera GX" -X $cx_ar[
 $buttonchrome = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:imagenTroll" -X ($cx_ar[0] -35) -Y ($cy_ar[0]) -Width 30 -Height 20;
     $buttonchrome.Add_Click({DESINSTALAR-PACKS -Dpack"Google.Chrome";  });
 $buttonbrave = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:imagenTroll" -X ($cx_ar[1] -35) -Y ($cy_ar[1]) -Width 30 -Height 20;
-    $buttonbrave.Add_Click({DESINSTALAR-PACKS -Dpack"XP8C9QZMS2PC1T";  }); 
+    $buttonbrave.Add_Click({DESINSTALAR-PACKS -Dpack "XP8C9QZMS2PC1T";  }); 
 $buttonfirefox = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:imagenTroll" -X ($cx_ar[2] -35) -Y ($cy_ar[2]) -Width 30 -Height 20; 
     $buttonfirefox.Add_Click({DESINSTALAR-PACKS -Dpack"9NZVDKPMR9RD";  }); 
 $buttonopera = Add-ImageButton -Control $panelNavegadores -ImagePath "$global:imagenTroll" -X ($cx_ar[3] -35) -Y ($cy_ar[3]) -Width 30 -Height 20;
