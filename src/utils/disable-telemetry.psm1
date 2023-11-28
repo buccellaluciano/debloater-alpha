@@ -40,10 +40,7 @@ function Disable-Telemetry {
             } elseif ($valor -eq 1) {
                 $value = 0
             }
-
-            Write-Host "$regroute"
-            Write-Host "$name"
-            #Set-ItemProperty -Path "$regroute" -Name "$name" -Value "$value" -ErrorAction SilentlyContinue
+            Set-ItemProperty -Path "$regroute" -Name "$name" -Value "$value" -ErrorAction SilentlyContinue
         }
 
 }
